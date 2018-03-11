@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="container">
+  {{ content }} 
+  {% if site.posts.size > 0 %}
+  <!-- <h2 class="view">{{ page.list_title | default: "Posts" }}</h2> -->
+  <div class="card-columns" style="margin-top:20px;">
+  <!-- <div class="d-flex flex-wrap justify-content-around" style="overflow:hidden; margin-top:20px;"> -->
+    {% for post in paginator.posts %}
+    <div class="card" style="margin: 30px 10px;">
+
+        {% if post.siteimage %}
+        <img class="card-img-top" src="{{site.baseurl}}{{post.siteimage}}" alt="Card image cap">
+        <!-- style="border-radius:.25rem; box-shadow:0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);" -->
+        {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ post.title | escape }}</h5>
+
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="small">{{ post.date | date: date_format }}</span>
+        <p>
+          {% if post.excerpt %} {{ post.excerpt }} {% endif %}
+        </p>
+        <a class="btn btn-info btn-block" href="{{ post.url | relative_url }}">Read More</a>
+        <!-- <div class="card-footer">123</div> -->
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+  {% include paginator.html %} {% endif %}
+</div>
