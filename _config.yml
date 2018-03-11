@@ -14,8 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 author: tomfriwel
-title: jekylltest
-email: your-email@example.com
+title: tomfriwel's blog
+# email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   "All of the buildings, all of those cars were once just a dream in somebody’s head." - Peter Gabriel
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -41,7 +41,7 @@ github_username:  tomfriwel
 #   - vendor/gems/
 #   - vendor/ruby/
 
-baseurl: /jekylltest
+baseurl: /blog
 show_excerpts: true
 
 # page setting
