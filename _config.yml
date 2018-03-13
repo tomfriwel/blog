@@ -23,6 +23,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tomfriwel
 github_username:  tomfriwel
 
+loadingImg:"http://zhangwenli.com/blog/img/loading.gif"
+
 # Build settings
 # markdown: markdown
 # theme: minima
