@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "通过编程来学习线性代数1.0"
+title:  "通过编程来学习线性代数1"
 comments: true
 ---
 

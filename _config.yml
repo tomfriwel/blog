@@ -49,3 +49,10 @@ paginate: 9
 paginate_path: "/page:num/"
 
 # build setting
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
