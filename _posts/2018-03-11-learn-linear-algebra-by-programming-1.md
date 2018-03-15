@@ -29,7 +29,7 @@ comments: true
 
 下面是我用`canvas`绘制的坐标系，一般编程中涉及到坐标系的地方，跟数学有些不同，y轴方向是向下为正。
 
-{% include image.html url="/assets/images/linear-algebra/102.png" description="canvas坐标系" %}
+{% include image.html url="/assets/images/linear-algebra/103.png" description="canvas坐标系" width=800 %}
 
 ```
 ```
