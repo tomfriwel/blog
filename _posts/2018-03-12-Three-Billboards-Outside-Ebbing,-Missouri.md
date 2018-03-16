@@ -1,6 +1,6 @@
 ---
 layout: post
-# title:  "《三块广告牌》"
+title:  "《三块广告牌》"
 comments: true
 ---
 
