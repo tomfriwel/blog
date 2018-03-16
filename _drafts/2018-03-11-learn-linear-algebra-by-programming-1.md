@@ -33,6 +33,8 @@ comments: true
 
 {% include image.html url="/assets/images/linear-algebra/103.png" description="canvas坐标系" width=800 %}
 
+{% include image.html url="/assets/images/linear-algebra/106.gif" description="canvas坐标系" width=800 %}
+
 那么来看看如何绘制出坐标系。下面主要是编程方面的东西，可以自己创建一个`.html`文件试一试。
 
 首先，创建`canvas`
