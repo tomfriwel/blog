@@ -163,5 +163,58 @@ function drawDirectionArrow(ctx, d) {
 
 如果想要在刻度上绘制数字标记，可以自行搜索相关文档，有一个叫[fillText](http://www.w3school.com.cn/tags/canvas_filltext.asp)的函数。
 
+##### 3. 绘制直线
+
+`a11 * x1 + a12 * x2 = b1` 此方程相当于 `a * x + b * y = c`。
+
+我们可以根据直线方程找到两个点，将两个点通过`moveTo`和`lineTo`连接并绘制出来。
+
+```js
+//---绘制直线---
+// 传入直线方程的三个常数和直线颜色
+/* 
+    a * x + b * y = c,
+
+    在 x, y 轴上的点
+    x = 0 && b != 0, y = c / b => (0, c / b)
+    y = 0 && a != 0, x = c / a => (c / a, 0)
+
+    b != 0, y = c / b => (x, (c - a * x) / b)
+    a != 0, x = c / a => ((c - b * y) / a, y)
+*/
+function drawLine(ctx, a, b, c, color = 'red') {
+    // 如果有一个为零，那么直线就是平行于x或y轴的
+    if (b != 0 && a != 0) {
+        var x1 = c / a, y1 = 0  // x轴上的点
+        var x2 = 0, y2 = c / b  // y轴上的点
+        var x3 = -originX, y3 = (c - a * x3) / b    //左边界点
+        var x4 = originX, y4 = (c - a * x4) / b    //右边界点
+
+        ctx.strokeStyle = color
+        ctx.lineWidth = 1
+
+        //  绘制直线
+        ctx.beginPath()
+        ctx.moveTo(x3 + originX, y3 + originY)
+        ctx.lineTo(x4 + originX, y4 + originY)
+        ctx.closePath()
+        ctx.stroke()
+    }
+}
+```
+
+然后调用该函数绘制：
+
+```
+drawLine(ctx, 1, 1, 123, 'red')
+drawLine(ctx, 1, 5, 999, 'blue')
+```
+
+结果：
+
+{% include image.html url="/assets/images/linear-algebra/107.png" description="canvas坐标系" width=500 %}
+
+##### 4. 求出两直线的交点
+
 (未完)
 
