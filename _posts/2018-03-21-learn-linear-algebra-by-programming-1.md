@@ -11,6 +11,7 @@ comments: true
 比如文件***linearAlgebra.html***:
 ```html
 <script>
+    // 在控制台打印
     console.log(123*2)
 </script>
 ```
