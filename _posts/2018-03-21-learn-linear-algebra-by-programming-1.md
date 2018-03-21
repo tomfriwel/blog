@@ -293,6 +293,8 @@ var p = calculateIntersection(1, 1, 123, 1, 5, 999)
 drawIntersection(ctx, p.x, p.y)
 ```
 
+上面求两直线交点的思路是根据`二阶行列式`来解二元线性方程组。
+
 结果如图：
 
 {% include image.html url="/assets/images/linear-algebra/108.png" description="canvas坐标系" width=500 %}
