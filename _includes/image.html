@@ -1,8 +1,8 @@
 <figure class="image">
     {% if include.width %}
-        <img src="{{site.baseurl}}{{include.url }}" alt="{{ include.description }}" width="{{include.width}}" style="border:1px solid #eee;">
+        <img src="{{site.baseurl}}{{include.url }}" alt="{{ include.description }}" style="max-width:{{include.width}}px; width:100%; border:1px solid #eee;">
     {% else %}
-    <img src="{{site.baseurl}}{{include.url }}" alt="{{ include.description }}" width="300" style="border:1px solid #eee;">
+        <img src="{{site.baseurl}}{{include.url }}" alt="{{ include.description }}" width="300" style="border:1px solid #eee;">
     {% endif %}
     <figcaption class="font-italic text-muted">{{ include.description }}</figcaption>
 </figure>
