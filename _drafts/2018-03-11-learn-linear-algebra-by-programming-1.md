@@ -283,34 +283,13 @@ function drawIntersection(ctx, x, y) {
 最后，我们的绘制函数大概是这样的：
 
 ```js
-// 设置绘制线的颜色为black
-ctx.strokeStyle = 'black'
 
-// 线宽度
-ctx.lineWidth = 1
-
-// 水平线
-ctx.beginPath()
-ctx.moveTo(0, 0 + originY)  // 画布的左边界中点
-ctx.lineTo(W, 0 + originY)    // 画布的右边界中点
-ctx.closePath()
-ctx.stroke()
-
-// 垂直线
-ctx.beginPath()
-ctx.moveTo(0 + originX, 0)  // 画布的上边界中点
-ctx.lineTo(0 + originX, H)  // 画布的下边界中点
-ctx.closePath()
-ctx.stroke()
-drawScale(ctx, scaleD)
-drawDirectionArrow(ctx, scaleD)
-
+drawCoordinateSystem(ctx)
 drawLine(ctx, 1, 1, 123, 'red')
 drawLine(ctx, 1, 5, 999, 'blue')
 
-var ins = calculateIntersection(1, 1, 123, 1, 5, 999)
-console.log(ins)
-drawIntersection(ctx, ins.x, ins.y)
+var p = calculateIntersection(1, 1, 123, 1, 5, 999)
+drawIntersection(ctx, p.x, p.y)
 ```
 
 结果如图：
