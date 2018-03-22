@@ -93,6 +93,10 @@ function http_post( $url, $data=null ) {
 }
 ```
 
+因为我用过框架，上面代码是改变过的，没有进行实际测试，但思路就大概是这样的。
+
+如果代码有什么问题可以告知我。
+
 ### 参考
 
 * [小程序登录](https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxchecksessionobject)
