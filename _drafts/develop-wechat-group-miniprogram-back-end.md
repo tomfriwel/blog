@@ -57,12 +57,40 @@ function getDecodeEncryptedData($sessionKey, $encryptedData, $iv) {
 }
 ```
 
-`http_post`函数：
-
 最后获取`post`传过来的参数，进行调用：
 
 ```php
+$code = ... // post 参数
+$encryptedData = ... // post 参数
+$iv = ... // post  参数
 
+$loginInfo = getInfoWithCode($appid, $appsecret, $code);
+$sessionKey = $loginInfo->session_key;
+echo getDecodeEncryptedData($sessionKey, $encryptedData, $iv);
+```
+
+`http_post`函数：
+
+```php
+function http_post( $url, $data=null ) {
+    $curl = curl_init(); // 启动一个CURL会话
+    curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); // 对认证证书来源的检查
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false); // 从证书中检查SSL加密算法是否存在
+    curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); // 模拟用户使用的浏览器
+    if($data != null){
+        curl_setopt($curl, CURLOPT_POST, 1); // 发送一个常规的Post请求
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data); // Post提交的数据包
+    }
+    curl_setopt($curl, CURLOPT_TIMEOUT, 300); // 设置超时限制防止死循环
+    curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
+    $info = curl_exec($curl); // 执行操作
+    curl_close( $curl );
+    // var_dump(json_decode($resp, true));
+    // echo "<br><br><br><br>";
+    return $info;
+}
 ```
 
 ### 参考
