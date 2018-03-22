@@ -69,7 +69,7 @@ $sessionKey = $loginInfo->session_key;
 echo getDecodeEncryptedData($sessionKey, $encryptedData, $iv);
 ```
 
-`http_post`函数：
+`http_post`函数，是官方某个demo里的，具体是哪里的忘了：
 
 ```php
 function http_post( $url, $data=null ) {
