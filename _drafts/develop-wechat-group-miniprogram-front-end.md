@@ -122,6 +122,8 @@ getDecodeEncryptedData: function (encryptedData, iv) {
 },
 ```
 
+首先，我们获取`encryptedData`和`iv`，然后将其传给后台进行解析。
+
 在`getDecodeEncryptedData`中，当后台解析成功后，就会返回一个`openGId`。
 
 此时就可以将群`openGId`与用户`openid`进行绑定了，这个绑定信息也是要保存到后台的。如果后台没有保存过头像昵称信息，此时也可以将用户头像和昵称一起保存到后台。
