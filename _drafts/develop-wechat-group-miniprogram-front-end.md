@@ -104,6 +104,21 @@ getShareInfo: function (shareTicket) {
 // 获取解密后的信息
 getDecodeEncryptedData: function (encryptedData, iv) {
     // 发送到后台解析
+    wx.login({
+        success: function(res) {
+            let code = res.code
+
+            // 下面只是演示代码
+            // post({
+            //     url:'https://www.example.com/controller/getDecodeEncryptedData'
+            //     data:{
+            //         code,
+            //         encryptedData,
+            //         iv,
+            //     }
+            // })
+        }
+    })
 },
 ```
 
@@ -113,11 +128,16 @@ getDecodeEncryptedData: function (encryptedData, iv) {
 
 类似于下面这样的一个接口:
 ```js
+// 下面只是演示代码
 post({
     url:'https://www.example.com/controller/bindGroupAndUser'
     data:{
-        openGId,
-        openid,
+        code,
+        openGId
     }
 })
 ```
+
+其中的`code`调用`wx.login`获得，后台根据这个`code`能获取到`openid`。然后进行绑定。
+
+我将在另一篇中描述后端的相关处理。
