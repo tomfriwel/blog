@@ -58,7 +58,7 @@ function getDecodeEncryptedData($sessionKey, $encryptedData, $iv) {
 }
 ```
 
-最后获取`post`传过来的参数，进行调用：
+最后获取`post`传过来的参数，进行调用获取`openGId`：
 
 ```php
 $code = ... // post 参数
@@ -69,6 +69,8 @@ $loginInfo = getInfoWithCode($appid, $appsecret, $code);
 $sessionKey = $loginInfo->session_key;
 echo getDecodeEncryptedData($sessionKey, $encryptedData, $iv);
 ```
+
+前端拿到`openGId`后就可以进行绑定相关操作了。
 
 `http_post`函数，是官方某个demo里的，具体是哪里的忘了：
 
@@ -93,6 +95,8 @@ function http_post( $url, $data=null ) {
     return $info;
 }
 ```
+
+其实这些都可以从官方文档里找到，这里只是做一个总结。
 
 因为我用过框架，上面代码是改变过的，没有进行实际测试，但思路就大概是这样的。
 
