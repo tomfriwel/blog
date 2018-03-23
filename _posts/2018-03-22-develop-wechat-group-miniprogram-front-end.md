@@ -27,7 +27,7 @@ wx.showShareMenu({
 
 ### 触发转发事件
 
-如果要自定义转发按钮而不是有默认右上角的转发按钮，需要在页面中放置一个`open-type="share"`的`button`组件:
+如果要自定义转发按钮而不是有默认右上角的转发按钮，需要在页面中放置一个`open-type="share"`的[`button`](https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html)组件:
 
 ```html
 <button open-type="share">share</button>
@@ -123,7 +123,7 @@ getDecodeEncryptedData: function (encryptedData, iv) {
 },
 ```
 
-首先，我们获取`encryptedData`和`iv`，然后将其传给后台进行解析。
+首先，我们通过[`wx.getShareInfo`](https://mp.weixin.qq.com/debug/wxadoc/dev/api/share.html#wxgetshareinfoobject)获取`encryptedData`和`iv`，然后将其传给后台进行解析。
 
 在`getDecodeEncryptedData`中，当后台解析成功后，就会返回一个`openGId`。
 
@@ -141,8 +141,14 @@ post({
 })
 ```
 
-其中的`code`调用`wx.login`获得，后台根据这个`code`能获取到`openid`。然后进行绑定。
+其中的`code`调用[`wx.login`](https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxloginobject)获得，后台根据这个`code`能获取到`openid`。然后进行绑定。
 
 然后根据自己的需求，可能还要一个保存用户基础信息和拉取群成员信息列表的接口。
 
 基本思路就是这样，我将在另一篇文章中描述后端的相关处理。
+
+### 参考
+
+* [小程序开发文档-转发](https://mp.weixin.qq.com/debug/wxadoc/dev/api/share.html)
+* [小程序登录](https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxchecksessionobject)
+* [用户数据的签名验证和加解密](https://mp.weixin.qq.com/debug/wxadoc/dev/api/signature.html)
