@@ -9,6 +9,8 @@ comments: true
 
 ### 模糊效果
 
+{% include image.html url="/assets/images/iphone-take-photo/blur-tip" description="模糊提示" width=800 %}
+
 ### 网格作用
 
 黄金分割
