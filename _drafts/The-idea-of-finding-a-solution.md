@@ -12,4 +12,4 @@
 
 游戏有适合和不适合，要结果的话就是开外挂、脚本啥的。要过程就是慢慢玩而不是直接通关。
 
-![](http://www.socalpain.com/wp-content/uploads/2014/08/GarlicCloves.jpg)
+{% include image.html outurl="http://www.socalpain.com/wp-content/uploads/2014/08/GarlicCloves.jpg" description="蒜" width=300 %}

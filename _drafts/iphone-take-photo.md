@@ -9,7 +9,13 @@ comments: true
 
 ### 模糊效果
 
-{% include image.html url="/assets/images/iphone-take-photo/blur-tip" description="模糊提示" width=800 %}
+要模糊远处的景物, 将一个物体置于近处, `长按`屏幕, 直到出现提示. 这时移开近处的物体, 就能一直保持模糊效果了.
+
+可以仔细看下面这张图片, 远处的事物是模糊的.
+
+{% include image.html url="/assets/images/iphone-take-photo/blur-tip.png" description="模糊提示" width=300 %}
+
+{% include image.html url="/assets/images/iphone-take-photo/blur-class.jpg" description="模糊效果" width=300 %}
 
 ### 网格作用
 
