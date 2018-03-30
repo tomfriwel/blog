@@ -149,6 +149,6 @@ post({
 
 ### 参考
 
-* [小程序开发文档-转发](https://mp.weixin.qq.com/debug/wxadoc/dev/api/share.html)
-* [小程序登录](https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxchecksessionobject)
-* [用户数据的签名验证和加解密](https://mp.weixin.qq.com/debug/wxadoc/dev/api/signature.html)
+- [小程序开发文档-转发](https://mp.weixin.qq.com/debug/wxadoc/dev/api/share.html)
+- [小程序登录](https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxchecksessionobject)
+- [用户数据的签名验证和加解密](https://mp.weixin.qq.com/debug/wxadoc/dev/api/signature.html)
