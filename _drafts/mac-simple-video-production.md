@@ -5,6 +5,8 @@ title:  "Mac上简单的视频制作技巧"
 comments: true
 ---
 
-只是拼接视频, 可以用QuickTime
+### 拼接视频
+
+只是拼接视频, 可以用QuickTime. After opening a video, `Edit > Add Clip to End...` to add another video to end.
 
 iMovie
