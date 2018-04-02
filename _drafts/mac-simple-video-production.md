@@ -9,4 +9,6 @@ comments: true
 
 只是拼接视频, 可以用QuickTime. After opening a video, `Edit > Add Clip to End...` to add another video to end.
 
-iMovie
+
+### 视音分离
+`iMovie` 添加视频到下面一栏后, 右键点击`dispatch`
