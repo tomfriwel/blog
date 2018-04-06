@@ -29,3 +29,29 @@ comments: true
 以此类推, 直到选完为止.
 
 n个元素所有排列的种数: `n! = n*(n-1)*...*3*2*1`
+
+
+这里我们用[`Heap's algorithm`](https://en.wikipedia.org/wiki/Heap%27s_algorithm)算法来生成每一项:
+
+```js
+// Heap's algorithm
+function generate(n, A) {
+    if(n==1) {
+        console.log(A)
+    }
+    else {
+        for(let i=0; i<n-1; i++) {
+            generate(n-1, A)
+            if(n%2==0) {
+                swap(A, i, n-1)
+            }
+            else {
+                swap(A, 0, n-1)
+            }
+        }
+        generate(n-1, A)
+    }
+}
+```
+
+可以在浏览器的控制台中试一下, 如`generate(3, [1, 2, 3])`或者``generate(4, ['a', 'b', 'c', 'd'])``, 字符数字都行, 每一项唯一
