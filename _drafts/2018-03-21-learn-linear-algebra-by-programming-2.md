@@ -55,3 +55,19 @@ function generate(n, A) {
 ```
 
 可以在浏览器的控制台中试一下, 如`generate(3, [1, 2, 3])`或者``generate(4, ['a', 'b', 'c', 'd'])``, 字符数字都行, 每一项唯一
+
+这里我们需要用一个数组来保存每一项
+
+```js
+let arr = []
+function generate(n, A) {
+    if(n==1) {
+        console.log(A)
+        arr.push(A)
+    }
+    ...
+}
+
+```
+
+得到每一项后, 就可以进行计算逆序数了. 一个排列的逆序数决定了是正或负数.
