@@ -6,6 +6,7 @@
 </h2>
 <div id="gitalk-container"></div>
 <script type="text/javascript">
+    var language = navigator.language || navigator.userLanguage;
     var gitalk = new Gitalk({
         clientID: 'd1eb7e13bdea94d4be23',
         clientSecret: '91cb6a1282bfd6e8225ee6d1c4b2743f621063ec',
@@ -13,8 +14,8 @@
         owner: 'tomfriwel',
         admin: ['tomfriwel'],
         id: document.title,
-        distractionFreeMode: true,
-        language: 'en'
+        distractionFreeMode: false,
+        language: language
     });
     gitalk.render('gitalk-container');
 </script>
