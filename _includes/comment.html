@@ -9,7 +9,7 @@
 <script type="text/javascript">
     var language = navigator.language || navigator.userLanguage;
     var path = location.pathname || 'unknown'
-    var id = md5(location.pathname);
+    var id = md5(path);
     var title = '[blog]' + (document.title || 'unknown')
 
     var gitalk = new Gitalk({
