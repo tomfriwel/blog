@@ -56,8 +56,8 @@ def newDraft(filename):
         file = open(filename, 'w')   # Trying to create a new file or open one
         file.write("""---
 layout: post
-title:  "title"
-date: ""
+title:  'title'
+date: '""" + getDate() + """'
 excerpt: >-
     excerpt
 comments: true
