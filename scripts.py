@@ -57,6 +57,7 @@ def newDraft(filename):
         file.write("""---
 layout: post
 title:  "title"
+date: ""
 excerpt: >-
     excerpt
 comments: true
@@ -64,7 +65,19 @@ comments: true
 
 """)
         file.close()
-        print('create '+filename)
+        print('create ' + filename)
+    except:
+        print('Something went wrong! Can\'t tell what?')
+        sys.exit(0)  # quit Python
+
+
+def publish(path):
+    filename = os.path.basename(path)
+    filename = getDate('%Y-%m-%d') + '-' + filename
+    newpath = './_posts/' + filename
+    try:
+        os.rename(path, newpath)
+        saveCurrentTimeToCp()
     except:
         print('Something went wrong! Can\'t tell what?')
         sys.exit(0)  # quit Python
@@ -93,7 +106,8 @@ def switch(case, extra=None):
     states = {
         'savedate': saveCurrentTimeToCp,
         'fileinfo': getFileInfo,
-        'newdraft': newDraft
+        'newdraft': newDraft,
+        'publish': publish
     }
     if states.has_key(case):
         if extra is not None:
