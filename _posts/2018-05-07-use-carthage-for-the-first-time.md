@@ -58,7 +58,7 @@ dyld: Library not loaded: @rpath/Alamofire.framework/Alamofire
   Reason: image not found
 ```
 
-后来查找了这个错误，发现添加 ***Framework Search Paths*** 只是让写代码的时候不报错，但要运行的时候也不报错还需要一步。
+后来查找了这个错误，发现添加库到 ***Framework Search Paths*** 里只是让`import`的时候不报错，但要保证运行的时候不报上面那个错还需要一步。
 
 将 `Alamofire.framework` 添加到 ***General>Embedded binaries***
 
