@@ -50,7 +50,23 @@ $(PROJECT_DIR)/Carthage/Build/iOS
 
 {% include image.html url="/assets/images/use-carthage-for-the-first-time/2.png" description="$(PROJECT_DIR)/Carthage/Build/iOS" width=800 %}
 
+上面设置是看别人博客进行配置的，但是一运行，就会报错：
+
+```
+dyld: Library not loaded: @rpath/Alamofire.framework/Alamofire
+  Referenced from: /var/containers/Bundle/Application/xxx/SwiftDemo.app/SwiftDemo
+  Reason: image not found
+```
+
+后来查找了这个错误，发现添加 ***Framework Search Paths*** 只是让写代码的时候不报错，但要运行的时候也不报错还需要一步。
+
+将 `Alamofire.framework` 添加到 ***General>Embedded binaries***
+
+{% include image.html url="/assets/images/use-carthage-for-the-first-time/3.png" description="Embedded binaries" width=800 %}
+
 ### References
 
 - [走向Carthage](https://www.jianshu.com/p/3921289cd3c5)
 - [Homebrew](https://docs.brew.sh/Manpage)
+- [dyld: Library not loaded: @rpath/Alamofire.framework/Alamofire on my iPhone(iOS8) while debuging #101](https://github.com/Alamofire/Alamofire/issues/101)
+- [iOS app with framework crashed on device, dyld: Library not loaded, Xcode 6 Beta](https://stackoverflow.com/a/24345546/6279975)
