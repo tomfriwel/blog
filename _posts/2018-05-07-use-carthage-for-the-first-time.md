@@ -23,7 +23,7 @@ comments: true
 
 ### 添加库
 
-在你的项目根目录下创建一个名为`Cartfile`的文件，比如使用`Alamofire`:
+在你的项目根目录下创建一个名为`Cartfile`的文件，并添加要用的第三方库，比如使用`Alamofire`:
 
 ***project/Cartfile:***
 ```
@@ -32,7 +32,7 @@ github "Alamofire/Alamofire" ~> 4.7
 
 `$ carthage update`
 
-> 安装
+> 安装Cartfile里的库
 
 执行命令后，***Carthage*** 会拉取库文件进行编译，会在 ***project/Carthage/Build*** 目录下生成不同平台的`Alamofire.framework`文件。
 
