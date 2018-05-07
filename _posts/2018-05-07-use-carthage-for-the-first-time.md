@@ -84,6 +84,7 @@ Alamofire.request("https://httpbin.org/get").responseJSON { response in
 
 ### References
 
+- [Carthage/Carthage](https://github.com/Carthage/Carthage)
 - [走向Carthage](https://www.jianshu.com/p/3921289cd3c5)
 - [Homebrew](https://docs.brew.sh/Manpage)
 - [dyld: Library not loaded: @rpath/Alamofire.framework/Alamofire on my iPhone(iOS8) while debuging #101](https://github.com/Alamofire/Alamofire/issues/101)
