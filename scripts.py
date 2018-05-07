@@ -58,8 +58,6 @@ def newDraft(filename):
 layout: post
 title:  'title'
 date: '""" + getDate() + """'
-excerpt: >-
-    excerpt
 comments: true
 ---
 
@@ -70,7 +68,7 @@ comments: true
         print('Something went wrong! Can\'t tell what?')
         sys.exit(0)  # quit Python
 
-
+# move draft to post
 def publish(path):
     filename = os.path.basename(path)
     filename = getDate('%Y-%m-%d') + '-' + filename
@@ -104,10 +102,10 @@ args = vars(ap.parse_args())
 
 def switch(case, extra=None):
     states = {
-        'savedate': saveCurrentTimeToCp,
+        'time': saveCurrentTimeToCp,
         'fileinfo': getFileInfo,
-        'newdraft': newDraft,
-        'publish': publish
+        'new': newDraft,
+        'post': publish
     }
     if states.has_key(case):
         if extra is not None:
