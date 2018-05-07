@@ -5,7 +5,7 @@ date: '2018-05-07 14:30:41'
 comments: true
 ---
 
-### Prepare
+### 准备
 
 `$ brew update`
 
@@ -32,7 +32,7 @@ github "Alamofire/Alamofire" ~> 4.7
 
 `$ carthage update`
 
-> 安装Cartfile里的库
+> 获取（fetch）并构建（build）您列出的每个框架。
 
 执行命令后，***Carthage*** 会拉取库文件进行编译，会在 ***project/Carthage/Build*** 目录下生成不同平台的`Alamofire.framework`文件。
 
