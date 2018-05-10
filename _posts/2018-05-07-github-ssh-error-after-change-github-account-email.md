@@ -25,7 +25,7 @@ comments: true
 
 ### 更新
 
-改了之后，`Gitlab`又不行了，出现：
+改了之后，`Gitlab`又不行了，出现错误：
 ```
 git@gitlab.com: Permission denied (publickey).
 fatal: Could not read from remote repository.
