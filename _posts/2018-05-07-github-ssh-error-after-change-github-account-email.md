@@ -16,6 +16,13 @@ comments: true
 想到最近改过Github的公开邮箱（就是Github个人主页那个邮箱），就联系到了一起。
 
 根据[Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)的方法，重新设置了ssh key，填信息部分除了邮箱那里，其他都是默认的。
+```
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+```
+`passphrase`我也是直接回车没填。
 
 然后再使用相关git命令，就解决了。
 
@@ -34,9 +41,47 @@ Please make sure you have the correct access rights
 and the repository exists.
 ```
 
-后来把`id_rsa`添加到`Setting > SSH Keys`，才可以用。
+后来把`id_rsa`添加到`Settings > SSH Keys`，才可以用。
 
 复制命令：`$ pbcopy < ~/.ssh/id_rsa.pub`
+
+或者创建一个新的key：
+```
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Enter a file in which to save the key (/Users/you/.ssh/id_rsa): gitlab_id_rsa
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+```
+
+然添加：
+```
+$ ssh-add ~/.ssh/id_rsa
+$ ssh-add ~/.ssh/gitlab_id_rsa
+```
+最后需要建一个配置文件：
+
+```
+$ cd ~/.ssh/
+$ touch config
+```
+
+然后添加：
+```
+#gitlab account
+Host gitlab.com
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/gitlab_id_rsa
+
+#github account
+Host github.com
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_rsa
+```
+
+也要将`gitlab_id_rsa.pub`内容复制到`Settings > SSH Keys`
+
 
 ### 参考
 
