@@ -23,6 +23,24 @@ comments: true
 
 🤪🤪🤪🤪
 
+### 更新
+
+改了之后，`Gitlab`又不行了，出现：
+```
+git@gitlab.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+后来把`id_rsa`添加到`Setting > SSH Keys`，才可以用。
+
+复制命令：`$ pbcopy < ~/.ssh/id_rsa.pub`
+
 ### 参考
 
 - [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+- [GitLab and SSH keys](https://docs.gitlab.com/ce/ssh/README.html#working-with-non-default-ssh-key-pair-paths)
+- [Multiple SSH Keys settings for different github account](https://gist.github.com/jexchan/2351996)
+- [Can I have multiple ssh keys in my .ssh folder?](https://superuser.com/questions/287651/can-i-have-multiple-ssh-keys-in-my-ssh-folder)
