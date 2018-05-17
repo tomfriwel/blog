@@ -6,7 +6,7 @@ date: '2018-04-09 15:25:13'
 
 最近看到这样一张图片：
 
-{% include image.html url="/assets/images/ps/stitch0.jpg" description="图片拼接实例" width=800 %}
+![图片拼接实例](/assets/images/ps/stitch0.jpg)
 
 就很想试一下用`PS`来实现类似的效果。
 

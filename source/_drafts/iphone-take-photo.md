@@ -13,9 +13,9 @@ comments: true
 
 可以仔细看下面这张图片, 远处的事物是模糊的.
 
-{% include image.html url="/assets/images/iphone-take-photo/blur-tip.png" description="模糊提示" width=300 %}
+![模糊提示](/assets/images/iphone-take-photo/blur-tip.png)
 
-{% include image.html url="/assets/images/iphone-take-photo/blur-class.jpg" description="模糊效果" width=300 %}
+![模糊效果](/assets/images/iphone-take-photo/blur-class.jpg)
 
 ### 网格作用
 
