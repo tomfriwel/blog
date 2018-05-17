@@ -1,4 +1,6 @@
 public/
+.deploy_git/
+db.json
 
 # Created by https://www.gitignore.io/api/git,node,macos,visualstudiocode
 
