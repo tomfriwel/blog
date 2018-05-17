@@ -3,6 +3,8 @@ layout: post
 title:  '更改Gihub公开邮箱后发生的ssh错误'
 date: '2018-05-07 11:42:05'
 comments: true
+tag:
+    - Github
 ---
 
 最近改了Github的Public email，然后在电脑上使用git拉取Github的库的时候，发生各种离奇的错误。
