@@ -9,7 +9,8 @@ comments: true
 
 之前介绍过了如何在微信小程序中获取群openGId相关的流程，在这篇文章中我会使用`php`实现之前提到过的相关接口。解析`encryptedData`和`iv`的代码官方已经给出了`php`、`nodejs`等版本的实现，这篇主要是贴一些相关代码。
 
-{% include image.html outurl="https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" description="openGId" width=800 %}
+
+![openGId](https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 准备
 

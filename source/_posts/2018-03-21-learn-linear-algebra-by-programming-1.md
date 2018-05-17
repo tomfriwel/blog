@@ -25,8 +25,7 @@ comments: true
 
 `行列式`的概念是由解多元线性方程组而引出的。比如下面这个：
 
-
-{% include image.html url="/assets/images/linear-algebra/101.jpeg" description="二元线性方程组" %}
+![二元线性方程组](/blog/assets/images/linear-algebra/101.jpeg)
 
 在坐标系中就是两根直线，分母为零的情况就是两根直线平行不相交。
 
@@ -34,9 +33,9 @@ comments: true
 
 下面是我用`canvas`绘制的坐标系，一般编程中涉及到坐标系的地方，跟数学里有些不同，y轴方向是向下为正。
 
-{% include image.html url="/assets/images/linear-algebra/103.png" description="canvas坐标系" width=800 %}
+![canvas坐标系](/blog/assets/images/linear-algebra/103.jpeg)
 
-{% include image.html url="/assets/images/linear-algebra/106.gif" description="canvas坐标系" width=800 %}
+![canvas坐标系](/blog/assets/images/linear-algebra/106.jpeg)
 
 那么来看看如何绘制出坐标系。下面主要是编程方面的东西，可以自己创建一个`.html`文件试一试。
 
@@ -104,7 +103,7 @@ function drawCoordinateSystem(ctx) {
 `stroke`绘制线条，如果`fill`，那么会将线包围的区域用颜色涂满。途中的黑色三角形方向标就是这样绘制的，设置三个点后调用`fill`。
 
 调用函数后得到下图：
-{% include image.html url="/assets/images/linear-algebra/104.png" description="canvas坐标系" width=500 %}
+![canvas坐标系](/blog/assets/images/linear-algebra/104.jpeg)
 
 阴影样式需要给`canvas`加上一个`box-shadow`：
 
@@ -162,7 +161,7 @@ function drawDirectionArrow(ctx, d) {
 
 然后在`drawCoordinateSystem`函数里追加调用`drawScale(ctx, scaleD)`和`drawDirectionArrow(ctx, scaleD)`，运行后如图：
 
-{% include image.html url="/assets/images/linear-algebra/105.png" description="canvas坐标系" width=500 %}
+![canvas坐标系](/blog/assets/images/linear-algebra/105.jpeg)
 
 如果想要在刻度上绘制数字标记，可以自行搜索相关文档，有一个叫[fillText](http://www.w3school.com.cn/tags/canvas_filltext.asp)的函数。
 
@@ -215,7 +214,7 @@ drawLine(ctx, 1, 5, 999, 'blue')
 
 结果：
 
-{% include image.html url="/assets/images/linear-algebra/107.png" description="canvas坐标系" width=500 %}
+![canvas坐标系](/blog/assets/images/linear-algebra/107.jpeg)
 
 ##### 4. 求出两直线的交点
 
@@ -297,7 +296,8 @@ drawIntersection(ctx, p.x, p.y)
 
 结果如图：
 
-{% include image.html url="/assets/images/linear-algebra/108.png" description="canvas坐标系" width=500 %}
+
+![canvas坐标系](/blog/assets/images/linear-algebra/108.jpeg)
 
 ### 总结
 

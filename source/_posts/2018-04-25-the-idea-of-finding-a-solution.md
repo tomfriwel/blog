@@ -16,4 +16,4 @@ comments: true
 
 总结：首先考虑目标，然后对这个目标制定计划、思考解决办法、讨论等，最后实行。
 
-{% include image.html outurl="http://www.socalpain.com/wp-content/uploads/2014/08/GarlicCloves.jpg" description="蒜" width=300 %}
+![蒜](http://www.socalpain.com/wp-content/uploads/2014/08/GarlicCloves.jpg)

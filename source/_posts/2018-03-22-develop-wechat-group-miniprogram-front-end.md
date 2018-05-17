@@ -11,7 +11,7 @@ comments: true
 
 下面我将实现小程序端的从转发到用户点击卡片后获取信息的这个过程。
 
-{% include image.html outurl="https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" description="openGId" width=800 %}
+![openGId](https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 开启
 
