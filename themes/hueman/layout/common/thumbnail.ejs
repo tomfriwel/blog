@@ -1,9 +1,6 @@
 <a href="<%- url_for(post.link ? post.link : post.path) %>" class="thumbnail">
     <% var thumbnailUrl = thumbnail(post) %>
     <% if (thumbnailUrl) { %>
-        <% if (thumbnailUrl.indexOf('http')!=0) { %>
-            <% thumbnailUrl = config.root + thumbnailUrl %>
-        <% } %>
         <span style="background-image:url(<%- thumbnailUrl %>)" alt="<%= post.title %>" class="thumbnail-image"></span>
     <% } else { %>
         <span class="thumbnail-image thumbnail-none"></span>
