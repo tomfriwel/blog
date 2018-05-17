@@ -1,0 +1,32 @@
+
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="/blog/js/md5.js"></script>
+<% if (typeof(script) !== 'undefined' && script) { %>
+
+<script type="text/javascript">
+    (function() {
+        var language = navigator.language || navigator.userLanguage;
+        var path = location.pathname || 'unknown'
+        var id = md5(path);
+        var title = '[blog]' + (document.title || 'unknown')
+
+        var gitalk = new Gitalk({
+            clientID: 'd1eb7e13bdea94d4be23',
+            clientSecret: '91cb6a1282bfd6e8225ee6d1c4b2743f621063ec',
+            repo: 'blog',
+            owner: 'tomfriwel',
+            admin: ['tomfriwel'],
+            id: id,
+            labels: ['blog-comments'],
+            title: title,
+            distractionFreeMode: false,
+            language: language
+        });
+        gitalk.render('gitalk-container');
+    })();
+</script>
+<% } else { %>
+    
+<% } %>
