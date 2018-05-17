@@ -38,7 +38,7 @@ github "Alamofire/Alamofire" ~> 4.7
 
 ***Carthage*** 不像 ***Cocoapods*** 会自动帮你做好连接配置，需要手动添加，因为一个一个将`*.framework`文件添加到 ***Build Phases>Link Binary With Libaries*** 里很麻烦，
 
-![Link Binary With Libaries](/assets/images/use-carthage-for-the-first-time/0.png)
+![Link Binary With Libaries](/blog/assets/images/use-carthage-for-the-first-time/0.png)
 
 所以这里推荐把相应库目录添加到 ***Build Settings>Framework Search Paths*** 里，比如我使用的是*iOS*版，那么添加一个：
 
@@ -46,9 +46,9 @@ github "Alamofire/Alamofire" ~> 4.7
 $(PROJECT_DIR)/Carthage/Build/iOS
 ```
 
-![Framework Search Paths](/assets/images/use-carthage-for-the-first-time/1.png)
+![Framework Search Paths](/blog/assets/images/use-carthage-for-the-first-time/1.png)
 
-![(PROJECT_DIR)/Carthage/Build/iOS](/assets/images/use-carthage-for-the-first-time/2.png)
+![(PROJECT_DIR)/Carthage/Build/iOS](/blog/assets/images/use-carthage-for-the-first-time/2.png)
 
 上面设置是看别人博客进行配置的，但是一运行，就会报错：
 
@@ -62,7 +62,7 @@ dyld: Library not loaded: @rpath/Alamofire.framework/Alamofire
 
 将 `Alamofire.framework` 添加到 ***General>Embedded binaries***
 
-![Embedded binaries](/assets/images/use-carthage-for-the-first-time/3.png)
+![Embedded binaries](/blog/assets/images/use-carthage-for-the-first-time/3.png)
 
 最后就可以用官方例子试用一下了：
 
