@@ -81,8 +81,6 @@ def publish(path):
         sys.exit(0)  # quit Python
 
 # format timestamp
-
-
 def formatTimestamp(timestamp):
     print(timestamp)
     time_local = time.localtime(timestamp)
@@ -91,6 +89,12 @@ def formatTimestamp(timestamp):
 
     print(dt)
 
+# Get post path
+def getPostPath(title, rel='/blog/'):
+    dt = getDate("%Y/%m/%d")
+    res = rel + dt + '/' + title + '/'
+    setClipboardData(res)
+    print(res)
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-t", "--type", required=True,
@@ -105,7 +109,8 @@ def switch(case, extra=None):
         'time': saveCurrentTimeToCp,
         'fileinfo': getFileInfo,
         'new': newDraft,
-        'post': publish
+        'post': publish,
+        'path': getPostPath
     }
     if states.has_key(case):
         if extra is not None:

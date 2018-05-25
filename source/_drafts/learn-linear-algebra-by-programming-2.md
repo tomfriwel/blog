@@ -3,6 +3,10 @@ layout: post
 title:  "通过编程来学习线性代数2"
 date: '2018-05-21 10:11:47'
 comments: true
+thumbnail: /blog/assets/images/linear-algebra/cover.png
+tag:
+    - 基础知识
+    - 线性代数
 ---
 
 

@@ -4,8 +4,10 @@ title:  "通过编程来学习线性代数1-解二元线性方程组"
 excerpt: 在这一节中你将了解如何在`canvas`中进行基本的绘制操作、关于计算`行列式`和解二元线性方程组的的相关知识。
 date: '2018-03-21 10:11:47'
 comments: true
+thumbnail: /blog/assets/images/linear-algebra/cover.png
 tag:
     - 基础知识
+    - 线性代数
 ---
 
 ### 环境
