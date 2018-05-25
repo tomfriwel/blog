@@ -6,7 +6,7 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "s": "hexo clean && hexo g && hexo s -p 1234",
+    "s": "hexo clean && hexo g && hexo s -p 1234 --draft",
     "d": "hexo clean && hexo g && hexo d -g"
   },
   "dependencies": {
