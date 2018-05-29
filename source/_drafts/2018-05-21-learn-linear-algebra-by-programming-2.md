@@ -42,42 +42,35 @@ n个元素所有排列的种数: `n! = n*(n-1)*...*3*2*1`
 
 ```js
 // Heap's algorithm
-function generate(n, A) {
-    if(n==1) {
-        console.log(A)
+
+/**
+ * 列举所有@param A 数组元素的排列
+ * 
+ * @param {Number} n A长度
+ * @param {Array} A 元素
+ * @param {Array} result 全部结果
+ */
+function generate(n, A, result) {
+    if (n == 1) {
+        result.push(A.slice())
     }
     else {
-        for(let i=0; i<n-1; i++) {
-            generate(n-1, A)
-            if(n%2==0) {
-                swap(A, i, n-1)
+        for (let i = 0; i < n - 1; i++) {
+            generate(n - 1, A, result)
+            if (n % 2 == 0) {
+                swap(A, i, n - 1)
             }
             else {
-                swap(A, 0, n-1)
+                swap(A, 0, n - 1)
             }
         }
-        generate(n-1, A)
+        generate(n - 1, A, result)
     }
 }
 ```
 
-可以在浏览器的控制台中试一下, 如`generate(3, [1, 2, 3])`或者``generate(4, ['a', 'b', 'c', 'd'])``, 字符数字都行, 每一项唯一
+可以在浏览器的控制台中试一下, 如`generate(3, [1, 2, 3], arr)`或者``generate(4, ['a', 'b', 'c', 'd'], arr)``, 字符数字都行，`arr`需要事先定义好`let arr = []`
 
-这里我们需要用一个数组来保存每一项
-
-```js
-let arr = []
-function generate(n, A) {
-    if(n==1) {
-        console.log(A)
-        arr.push(A)
-    }
-    ...
-    ...
-    ...
-}
-
-```
 
 得到每一项后, 就可以进行计算逆序数了. 一个排列的逆序数决定了这一项是正或负数.
 
@@ -103,5 +96,47 @@ function calcInverseNumber(item) {
         }
     }
     return sum
+}
+```
+
+到这里，生成计算中的每一项和计算每一项的逆序数的方法都有了，接下来就需要一个计算方法。这个计算方法需要传入一个`行列式`，然后通过`generate`生成相乘的每一项，再通过`calcInverseNumber`算出逆序数并相加得出结果。
+
+```js
+// 计算行列式的值
+/*
+    @data [
+        [1, 2, 5],
+        [1, 3, -2],
+        [2, 5, 3]
+    ]
+
+    @return the value of @data
+*/
+function calcDeterminant(data) {
+    var n = data.length
+    var items = generate(n) //标准序列
+    var sum = []
+    permute(sum, number, 0, n - 1)
+    var inverses = sum.map(function (item) {
+        return calcInverseNumber(item)
+    })
+
+    var resultSum = 0
+    for (var i = 0, len = factorial(n); i < len; i++) {
+        var arr_j = sum[i]
+        var inverseCount = inverses[i]
+        var result = 1
+
+        var k = 0
+        arr_j.forEach(function (column) {
+            result *= data[k][column - 1]
+            k++
+        })
+
+        // 偶排列、奇排列
+        resultSum += (inverseCount % 2 ? -1 : 1) * result
+    }
+
+    return resultSum
 }
 ```
