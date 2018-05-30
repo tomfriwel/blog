@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "通过编程来学习线性代数2"
-date: '2018-05-21 10:11:47'
+date: '2018-05-30 22:31:00'
 comments: true
 thumbnail: /blog/assets/images/linear-algebra/cover.png
 tag:
@@ -44,7 +44,7 @@ n个元素所有排列的种数: `n! = n*(n-1)*...*3*2*1`
 // Heap's algorithm
 
 /**
- * 列举所有@param A 数组元素的排列
+ * 列举所有@param A 数组元素的全排列(排列)
  * 
  * @param {Number} n A长度
  * @param {Array} A 元素
@@ -114,7 +114,6 @@ function calcDeterminantV1(data) {
         standardIndex.push(i)
     }
 
-    // 得到所有排列的角标
     let indexArr = []
     generate(n, standardIndex, indexArr)
 
@@ -130,8 +129,30 @@ function calcDeterminantV1(data) {
         sum += item
     }
 
-    console.log(sum)
     return sum
+}
+```
+
+`line 7` 获取行列式的长度
+`line 8-11` 生成一个`标准排列`的数组`[0, 1, 2, ..., n-1]`
+`line 13-14` 生成`0~n-1`的所有可能的排列，共`n!`个，`indexArr`有`n!`个长度为`n`的数组，这些数组的元素是`0~n-1`组成的一个排列。
+`line 16-26` 计算`行列式data`的值，函数`factorial(n)`为计算`n!`的值。
+`line 17-24`遍历`indexArr`数组，计算每个排列的值。
+`line 19`计算排列`arr`的`逆序数`，`line 21`判断`逆序数inverseCount`的正负（奇数为负，偶数为正）。
+`line 22-25` 使`data`中角标`(j, arr[j])`对应的数进行相乘，得到`item`，并追加到总数`sum`中。
+
+函数`factorial(n)`:
+```js
+/**
+ * 
+ * @param {Number} n 
+ */
+function factorial(n) {
+    var result = 1
+    for (i = 2; i <= n; i++) {
+        result *= i
+    }
+    return result
 }
 ```
 
