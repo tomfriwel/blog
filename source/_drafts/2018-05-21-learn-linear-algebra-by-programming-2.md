@@ -103,40 +103,54 @@ function calcInverseNumber(item) {
 
 ```js
 // 计算行列式的值
-/*
-    @data [
-        [1, 2, 5],
-        [1, 3, -2],
-        [2, 5, 3]
-    ]
-
-    @return the value of @data
-*/
-function calcDeterminant(data) {
-    var n = data.length
-    var items = generate(n) //标准序列
-    var sum = []
-    permute(sum, number, 0, n - 1)
-    var inverses = sum.map(function (item) {
-        return calcInverseNumber(item)
-    })
-
-    var resultSum = 0
-    for (var i = 0, len = factorial(n); i < len; i++) {
-        var arr_j = sum[i]
-        var inverseCount = inverses[i]
-        var result = 1
-
-        var k = 0
-        arr_j.forEach(function (column) {
-            result *= data[k][column - 1]
-            k++
-        })
-
-        // 偶排列、奇排列
-        resultSum += (inverseCount % 2 ? -1 : 1) * result
+/**
+ * @param {Array} data 行列式数组
+ * 
+ */
+function calcDeterminantV1(data) {
+    let n = data.length
+    let standardIndex = []
+    for (let i = 0; i < n; i++) {
+        standardIndex.push(i)
     }
 
-    return resultSum
+    // 得到所有排列的角标
+    let indexArr = []
+    generate(n, standardIndex, indexArr)
+
+    let sum = 0
+    for (let i = 0, len = factorial(n); i < len; i++) {
+        let arr = indexArr[i]
+        let inverseCount = calcInverseNumber(arr)
+
+        let item = (inverseCount % 2 ? -1 : 1)
+        for (let j = 0; j < n; j++) {
+            item *= data[j][arr[j]]
+        }
+        sum += item
+    }
+
+    console.log(sum)
+    return sum
 }
+```
+
+现在可以试试用这个方法来计算行列式的值了，比如：
+
+```js
+[[1, 0, 0],
+[0, 3, 0],
+[0, 0, 3]]
+// sum = 9
+
+[[1, 2, -4],
+[-2, 2, 1],
+[-3, 4, -2]]
+// sum = -14
+
+[[2, 1, -5, 1],
+[1, -3, 0, -6],
+[0, 2, -1, 2],
+[1, 4, -7, 6]]
+// sum = 27
 ```
