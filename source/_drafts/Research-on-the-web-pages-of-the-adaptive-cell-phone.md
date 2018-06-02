@@ -23,3 +23,22 @@ rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。规定屏�
 `1px = 750 / screenWidth`
 
 在`CSS`中的像素单位就可以用类似于`rpx`的单位来代替。
+
+设置一个容器：
+
+```html
+<body>
+    <div class='container'>
+    </div>
+</body>
+```
+
+```css
+body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    
+}
+```
