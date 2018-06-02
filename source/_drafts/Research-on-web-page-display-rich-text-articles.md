@@ -7,5 +7,19 @@ tags:
 
 Main items:
 
-- text
-- image
+- `text`
+- `image`
+
+
+#### `text` Properties
+
+- content
+- font size (title, subtitle, content)
+- [link]
+- bold
+- italic
+
+#### `image` Properties
+
+- src
+- [description]
