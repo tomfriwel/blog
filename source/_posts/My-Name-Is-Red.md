@@ -1,11 +1,13 @@
 ---
-title: My Name Is Red (《我的名字叫红》)
+title: 《我的名字叫红》(My Name Is Red)
 date: 2018-06-02 20:29:38
 thumbnail: /blog/2018/06/02/My-Name-Is-Red/cover.png
 tags:
     - 读书
     - 阅读笔记
 ---
+
+#### 作者：费利特·奥尔罕·帕慕克 (Ferit Orhan Pamuk)
 
 
 #### 我是一棵树
