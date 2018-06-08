@@ -1,7 +1,8 @@
 ---
-title: Research on the web pages of the adaptive cell phone
+title: 关于自适应手机网页的研究
 tags:
   - Research
+  - 微信小程序
 date: 2018-06-08 15:59:02
 ---
 
@@ -62,3 +63,7 @@ $('.class').css({
 ```
 
 在网页中查看，无论`iPhone ...`或`iPhone ... Plus`，屏幕都会被撑满。
+
+[点这里可以看我做的Demo](./demo)
+
+这个只能用于手机端，电脑上的话屏幕比例与手机差别很大。
