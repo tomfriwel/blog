@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div class="banner">
+            <div class="image" style="background-image: url(./banner.png)"></div>
+            <div class="banner-title-wrap">Web Page Research</div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./jquery.js"></script>
+<script>
+    window.onload = function () {
+        // 1rpx = screenWidth / 750
+        // 1px = 750 / screenWidth
+        var screenWidth = window.innerWidth
+        var one_rpx = screenWidth / 750
+        console.log(screenWidth)
+        console.log(one_rpx)
+        $('.container').css({
+            color: '#fff',
+            fontFamily: "'Avenir', Helvetica, Arial, sans-serif"
+        })
+        $('.banner').css({
+            position: 'relative',
+            width: '100%',
+            height: rpx(1100),
+        })
+        $('.banner .image').css({
+            width: '100%',
+            height: '100%',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center'
+        })
+        $('.banner-title-wrap').css({
+            position: 'absolute',
+            bottom: 0,
+            width: '100%',
+            height: rpx(257),
+            background: '#000',
+            opacity: 0.85,
+            textAlign: 'center',
+        })
+
+
+        function rpx(n) {
+            return (n * one_rpx) + 'px'
+        }
+    }
+</script>
