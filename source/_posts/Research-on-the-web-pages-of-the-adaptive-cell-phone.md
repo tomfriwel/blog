@@ -44,3 +44,21 @@ body {
     
 }
 ```
+
+```js
+var screenWidth = window.innerWidth
+var unit = screenWidth / 750
+
+function rpx(n) {
+    return (n * unit) + 'px'
+}
+
+// jquery
+$('.class').css({
+    width: rpx(750),
+    height: rpx(1334),
+    backgroundColor: 'pink'
+})
+```
+
+在网页中查看，无论`iPhone ...`或`iPhone ... Plus`，屏幕都会被撑满。
