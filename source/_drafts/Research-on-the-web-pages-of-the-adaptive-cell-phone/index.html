@@ -5,13 +5,14 @@
         body {
             margin: 0;
             padding: 0;
-            background: #000;
+            background: #ddd;
+            overflow-x: hidden;
+            overflow-y: scroll;
         }
 
         .container {
             width: 100%;
-            height: 100%;
-            background: #ddd;
+            background: #000;
         }
     </style>
 </head>
@@ -20,7 +21,14 @@
     <div class='container'>
         <div class="banner">
             <div class="image" style="background-image: url(./banner.png)"></div>
-            <div class="banner-title-wrap">Web Page Research</div>
+            <div class="banner-title-wrap">
+                <div class="banner-title">Web Page Research</div>
+            </div>
+        </div>
+        <div class="content">
+                一位伟大的法兰克大画师与另一位伟大的法兰克大画师，一起走过一片法兰克草原，谈论着技巧和艺术。他们走着、走着，看到前方有一座森林，其中技艺更为纯熟的一位告诉另一位：“新风格的绘画需要这样一种才能，当你画了这座森林中的一棵树后，看过画的人来到这里，若他愿意的话，便可从所有树木里准确无误地找出那一棵树。” 
+                <br><br>
+                感谢安拉，我，你们见到的这幅可怜的树画，好在不是根据这种企图画出来的。这么说不是害怕如果我是如此被画出来的话，伊斯坦布尔所有的狗都会以为我是一棵真的树，跑来往我身上撒尿，而是因为：我不想成为一棵树本身，而想成为它的意义。
         </div>
     </div>
 </body>
@@ -32,17 +40,18 @@
         // 1rpx = screenWidth / 750
         // 1px = 750 / screenWidth
         var screenWidth = window.innerWidth
-        var one_rpx = screenWidth / 750
+        var unit = screenWidth / 750
         console.log(screenWidth)
-        console.log(one_rpx)
+        console.log(unit)
         $('.container').css({
             color: '#fff',
-            fontFamily: "'Avenir', Helvetica, Arial, sans-serif"
+            fontFamily: "'Avenir', Helvetica, Arial, sans-serif",
+            paddingBottom: rpx(100)
         })
         $('.banner').css({
             position: 'relative',
             width: '100%',
-            height: rpx(1100),
+            height: rpx(1334),
         })
         $('.banner .image').css({
             width: '100%',
@@ -58,11 +67,26 @@
             background: '#000',
             opacity: 0.85,
             textAlign: 'center',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
         })
 
+        $('.banner-title').css({
+            marginTop: rpx(18),
+            fontSize: rpx(32),
+            lineHeight: rpx(46),
+            letterSpacing: rpx(10.5),
+        })
+        $('.content').css({
+            marginTop: rpx(100),
+            marginLeft: rpx(40),
+            marginRight: rpx(40),
+            fontSize: rpx(30)
+        })
 
         function rpx(n) {
-            return (n * one_rpx) + 'px'
+            return (n * unit) + 'px'
         }
     }
 </script>
