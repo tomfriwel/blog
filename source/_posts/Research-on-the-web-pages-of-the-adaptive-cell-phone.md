@@ -62,7 +62,7 @@ $('.class').css({
 })
 ```
 
-在网页中查看，无论`iPhone ...`或`iPhone ... Plus`，屏幕都会被撑满。
+在网页浏览器的模拟器中查看，无论`iPhone ...`或`iPhone ... Plus`，屏幕都会被撑满。
 
 [点这里可以看我做的Demo](./demo)
 
