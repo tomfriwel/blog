@@ -1,8 +1,10 @@
 ---
 title: Research on the web pages of the adaptive cell phone
 tags:
-    - Research
+  - Research
+date: 2018-06-08 15:59:02
 ---
+
 
 手机设计一般以`750px`宽度为标准，微信小程序就是以这样的标准来开发的，引入了一个叫`rpx`的相对单位。
 
