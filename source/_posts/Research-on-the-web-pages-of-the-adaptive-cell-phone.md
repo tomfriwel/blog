@@ -64,6 +64,6 @@ $('.class').css({
 
 在网页浏览器的模拟器中查看，无论`iPhone ...`或`iPhone ... Plus`，屏幕都会被撑满。
 
-[点这里可以看我做的Demo](./demo)
+[点这里可以看我做的Demo](/blog/demo/Research-on-the-web-pages-of-the-adaptive-cell-phone/demo)
 
 这个只能用于手机端，电脑上的话屏幕比例与手机差别很大。
