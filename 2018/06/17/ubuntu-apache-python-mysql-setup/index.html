@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>ubuntu apache python mysql setup | tomfriwel&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="Version12$ cat /etc/issue&amp;gt; Ubuntu 14.04.2 LTS \n \l SetupFor I alreay install Apache and Mysql, so there is not fully setup details. Detailed configuration process in the link. How To Set Up an Apa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu apache python mysql setup">
+<meta property="og:url" content="https://tomfriwel.github.io/blog/2018/06/17/ubuntu-apache-python-mysql-setup/index.html">
+<meta property="og:site_name" content="tomfriwel&#39;s blog">
+<meta property="og:description" content="Version12$ cat /etc/issue&amp;gt; Ubuntu 14.04.2 LTS \n \l SetupFor I alreay install Apache and Mysql, so there is not fully setup details. Detailed configuration process in the link. How To Set Up an Apa">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-21T08:53:11.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ubuntu apache python mysql setup">
+<meta name="twitter:description" content="Version12$ cat /etc/issue&amp;gt; Ubuntu 14.04.2 LTS \n \l SetupFor I alreay install Apache and Mysql, so there is not fully setup details. Detailed configuration process in the link. How To Set Up an Apa">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/blog/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/blog/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/blog/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <script src="/blog/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/blog/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/blog/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/blog/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/blog/">主页</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/blog/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/blog/',
+        CONTENT_URL: '/blog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/blog/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-ubuntu-apache-python-mysql-setup" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        ubuntu apache python mysql setup
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/blog/2018/06/17/ubuntu-apache-python-mysql-setup/" class="article-date">
+            <time datetime="2018-06-17T01:49:48.000Z" itemprop="datePublished">2018-06-17</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="Version"><a href="#Version" class="headerlink" title="Version"></a>Version</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/issue</span><br><span class="line">&gt; Ubuntu 14.04.2 LTS \n \l</span><br></pre></td></tr></table></figure>
+<h4 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h4><p>For I alreay install Apache and Mysql, so there is not fully setup details. Detailed configuration process in the link.</p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04" target="_blank" rel="noopener">How To Set Up an Apache, MySQL, and Python (LAMP) Server Without Frameworks on Ubuntu 14.04</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo rm /usr/bin/python</span><br><span class="line">$ sudo ln -s /usr/bin/python3 /usr/bin/python</span><br><span class="line">$ sudo a2dismod mpm_event</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">perl: warning: Setting locale failed.</span><br><span class="line">perl: warning: Please check that your locale settings:</span><br><span class="line">	LANGUAGE = &quot;en_US:&quot;,</span><br><span class="line">	LC_ALL = (unset),</span><br><span class="line">	LC_CTYPE = &quot;UTF-8&quot;,</span><br><span class="line">	LANG = &quot;en_US.UTF-8&quot;</span><br><span class="line">    are supported and installed on your system.</span><br><span class="line">perl: warning: Falling back to the standard locale (&quot;C&quot;).</span><br><span class="line">Module mpm_event already disabled</span><br></pre></td></tr></table></figure>
+<p>Get rid of this warning:</p>
+<p><a href="https://askubuntu.com/a/17002" target="_blank" rel="noopener">How to set locale?</a><br><a href="https://askubuntu.com/a/749780" target="_blank" rel="noopener">Cannot set LC_CTYPE to default locale: No such file or directory</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install language-pack-en-base</span><br><span class="line">$ sudo dpkg-reconfigure locales</span><br><span class="line">$ export LC_ALL=&quot;en_US.UTF-8&quot;</span><br></pre></td></tr></table></figure>
+<p>Setup Apache conf:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    &lt;Directory /var/www/test&gt;</span><br><span class="line">        Options +ExecCGI</span><br><span class="line">        DirectoryIndex index.py</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">    AddHandler cgi-script .py</span><br><span class="line"></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>index.py:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'Content-type:text/html\r\n'</span>)</span><br><span class="line">print(<span class="string">'hello'</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chmod 755 /var/www/test/index.py</span><br><span class="line">$ sudo service apache2 restart</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Content-of-How-To-Set-Up-an-Apache-MySQL-and-Python-LAMP-Server-Without-Frameworks-on-Ubuntu-14-04"><a href="#Content-of-How-To-Set-Up-an-Apache-MySQL-and-Python-LAMP-Server-Without-Frameworks-on-Ubuntu-14-04" class="headerlink" title="Content of How To Set Up an Apache, MySQL, and Python (LAMP) Server Without Frameworks on Ubuntu 14.04"></a>Content of <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04" target="_blank" rel="noopener">How To Set Up an Apache, MySQL, and Python (LAMP) Server Without Frameworks on Ubuntu 14.04</a></h2><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>This article will walk you through setting up a server with Python 3, MySQL, and Apache2, sans the help of a framework. By the end of this tutorial, you will be fully capable of launching a barebones system into production.</p>
+<p>Django is often the one-shop-stop for all things Python; it’s compatible with nearly all versions of Python, comes prepackaged with a custom server, and even features a one-click-install database. Setting up a vanilla system without this powerful tool can be tricky, but earns you invaluable insight into server structure from the ground up.</p>
+<p>This tutorial uses only package installers, namely apt-get and Pip. Package installers are simply small programs that make code installations much more convenient and manageable. Without them, maintaining libraries, modules, and other code bits can become an extremely messy business.</p>
+<h4 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h4><p>To follow this tutorial, you will need:</p>
+<ul>
+<li>One Ubuntu 14.04 Droplet.</li>
+<li>A sudo non-root user, which you can set up by following this tutorial.</li>
+</ul>
+<h4 id="Step-1-—-Making-Python-3-the-Default"><a href="#Step-1-—-Making-Python-3-the-Default" class="headerlink" title="Step 1 — Making Python 3 the Default"></a>Step 1 — Making Python 3 the Default</h4><p>In this step, we will set Python 3 as the default for our <code>python</code> command.</p>
+<p>First, check your current Python version.</p>
+<p><code>$ python --version</code></p>
+<p>On a fresh Ubuntu 14.04 server, this will output:</p>
+<p><code>Python 2.7.6</code></p>
+<p>We would like to have <code>python</code> run Python 3. So first, let’s remove the old 2.7 binary.</p>
+<p><code>$ sudo rm /usr/bin/python</code></p>
+<p>Next, create a symbolic link to the Python 3 binary in its place.</p>
+<p><code>$ sudo ln -s /usr/bin/python3 /usr/bin/python</code></p>
+<p>If you run <code>python --version</code> again, you will now see <code>Python 3.4.0</code>.</p>
+<h4 id="Step-2-—-Installing-Pip"><a href="#Step-2-—-Installing-Pip" class="headerlink" title="Step 2 — Installing Pip"></a>Step 2 — Installing Pip</h4><p>In this section, we will install Pip, the recommended package installer for Python.</p>
+<p>First, update the system’s package index. This will ensure that old or outdated packages do not interfere with the installation.</p>
+<p><code>$ sudo apt-get update</code></p>
+<p>Pip allows us to easily manage any Python 3 package we would like to have. To install it, simply run the following:</p>
+<p><code>$ sudo apt-get install python3-pip</code></p>
+<p>For an overview of Pip, you can read this tutorial.</p>
+<h4 id="Step-3-—-Installing-MySQL"><a href="#Step-3-—-Installing-MySQL" class="headerlink" title="Step 3 — Installing MySQL"></a>Step 3 — Installing MySQL</h4><p>In this section, we will install and configure MySQL.</p>
+<p>Installing SQL is simple:</p>
+<p><code>$ sudo apt-get install mysql-server</code></p>
+<p>Enter a strong password for the MySQL root user when prompted, and remember it, because we will need it later.</p>
+<p>The MySQL server will start once installation completes. After installation, run:</p>
+<p>mysql_secure_installation<br>This setup will take you through a series of self-explanatory steps. First, you’ll need to enter the root password you picked a moment ago. The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press <strong>ENTER</strong> to accept the default response.</p>
+<p>Python 3 requires a way to connect with MySQL, however. There are a number of options, like MySQLclient, but for the module’s simplicity, this tutorial will use <code>pymysql</code>. Install it using Pip:</p>
+<p><code>$ sudo pip3 install pymysql</code></p>
+<h4 id="Step-4-—-Installing-Apache-2"><a href="#Step-4-—-Installing-Apache-2" class="headerlink" title="Step 4 — Installing Apache 2"></a>Step 4 — Installing Apache 2</h4><p>In this section, we will install Apache 2, and ensure that it recognizes Python files as executables.</p>
+<p>Install Apache using apt-get:</p>
+<p><code>$ sudo apt-get install apache2</code></p>
+<p>Like MySQL, the Apache server will start once the installation completes.</p>
+<p>Note: After installation, several ports are open to the internet. Make sure to see the conclusion of this tutorial for resources on security.</p>
+<p>We want to place our website’s root directory in a safe location. The server is by default at <code>/var/www/html</code>. To keep convention, we will create a new directory for testing purposes, called <code>test</code>, in the same location.</p>
+<p><code>$ sudo mkdir /var/www/test</code></p>
+<p>Finally, we must register Python with Apache. To start, we disable multithreading processes.</p>
+<p><code>$ sudo a2dismod mpm_event</code></p>
+<p>Then, we give Apache explicit permission to run scripts.</p>
+<p><code>$ sudo a2enmod mpm_prefork cgi</code></p>
+<p>Next, we modify the actual Apache configuration, to explicitly declare Python files as runnable file and allow such executables. Open the configuration file using nano or your favorite text editor.</p>
+<p><code>$ sudo nano /etc/apache2/sites-enabled/000-default.conf</code></p>
+<p>Add the following right after the first line, which reads <code>&lt;VirtualHost *:80\&gt;</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory /var/www/test&gt;</span><br><span class="line">    Options +ExecCGI</span><br><span class="line">    DirectoryIndex index.py</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">AddHandler cgi-script .py</span><br></pre></td></tr></table></figure>
+<p>Make sure that your <code>&lt;Directory&gt;</code> block is nested inside the <code>&lt;VirtualHost&gt;</code> block, like so. Make sure to indent correctly with tabs, too.</p>
+<p><em>/etc/apache2/sites-enabled/000-default.conf</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    &lt;Directory /var/www/test&gt;</span><br><span class="line">        Options +ExecCGI</span><br><span class="line">        DirectoryIndex index.py</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">    AddHandler cgi-script .py</span><br><span class="line"></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure></p>
+<p>This Directory block allows us to specify how Apache treats that directory. It tells Apache that the <code>/var/www/test</code> directory contains executables, considers <code>index.py</code> to be the default file, then defines the executables.</p>
+<p>We also want to allow executables in our website directory, so we need to change the path for <code>DocumentRoot</code>, too. Look for the line that reads <code>DocumentRoot /var/www/html</code>, a few lines below the long comment at the top of the file, and modify it to read <code>/var/www/test</code> instead.</p>
+<p><code>DocumentRoot /var/www/test</code></p>
+<p>Your file should now resemble the following.</p>
+<p><em>/etc/apache2/sites-enabled/000-default.conf</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">        &lt;Directory /var/www/test&gt;</span><br><span class="line">                Options +ExecCGI</span><br><span class="line">                DirectoryIndex index.py</span><br><span class="line">        &lt;/Directory&gt;</span><br><span class="line">        AddHandler cgi-script .py</span><br><span class="line"></span><br><span class="line">        ...</span><br><span class="line"></span><br><span class="line">        DocumentRoot /var/www/test</span><br><span class="line"></span><br><span class="line">        ...</span><br></pre></td></tr></table></figure>
+<p>Save and exit the file. To put these changes into effect, restart Apache.</p>
+<p><code>$ sudo service apache2 restart</code></p>
+<p><strong>Note</strong>: Apache 2 may throw a warning which says about the server’s fully qualified domain name; this can be ignored as the ServerName directive has little application as of this moment. They are ultimately used to determine subdomain hosting, after the necessary records are created.</p>
+<p>If the last line of the output reads <code>[ OK ]</code>, Apache has restarted successfully.</p>
+<h4 id="Step-5-—-Testing-the-Final-Product"><a href="#Step-5-—-Testing-the-Final-Product" class="headerlink" title="Step 5 — Testing the Final Product"></a>Step 5 — Testing the Final Product</h4><p>In this section, we will confirm that individual components (Python, MySQL, and Apache) can interact with one another by creating an example webpage and database.</p>
+<p>First, let’s create a database. Log in to MySQL. You’ll need to enter the MySQL root password you set earlier.</p>
+<p><code>mysql -u root -p</code><br>Add an example database called example.</p>
+<p><code>CREATE DATABASE example;</code></p>
+<p>Switch to the new database.</p>
+<p><code>USE example;</code></p>
+<p>Add a table for some example data that we’ll have the Python app add.</p>
+<p><code>CREATE TABLE numbers (num INT, word VARCHAR(20));</code></p>
+<p>Press <strong>CTRL+D</strong> to exit. For more background on SQL, you can read this MySQL tutorial.</p>
+<p>Now, create a new file for our simple Python app.</p>
+<p><code>$ sudo nano /var/www/test/index.py</code></p>
+<p>Copy and paste the following code in. The in-line comments describe what each piece of the code does. Make sure to replace the passwd value with the root MySQL <code>password</code> you chose earlier.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Turn on debug mode.</span></span><br><span class="line"><span class="keyword">import</span> cgitb</span><br><span class="line">cgitb.enable()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print necessary headers.</span></span><br><span class="line">print(<span class="string">"Content-Type: text/html"</span>)</span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to the database.</span></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">conn = pymysql.connect(</span><br><span class="line">    db=<span class="string">'example'</span>,</span><br><span class="line">    user=<span class="string">'root'</span>,</span><br><span class="line">    passwd=<span class="string">'your_root_mysql_password'</span>,</span><br><span class="line">    host=<span class="string">'localhost'</span>)</span><br><span class="line">c = conn.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Insert some example data.</span></span><br><span class="line">c.execute(<span class="string">"INSERT INTO numbers VALUES (1, 'One!')"</span>)</span><br><span class="line">c.execute(<span class="string">"INSERT INTO numbers VALUES (2, 'Two!')"</span>)</span><br><span class="line">c.execute(<span class="string">"INSERT INTO numbers VALUES (3, 'Three!')"</span>)</span><br><span class="line">conn.commit()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print the contents of the database.</span></span><br><span class="line">c.execute(<span class="string">"SELECT * FROM numbers"</span>)</span><br><span class="line">print([(r[<span class="number">0</span>], r[<span class="number">1</span>]) <span class="keyword">for</span> r <span class="keyword">in</span> c.fetchall()])</span><br></pre></td></tr></table></figure>
+<p>Save and exit.</p>
+<p>Next, fix permissions on the newly-created file. For more information on the three-digit permissions code, see the tutorial on Linux permissions.</p>
+<p><code>$ sudo chmod 755 /var/www/test/index.py</code></p>
+<p>Now, access your server’s by going to <code>http://your_server_ip</code> using your favorite browser. You should see the following:</p>
+<p><em>your_server_ip’&gt;<a href="http://your_server_ip" target="_blank" rel="noopener">http://your_server_ip</a></em></p>
+<p><code>[(1, &#39;One!&#39;), (2, &#39;Two!&#39;), (3, &#39;Three!&#39;)]</code></p>
+<p>Congratulations! Your server is now online.</p>
+<p>Conclusion<br>You now have a working server that can run Python 3 with a robust, SQL database. The server is now also configured for easy maintenance, via well-documented and established package installers.</p>
+<p>However, in its current state, the server is vulnerable to outsiders. Whereas elements like SSL encryption are not essential to your server’s function, they are indispensable resources for a reliable, safe server. Learn more by reading about how to configure Apache, how to create an Apache SSL certificate and how to secure your Linux server.</p>
+
+        </div>
+        <i style="color:#AAAAAA;">声明：转载请注明作者及原文链接</i>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://tomfriwel.github.io/blog/2018/06/17/ubuntu-apache-python-mysql-setup/" data-id="cjiod6vuy0037fzwhvcjpx9pz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    
+    
+    
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="/blog/assets/js/md5.js"></script>
+
+
+<script type="text/javascript">
+    (function() {
+        var language = navigator.language || navigator.userLanguage;
+        var path = location.pathname || 'unknown'
+        var id = md5(path);
+        var title = '[blog]' + (document.title || 'unknown')
+
+        var gitalk = new Gitalk({
+            clientID: 'd1eb7e13bdea94d4be23',
+            clientSecret: '91cb6a1282bfd6e8225ee6d1c4b2743f621063ec',
+            repo: 'blog',
+            owner: 'tomfriwel',
+            admin: ['tomfriwel'],
+            id: id,
+            labels: ['blog-comments'],
+            title: title,
+            distractionFreeMode: false,
+            language: language
+        });
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+
+
+    
+    <section id="comments">
+    
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="/blog/assets/js/md5.js"></script>
+
+    
+
+    
+    </section>
+
+
+</article>
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/tomfriwel" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/tomfriwel" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://www.weibo.com/tomfriwel" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/blog/2018/06/19/Drawing-practice-record-2018-6-19/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            绘画练习记录 2018-6-19
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/blog/2018/06/14/My-Name-Is-Red/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">《我的名字叫红》(My Name Is Red)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/06/21/2018-03-11-learn-basic-knowledge-by-programming/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/06/21/2018-03-11-learn-basic-knowledge-by-programming/" class="title">通过编程来学习基础学科的知识</a></p>
+                            <p class="item-date"><time datetime="2018-06-21T08:53:11.428Z" itemprop="datePublished">2018-06-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/06/21/2018-03-12-Three-Billboards-Outside-Ebbing,-Missouri/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/06/21/2018-03-12-Three-Billboards-Outside-Ebbing,-Missouri/" class="title">《三块广告牌》</a></p>
+                            <p class="item-date"><time datetime="2018-06-21T08:53:11.428Z" itemprop="datePublished">2018-06-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/06/19/Drawing-practice-record-2018-6-19/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2018/06/19/Drawing-practice-record-2018-6-19/7.jpg)" alt="绘画练习记录 2018-6-19" class="thumbnail-image"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/06/19/Drawing-practice-record-2018-6-19/" class="title">绘画练习记录 2018-6-19</a></p>
+                            <p class="item-date"><time datetime="2018-06-19T14:10:17.000Z" itemprop="datePublished">2018-06-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/06/17/ubuntu-apache-python-mysql-setup/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/06/17/ubuntu-apache-python-mysql-setup/" class="title">ubuntu apache python mysql setup</a></p>
+                            <p class="item-date"><time datetime="2018-06-17T01:49:48.000Z" itemprop="datePublished">2018-06-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/06/14/My-Name-Is-Red/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2018/06/02/My-Name-Is-Red/cover.png)" alt="《我的名字叫红》(My Name Is Red)" class="thumbnail-image"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/06/14/My-Name-Is-Red/" class="title">《我的名字叫红》(My Name Is Red)</a></p>
+                            <p class="item-date"><time datetime="2018-06-14T12:29:38.000Z" itemprop="datePublished">2018-06-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Game/">Game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Research/">Research</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/image-recognition/">image recognition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/machine-learning/">machine learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/vue/">vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/后端/">后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/基础知识/">基础知识</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/开源项目/">开源项目</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/微信小程序/">微信小程序</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/思考/">思考</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/电影/">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/目标/">目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/线性代数/">线性代数</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/练习/">练习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/绘画/">绘画</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/记录/">记录</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/读书/">读书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/阅读笔记/">阅读笔记</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/blog/tags/Game/" style="font-size: 10px;">Game</a> <a href="/blog/tags/Github/" style="font-size: 10px;">Github</a> <a href="/blog/tags/Research/" style="font-size: 10px;">Research</a> <a href="/blog/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/blog/tags/image-recognition/" style="font-size: 10px;">image recognition</a> <a href="/blog/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/blog/tags/vue/" style="font-size: 10px;">vue</a> <a href="/blog/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog/tags/基础知识/" style="font-size: 13.33px;">基础知识</a> <a href="/blog/tags/开源项目/" style="font-size: 13.33px;">开源项目</a> <a href="/blog/tags/微信小程序/" style="font-size: 20px;">微信小程序</a> <a href="/blog/tags/思考/" style="font-size: 20px;">思考</a> <a href="/blog/tags/电影/" style="font-size: 10px;">电影</a> <a href="/blog/tags/目标/" style="font-size: 10px;">目标</a> <a href="/blog/tags/线性代数/" style="font-size: 13.33px;">线性代数</a> <a href="/blog/tags/练习/" style="font-size: 16.67px;">练习</a> <a href="/blog/tags/绘画/" style="font-size: 16.67px;">绘画</a> <a href="/blog/tags/记录/" style="font-size: 16.67px;">记录</a> <a href="/blog/tags/读书/" style="font-size: 10px;">读书</a> <a href="/blog/tags/阅读笔记/" style="font-size: 10px;">阅读笔记</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.tomfriwel.com">tomfriwel</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/blog/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 tomfriwel</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+        <script src="/blog/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/blog/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/blog/js/main.js"></script>
+
+    </div>
+</body>
+</html>
