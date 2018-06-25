@@ -14,3 +14,8 @@ tags:
 - 获取`ticket`, 注意`type=jsapi`, 我因为测试卡券写死成了`wx_card` https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&type=jsapi 
 
 - JS安全域名不带协议，即：`http://test.domain.com`, 那么JS安全域名为`test.domain.com`
+
+
+[微信卡券JSAPI签名校验工具](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=cardsign)
+
+[微信公众平台接口调试工具](https://mp.weixin.qq.com/debug/)
