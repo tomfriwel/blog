@@ -5,7 +5,7 @@ tags:
 
 没有公众号可以通过下面的链接申请一个测试号进行测试。
 
-[https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login)
+[微信公众平台接口测试帐号](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login)
 
 [微信 JS 接口签名校验工具](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign)
 
@@ -19,3 +19,6 @@ tags:
 [微信卡券JSAPI签名校验工具](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=cardsign)
 
 [微信公众平台接口调试工具](https://mp.weixin.qq.com/debug/)
+
+
+[PHP开发微信公众号（二）消息接受与推送](https://www.cnblogs.com/myIvan/p/7228888.html)
