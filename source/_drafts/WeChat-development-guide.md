@@ -23,6 +23,11 @@ tags:
 
 [PHP开发微信公众号（二）消息接受与推送](https://www.cnblogs.com/myIvan/p/7228888.html)
 
+
+#### card
+
+[顾客回流其实不难，这家店每天40%营业额来自微信会员卡买单](https://mp.weixin.qq.com/s?__biz=MjM5NDQ5Njk3OA==&mid=412978040&idx=1&sn=308a18ef3970b5c62964b508455fb477#rd)
+
 #### error
 
 [老铁们，小程序wx.addcard报fail no permission何故？](http://html51.com/info-1360-1/)
