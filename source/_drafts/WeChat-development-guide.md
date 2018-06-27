@@ -22,3 +22,15 @@ tags:
 
 
 [PHP开发微信公众号（二）消息接受与推送](https://www.cnblogs.com/myIvan/p/7228888.html)
+
+#### error
+
+[老铁们，小程序wx.addcard报fail no permission何故？](http://html51.com/info-1360-1/)
+目前只有认证小程序才能使用卡券接口，可参考指引进行认证。
+
+小程序`wx.openCard`里的`code`是解密后的
+
+
+#### web
+
+- [51程序](http://html51.com)
