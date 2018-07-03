@@ -1,7 +1,11 @@
 ---
-title: WeChat development guide
+title: 微信开发指南
 tags:
 ---
+
+#### 目标
+
+做一个有品质的微信开发教程。
 
 没有公众号可以通过下面的链接申请一个测试号进行测试。
 
