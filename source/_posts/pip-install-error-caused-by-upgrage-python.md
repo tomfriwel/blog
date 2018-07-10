@@ -1,7 +1,9 @@
 ---
 title: pip install error caused by upgrage python
+date: 2018-07-10 23:03:53
 tags:
 ---
+
 
 `Ubuntu 14.04.2 LTS`
 
