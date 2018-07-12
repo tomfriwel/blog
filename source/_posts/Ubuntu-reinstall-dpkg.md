@@ -4,6 +4,8 @@ date: 2018-07-12 10:18:26
 tags:
     - ubuntu
     - server
+    - dpkg
+    - error
 ---
 
 ```shell
