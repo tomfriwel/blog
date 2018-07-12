@@ -5,6 +5,8 @@ tags:
     - english
 ---
 
+#### Source
+
 ```
 as soon as I apt-get install something a whole bunch of those errors pops up.
 Luckely those installs do succeed.
@@ -25,3 +27,10 @@ I am running knoppix 6.4.3 (cd) on a usb. I think I screwed up somewhere while r
 ```
 
 [Thread: dpkg: warning: files list file for package missing, as assuming package has ....](http://knoppix.net/forum/threads/29068-dpkg-warning-files-list-file-for-package-missing-as-assuming-package-has-....)
+
+
+I can fix the problems by doing a apt-get remove && apt-get install for every package but this is a very time consuming job as you can imagine...
+
+#### Example
+
+I can fix the problems caused by the bug this is a very time consuming job.
