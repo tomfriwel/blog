@@ -33,4 +33,4 @@ I can fix the problems by doing a apt-get remove && apt-get install for every pa
 
 #### Example
 
-I can fix the problems caused by the bug this is a very time consuming job.
+I can fix the problems caused by the bug but this is a very time consuming job.
