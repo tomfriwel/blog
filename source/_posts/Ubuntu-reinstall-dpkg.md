@@ -1,5 +1,5 @@
 ---
-title: Ubuntu reinstall dpkg
+title: Ubuntu reinstall dpkg and error related with it
 date: 2018-07-12 10:18:26
 tags:
     - ubuntu
