@@ -33,3 +33,46 @@ dpkg: warning: files list file for package `*****' missing, assuming package has
 [How To Run the .sh File Shell Script In Linux / UNIX](https://www.cyberciti.biz/faq/run-execute-sh-shell-script/)
 
 [x11-common contains empty filename](https://unix.stackexchange.com/questions/425355/x11-common-contains-empty-filename)
+
+
+```shell
+Preparing to unpack .../dpkg_1.17.5ubuntu5.8_amd64.deb ...
+/usr/bin/dpkg: symbol lookup error: /usr/bin/dpkg: undefined symbol: setexecfilecon
+dpkg: error processing archive /var/cache/apt/archives/dpkg_1.17.5ubuntu5.8_amd64.deb (--unpack):
+ subprocess new pre-installation script returned error exit status 127
+/usr/bin/dpkg: symbol lookup error: /usr/bin/dpkg: undefined symbol: setexecfilecon
+dpkg: error while cleaning up:
+ subprocess new post-removal script returned error exit status 127
+Errors were encountered while processing:
+ /var/cache/apt/archives/dpkg_1.17.5ubuntu5.8_amd64.deb
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+```
+
+[How to resolve “dpkg: error processing /var/cache/apt/archives/python-apport_2.0.1-0ubuntu9_all.deb”?](https://askubuntu.com/a/148389/707430)
+
+#### repair
+```
+/var/cache/apt/archives
+/var/lib/dpkg/info
+```
+
+`$ dpkg --configure -a`
+
+```shell
+dpkg: error processing package python-pkg-resources (--configure):
+ package is in a very bad inconsistent state; you should
+ reinstall it before attempting configuration
+Errors were encountered while processing:
+ python-pkg-resources
+```
+
+`$ dpkg -l | grep python`
+
+`$ cd /var/cache/apt/archives/`
+
+[dpkg](https://help.ubuntu.com/lts/serverguide/dpkg.html)
+[How to repair apt-get command?](https://askubuntu.com/questions/33949/how-to-repair-apt-get-command)
+[Problem installing any new packages in Ubuntu because of python](https://askubuntu.com/questions/534040/problem-installing-any-new-packages-in-ubuntu-because-of-python)
+[How to resolve “dpkg: error processing /var/cache/apt/archives/python-apport_2.0.1-0ubuntu9_all.deb”?](https://askubuntu.com/questions/148383/how-to-resolve-dpkg-error-processing-var-cache-apt-archives-python-apport-2-0)
+
+[FIXING THE DREADED “ERRORS WERE ENCOUNTERED WHILE PROCESSING” ERRORS](https://journalxtra.com/linux/fixing-the-dreaded-errors-were-encountered-while-processing-errors/)
