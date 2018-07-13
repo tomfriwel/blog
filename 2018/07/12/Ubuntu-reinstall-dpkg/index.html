@@ -7,17 +7,17 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="ubuntu,server,dpkg,error" />
+        <meta name="keywords" content="server,ubuntu,dpkg,error" />
     
     <meta name="description" content="1: Sub-process /usr/bin/dpkg returned an error code (1) Check cpu info to find use i386 or amd64: $ cat /proc/cpuinfo How to reinstall dpkg How can I unpack a .deb on Mac OS X without installing it? 1">
-<meta name="keywords" content="ubuntu,server,dpkg,error">
+<meta name="keywords" content="server,ubuntu,dpkg,error">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu reinstall dpkg and error related with it">
 <meta property="og:url" content="https://tomfriwel.github.io/blog/2018/07/12/Ubuntu-reinstall-dpkg/index.html">
 <meta property="og:site_name" content="tomfriwel&#39;s blog">
 <meta property="og:description" content="1: Sub-process /usr/bin/dpkg returned an error code (1) Check cpu info to find use i386 or amd64: $ cat /proc/cpuinfo How to reinstall dpkg How can I unpack a .deb on Mac OS X without installing it? 1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-12T03:03:02.780Z">
+<meta property="og:updated_time" content="2018-07-12T07:55:49.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu reinstall dpkg and error related with it">
 <meta name="twitter:description" content="1: Sub-process /usr/bin/dpkg returned an error code (1) Check cpu info to find use i386 or amd64: $ cat /proc/cpuinfo How to reinstall dpkg How can I unpack a .deb on Mac OS X without installing it? 1">
@@ -173,7 +173,16 @@
 <p><a href="https://serverfault.com/questions/430682/dpkg-warning-files-list-file-for-package-x-missing" target="_blank" rel="noopener">dpkg: warning: files list file for package ‘x’ missing</a></p>
 <p><a href="https://www.cyberciti.biz/faq/run-execute-sh-shell-script/" target="_blank" rel="noopener">How To Run the .sh File Shell Script In Linux / UNIX</a></p>
 <p><a href="https://unix.stackexchange.com/questions/425355/x11-common-contains-empty-filename" target="_blank" rel="noopener">x11-common contains empty filename</a></p>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Preparing to unpack .../dpkg_1.17.5ubuntu5.8_amd64.deb ...</span><br><span class="line">/usr/bin/dpkg: symbol lookup error: /usr/bin/dpkg: undefined symbol: setexecfilecon</span><br><span class="line">dpkg: error processing archive /var/cache/apt/archives/dpkg_1.17.5ubuntu5.8_amd64.deb (--unpack):</span><br><span class="line"> subprocess new pre-installation script returned error exit status 127</span><br><span class="line">/usr/bin/dpkg: symbol lookup error: /usr/bin/dpkg: undefined symbol: setexecfilecon</span><br><span class="line">dpkg: error while cleaning up:</span><br><span class="line"> subprocess new post-removal script returned error exit status 127</span><br><span class="line">Errors were encountered while processing:</span><br><span class="line"> /var/cache/apt/archives/dpkg_1.17.5ubuntu5.8_amd64.deb</span><br><span class="line">E: Sub-process /usr/bin/dpkg returned an error code (1)</span><br></pre></td></tr></table></figure>
+<p><a href="https://askubuntu.com/a/148389/707430" target="_blank" rel="noopener">How to resolve “dpkg: error processing /var/cache/apt/archives/python-apport_2.0.1-0ubuntu9_all.deb”?</a></p>
+<h4 id="repair"><a href="#repair" class="headerlink" title="repair"></a>repair</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/var/cache/apt/archives</span><br><span class="line">/var/lib/dpkg/info</span><br></pre></td></tr></table></figure>
+<p><code>$ dpkg --configure -a</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dpkg: error processing package python-pkg-resources (--configure):</span><br><span class="line"> package is in a very bad inconsistent state; you should</span><br><span class="line"> reinstall it before attempting configuration</span><br><span class="line">Errors were encountered while processing:</span><br><span class="line"> python-pkg-resources</span><br></pre></td></tr></table></figure>
+<p><code>$ dpkg -l | grep python</code></p>
+<p><code>$ cd /var/cache/apt/archives/</code></p>
+<p><a href="https://help.ubuntu.com/lts/serverguide/dpkg.html" target="_blank" rel="noopener">dpkg</a><br><a href="https://askubuntu.com/questions/33949/how-to-repair-apt-get-command" target="_blank" rel="noopener">How to repair apt-get command?</a><br><a href="https://askubuntu.com/questions/534040/problem-installing-any-new-packages-in-ubuntu-because-of-python" target="_blank" rel="noopener">Problem installing any new packages in Ubuntu because of python</a><br><a href="https://askubuntu.com/questions/148383/how-to-resolve-dpkg-error-processing-var-cache-apt-archives-python-apport-2-0" target="_blank" rel="noopener">How to resolve “dpkg: error processing /var/cache/apt/archives/python-apport_2.0.1-0ubuntu9_all.deb”?</a></p>
+<p><a href="https://journalxtra.com/linux/fixing-the-dreaded-errors-were-encountered-while-processing-errors/" target="_blank" rel="noopener">FIXING THE DREADED “ERRORS WERE ENCOUNTERED WHILE PROCESSING” ERRORS</a></p>
+<h1 id="not-repair…"><a href="#not-repair…" class="headerlink" title="not repair…"></a>not repair…</h1>
         </div>
         <i style="color:#AAAAAA;">声明：转载请注明作者及原文链接</i>
         <footer class="article-footer">
@@ -181,7 +190,7 @@
 
 
 
-    <a data-url="https://tomfriwel.github.io/blog/2018/07/12/Ubuntu-reinstall-dpkg/" data-id="cjjhztc93002e9xwhotxrko5t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://tomfriwel.github.io/blog/2018/07/12/Ubuntu-reinstall-dpkg/" data-id="cjjjanunm0029r2whu8gfeple" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
