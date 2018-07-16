@@ -28,6 +28,7 @@ tags:
 
 [PHP开发微信公众号（二）消息接受与推送](https://www.cnblogs.com/myIvan/p/7228888.html)
 
+[微信会员卡与CRM打通](https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=1463324905&version=1&lang=zh_CN&platform=2)
 
 #### card
 
