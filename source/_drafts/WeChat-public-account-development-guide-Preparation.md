@@ -7,7 +7,7 @@ tags:
 #### 开发之前
 
 - 得有一台自己的服务器（我用的是阿里云服务器）
-- 做好相关的开发配置（我用的是`Apache + PHP + MySql`，用了`PHP`的`CodeIgniter`框架）
+- 做好相关的开发配置（我用的是`Apache + Python + MySql`，用了`Python`的`Webpy`框架）
 
 #### 申请测试账号
 
@@ -33,6 +33,10 @@ tags:
 
 包含`URL`和`Token`，虽然保存后显示有**修改**按钮，但我修改时是改不了的，所以配置时要注意。这里的`Token`是自定义的，不是`access_token`。
 
+因为[入门指引](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1472017492_58YV5)使用的也是`Webpy`，如果你也是使用这个框架，你可跟着上面的代码进行配置。
+
+在填写上面两个参数时，需要你先配置好服务器，并做好相应的代码设置。比如根据上面[入门指引](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1472017492_58YV5)，你需要把`handle.py`文件的`token = "xxxx"`改成你填写的`Token`才能配置成功，不然会显示配置失败。
+
 - JS接口安全域名
 
 `域名`：自己服务器的域名，你向微信发送请求时，会验证的，如果域名不匹配是无法获取数据的。不需要天`http`或`https`前缀。可以多次修改，可以填服务器的IP地址。
@@ -50,5 +54,7 @@ tags:
 这里并没有列出全部的接口，比如***卡券接口***，不要被此列表所迷惑。
 
 #### 开始开发
+
+在[入门指引](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1472017492_58YV5)中，已经有比较详细的开发引导，我这里其实也有一定重复内容。
 
 微信开发里，几乎所有接口都会涉及到一个东西：`access_token`，本文讲完如何获取、保存`access_token`就结束。
