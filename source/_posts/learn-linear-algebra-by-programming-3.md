@@ -1,13 +1,14 @@
 ---
-layout: post
-title:  "通过编程来学习线性代数3"
-date: '2018-07-29 17:29:00'
+title: 通过编程来学习线性代数3（更新中）
 comments: true
 thumbnail: /blog/assets/images/linear-algebra/cover.png
 tag:
-    - 基础知识
-    - 线性代数
+  - 基础知识
+  - 线性代数
+date: 2018-07-29 17:29:00
+tags:
 ---
+
 
 #### 行列式类
 
