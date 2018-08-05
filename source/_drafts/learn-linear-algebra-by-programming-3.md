@@ -9,7 +9,7 @@ tag:
     - 线性代数
 ---
 
-### 行列式类
+#### 行列式类
 
 在讨论行列式的一些性质之前，我先根据之前讲到的内容写一个行列式的类。
 
@@ -169,3 +169,46 @@ function swap(arr, i, j) {
     return arr
 }
 ```
+
+基本的东西准备好了，下面我们往行列式类`Det`上加一些功能，即行列式的一些性质。
+
+#### 性质1：行列式与它的转置行列式相等
+
+行列式的转置行列式即行变成列，列变成行。
+
+![转置行列式](./linear3-1.png)
+
+在`det.js`添加：
+```js
+// 获取转置行列式
+Det.prototype.getTransposedDet = function () {
+    let len = this.length
+    let newArr = new Array(len)
+    for (let i = 0; i < len; i++) {
+        if(!newArr[i]) {
+            newArr[i] = new Array(len)
+        }
+        for (let j = 0; j < len; j++) {
+            newArr[i][j] = this.array[j][i]
+        }
+    }
+    return new Det(newArr)
+}
+```
+
+测试：
+```js
+let det = new Det([
+    [2, 1, -5, 1],
+    [1, -3, 0, -6],
+    [0, 2, -1, 2],
+    [1, 4, -7, 6]
+])
+det.calc()  // 27
+
+let tdet = det.getTransposedDet()
+tdet.calc() // 27
+```
+这里可以把`tdet.array`打印出来，看是不是真的转置成功。
+
+#### 性质2：
