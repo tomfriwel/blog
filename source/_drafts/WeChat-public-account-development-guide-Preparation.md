@@ -55,6 +55,6 @@ tags:
 
 #### 开始开发
 
-在[入门指引](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1472017492_58YV5)中，已经有比较详细的开发引导，我这里其实也有一定重复内容。
+在[入门指引](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1472017492_58YV5)中，已经有比较详细的开发引导，我这里代码相关的东西大多是重复内容。
 
 微信开发里，几乎所有接口都会涉及到一个东西：`access_token`，本文讲完如何获取、保存`access_token`就结束。
