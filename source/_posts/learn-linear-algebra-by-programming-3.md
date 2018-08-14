@@ -246,3 +246,7 @@ let tdet = det.swap(3, 1, true) // -27
 // let tdet = det.swap(3, 1, false) // -27
 tdet.calc()
 ```
+
+### 代码
+
+- [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)

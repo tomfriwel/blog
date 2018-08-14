@@ -337,3 +337,7 @@ function calculate3Det(a11, a12, a13, a21, a22, a23, a31, a32, a33) {
 那么编程上如何简化这个计算呢？
 
 下一节将会来解决这个问题。
+
+### 代码
+
+- [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)

@@ -179,3 +179,8 @@ function factorial(n) {
 目前，计算行列式的值已经告一段落了，下一节将实现一些行列式的延伸。
 
 比如行列式按行（列）展开相关知识。
+
+
+### 代码
+
+- [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)
