@@ -1,13 +1,14 @@
 ---
 title: ubuntu apache config webpy
 tags:
-    - Ubuntu
-    - Apache
-    - Python
-    - webpy
-
+  - Ubuntu
+  - Apache
+  - Python
+  - webpy
 thumbnail: /blog/2018/08/14/ubuntu-apache-config-webpy/ubuntu-apache-config-webpy-0.png
+date: 2018-08-14 17:09:51
 ---
+
 
 ```
 <VirtualHost *:80>
