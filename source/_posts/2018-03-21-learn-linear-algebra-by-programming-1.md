@@ -29,7 +29,7 @@ tag:
 
 `行列式`的概念是由解多元线性方程组而引出的。比如下面这个：
 
-![二元线性方程组](/blog/assets/images/linear-algebra/100.jpeg)
+![二元线性方程组](/blog/assets/images/linear-algebra/100.png)
 
 在坐标系中就是两根直线，分母为零的情况就是两根直线平行不相交。
 
