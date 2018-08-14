@@ -2,6 +2,10 @@
 title: ubuntu apache python mysql setup
 date: 2018-06-17 09:49:48
 tags:
+    - Ubuntu
+    - Apache
+    - Python
+    - Mysql
 ---
 
 

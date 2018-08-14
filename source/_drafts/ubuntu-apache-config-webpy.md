@@ -1,6 +1,12 @@
 ---
 title: ubuntu apache config webpy
 tags:
+    - Ubuntu
+    - Apache
+    - Python
+    - webpy
+
+thumbnail: /blog/2018/08/14/ubuntu-apache-config-webpy/ubuntu-apache-config-webpy-0.png
 ---
 
 ```
@@ -36,3 +42,6 @@ tags:
     CustomLog ${APACHE_LOG_DIR}/test.example.com.access.log combined
 </VirtualHost>
 ```
+`line 5` 大概意思是凡是进入`test.example.com`的都会经过这里，如`test.example.com/test`, 如`test.example.com/page/123`，并且在`index.py`中做相应的`url`管理。
+
+`line 8` 可以直接访问的目录, 并且设置`line 23~26`
