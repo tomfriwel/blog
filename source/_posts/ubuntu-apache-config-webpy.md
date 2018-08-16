@@ -11,7 +11,9 @@ date: 2018-08-14 17:09:51
 
 我服务器系统是Ubuntu，用的是Apache，Apache我已经配置过了，所以不知道如何配置的可以自行搜索相关资料。
 
-我是根据[Webpy + Apache with mod_wsgi on Ubuntu](http://webpy.org/cookbook/mod_wsgi-apache-ubuntu)来安装的，下面主要看一下我的Apache配置：
+我是根据[Webpy + Apache with mod_wsgi on Ubuntu](http://webpy.org/cookbook/mod_wsgi-apache-ubuntu)来安装的。
+
+下面主要看一下我的Apache配置：
 
 ```
 <VirtualHost *:80>
