@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "通过编程来学习线性代数2"
+title:  "通过编程来学习线性代数2-计算行列式的值"
 date: '2018-05-30 22:31:00'
 comments: true
 thumbnail: /blog/assets/images/linear-algebra/cover.png
