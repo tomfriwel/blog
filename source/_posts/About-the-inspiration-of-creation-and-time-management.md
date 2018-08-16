@@ -1,6 +1,7 @@
 ---
 title: 关于创作的感悟和时间管理
 date: 2018-08-16 13:41:31
+thumbnail: /blog/2018/08/16/Painting-record-2018-8-16/2.jpg
 tags:
     - 思考
     - 阅读
