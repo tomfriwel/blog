@@ -1,5 +1,5 @@
 ---
-title: 通过编程来学习线性代数3（更新中）
+title: 通过编程来学习线性代数3-行列式的性质（更新中）
 comments: true
 thumbnail: /blog/assets/images/linear-algebra/cover.png
 tags:
@@ -244,6 +244,27 @@ det.calc()  // 27
 let tdet = det.swap(3, 1, true) // -27
 // let tdet = det.swap(3, 1, false) // -27
 tdet.calc()
+```
+
+#### 性质3：行列式的某一行（列）中所有元素都乘以同一个数`k`，等于用数`k`乘以此行列式
+
+可以通过计算下面两个行列式来验证，第二个行列式的第一列是第一个行列式第一列的两倍，计算结果分别为27和54
+```
+let det = new Det([
+    [2, 1, -5, 1],
+    [1, -3, 0, -6],
+    [0, 2, -1, 2],
+    [1, 4, -7, 6]
+])
+det.calc()
+
+let det2 = new Det([
+    [4, 1, -5, 1],
+    [2, -3, 0, -6],
+    [0, 2, -1, 2],
+    [2, 4, -7, 6]
+])
+det2.calc()
 ```
 
 ### 代码
