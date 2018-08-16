@@ -308,6 +308,16 @@ let det2 = new Det([
 det2.calc() // 54
 ```
 
+#### 性质4：行列式中如果有两行（列）元素成比例，则此行列式为零
+
+#### 性质5：若行列式的某一行（列）的元素都是两个数之和，如：
+
+![](./linear3-2.png)
+
 ### 代码
 
 - [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)
+
+### 参考
+
+- [线性代数-同济大学(第五版)课件 [完整版]](https://wenku.baidu.com/view/e3efed47fe4733687e21aafd?pn=51)
