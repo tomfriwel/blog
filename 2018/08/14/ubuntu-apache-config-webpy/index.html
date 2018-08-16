@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>ubuntu apache config webpy | tomfriwel&#39;s blog</title>
+    <title>Python网络框架web.py配置 | tomfriwel&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Python,webpy,Ubuntu,Apache" />
+        <meta name="keywords" content="Ubuntu,Apache,Python,webpy" />
     
-    <meta name="description" content="12345678910111213141516171819202122232425262728293031&amp;lt;VirtualHost *:80&amp;gt;    ServerAdmin webmaster@localhost    ServerName test.example.com    DocumentRoot /var/web/test.example.com    WSGIScriptA">
-<meta name="keywords" content="Python,webpy,Ubuntu,Apache">
+    <meta name="description" content="我服务器系统是Ubuntu，用的是Apache，Apache我已经配置过了，所以不知道如何配置的可以自行搜索相关资料。 我是根据Webpy + Apache with mod_wsgi on Ubuntu来安装的，下面主要看一下我的Apache配置： 123456789101112131415161718192021222324252627&amp;lt;VirtualHost *:80&amp;gt;    S">
+<meta name="keywords" content="Ubuntu,Apache,Python,webpy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu apache config webpy">
+<meta property="og:title" content="Python网络框架web.py配置">
 <meta property="og:url" content="https://tomfriwel.github.io/blog/2018/08/14/ubuntu-apache-config-webpy/index.html">
 <meta property="og:site_name" content="tomfriwel&#39;s blog">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031&amp;lt;VirtualHost *:80&amp;gt;    ServerAdmin webmaster@localhost    ServerName test.example.com    DocumentRoot /var/web/test.example.com    WSGIScriptA">
+<meta property="og:description" content="我服务器系统是Ubuntu，用的是Apache，Apache我已经配置过了，所以不知道如何配置的可以自行搜索相关资料。 我是根据Webpy + Apache with mod_wsgi on Ubuntu来安装的，下面主要看一下我的Apache配置： 123456789101112131415161718192021222324252627&amp;lt;VirtualHost *:80&amp;gt;    S">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://tomfriwel.github.io/blog/2018/08/14/ubuntu-apache-config-webpy/ubuntu-apache-config-webpy-0.png">
-<meta property="og:updated_time" content="2018-08-14T09:09:51.364Z">
+<meta property="og:updated_time" content="2018-08-16T07:10:33.169Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu apache config webpy">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031&amp;lt;VirtualHost *:80&amp;gt;    ServerAdmin webmaster@localhost    ServerName test.example.com    DocumentRoot /var/web/test.example.com    WSGIScriptA">
+<meta name="twitter:title" content="Python网络框架web.py配置">
+<meta name="twitter:description" content="我服务器系统是Ubuntu，用的是Apache，Apache我已经配置过了，所以不知道如何配置的可以自行搜索相关资料。 我是根据Webpy + Apache with mod_wsgi on Ubuntu来安装的，下面主要看一下我的Apache配置： 123456789101112131415161718192021222324252627&amp;lt;VirtualHost *:80&amp;gt;    S">
 <meta name="twitter:image" content="https://tomfriwel.github.io/blog/2018/08/14/ubuntu-apache-config-webpy/ubuntu-apache-config-webpy-0.png">
     
 
@@ -140,7 +140,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        ubuntu apache config webpy
+        Python网络框架web.py配置
         </h1>
     
 
@@ -165,9 +165,17 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAdmin webmaster@localhost</span><br><span class="line">    ServerName test.example.com</span><br><span class="line">    DocumentRoot /var/web/test.example.com</span><br><span class="line">    WSGIScriptAlias / /var/web/test.example.com/index.py/</span><br><span class="line"></span><br><span class="line">    # the Alias directive</span><br><span class="line">    Alias /static /var/web/test.example.com/static</span><br><span class="line"></span><br><span class="line">    AddType text/html .py</span><br><span class="line"></span><br><span class="line">    RewriteEngine On</span><br><span class="line">    &lt;Directory /var/web/test.example.com&gt;</span><br><span class="line">        Options +ExecCGI</span><br><span class="line">        # AddHandler cgi-script .py</span><br><span class="line">        # DirectoryIndex index.py</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">    # Alias /foo/static/ /path/to/static</span><br><span class="line">    # ScriptAlias /foo/ /path/to/code.py</span><br><span class="line"></span><br><span class="line">    # because Alias can be used to reference resources outside docroot, you</span><br><span class="line">    # must reference the directory with an absolute path</span><br><span class="line">    &lt;Directory /var/web/test.example.com/static&gt;</span><br><span class="line">        # directives to effect the static directory</span><br><span class="line">        Options FollowSymLinks</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">    # log location</span><br><span class="line">    ErrorLog $&#123;APACHE_LOG_DIR&#125;/test.example.com.error.log</span><br><span class="line">    CustomLog $&#123;APACHE_LOG_DIR&#125;/test.example.com.access.log combined</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+            <p>我服务器系统是Ubuntu，用的是Apache，Apache我已经配置过了，所以不知道如何配置的可以自行搜索相关资料。</p>
+<p>我是根据<a href="http://webpy.org/cookbook/mod_wsgi-apache-ubuntu" target="_blank" rel="noopener">Webpy + Apache with mod_wsgi on Ubuntu</a>来安装的，下面主要看一下我的Apache配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAdmin webmaster@localhost</span><br><span class="line">    ServerName test.example.com</span><br><span class="line">    DocumentRoot /var/web/test.example.com</span><br><span class="line">    WSGIScriptAlias / /var/web/test.example.com/index.py/</span><br><span class="line"></span><br><span class="line">    # the Alias directive</span><br><span class="line">    Alias /static /var/web/test.example.com/static</span><br><span class="line"></span><br><span class="line">    AddType text/html .py</span><br><span class="line"></span><br><span class="line">    RewriteEngine On</span><br><span class="line">    &lt;Directory /var/web/test.example.com&gt;</span><br><span class="line">        Options +ExecCGI</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">    # because Alias can be used to reference resources outside docroot, you</span><br><span class="line">    # must reference the directory with an absolute path</span><br><span class="line">    &lt;Directory /var/web/test.example.com/static&gt;</span><br><span class="line">        # directives to effect the static directory</span><br><span class="line">        Options FollowSymLinks</span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line"></span><br><span class="line">    # log location</span><br><span class="line">    ErrorLog $&#123;APACHE_LOG_DIR&#125;/test.example.com.error.log</span><br><span class="line">    CustomLog $&#123;APACHE_LOG_DIR&#125;/test.example.com.access.log combined</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
 <p><code>line 5</code> 大概意思是凡是进入<code>test.example.com</code>的都会经过这里，如<code>test.example.com/test</code>, 如<code>test.example.com/page/123</code>，并且在<code>index.py</code>中做相应的<code>url</code>管理。</p>
-<p><code>line 8</code> 可以直接访问的目录, 并且设置<code>line 23~26</code></p>
+<p><code>line 8</code> 可以直接访问的静态文件目录, 并且设置<code>line 19~22</code></p>
+<p>然后用下面的代码进行初次试探：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> web</span><br><span class="line"><span class="comment"># from handle import Handle</span></span><br><span class="line"></span><br><span class="line">web.config.debug = <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Handle</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'Hello tom.'</span></span><br><span class="line"></span><br><span class="line">urls = (</span><br><span class="line">    <span class="string">'/test'</span>, <span class="string">'Handle'</span>,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">application = web.application(urls, globals()).wsgifunc()</span><br></pre></td></tr></table></figure>
+<p>主要的就是<code>line 10~12</code>，相当于路由映射的东西，将<code>/test</code>的请求交给<code>Handle</code>类来处理。一般情况下是将处理类<code>Handle</code>单独建一个<code>.py</code>文件，让后通过<code>line 2</code>引入。</p>
+<p>输入<code>网址/test</code>进行访问，比如<code>test.example.com/test</code>，不出错就会看到<code>Handle</code>类的输出了。</p>
+<p>有的时候改动之后可能需要重启一下Apache: <code>$ service apache2 restart</code>。</p>
+<p>有的时候报错需要到报错日志里查看。<code>/var/log/apache2/test.example.com.error.log</code>，从这点来看，不如<code>PHP</code>的一些框架（<code>CodeIgniter</code>, <code>Laravel</code>）那么人性化。</p>
 
         </div>
         <i style="color:#AAAAAA;">声明：转载请注明作者及原文链接</i>
@@ -176,7 +184,7 @@
 
 
 
-    <a data-url="https://tomfriwel.github.io/blog/2018/08/14/ubuntu-apache-config-webpy/" data-id="cjkw69v3m002rd1whury2p3r3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://tomfriwel.github.io/blog/2018/08/14/ubuntu-apache-config-webpy/" data-id="cjkw873an002kccwhj1z0g9xj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -401,7 +409,7 @@
                             <a href="/blog/2018/08/14/ubuntu-apache-config-webpy/" class="thumbnail">
     
     
-        <span style="background-image:url(/blog/2018/08/14/ubuntu-apache-config-webpy/ubuntu-apache-config-webpy-0.png)" alt="ubuntu apache config webpy" class="thumbnail-image"></span>
+        <span style="background-image:url(/blog/2018/08/14/ubuntu-apache-config-webpy/ubuntu-apache-config-webpy-0.png)" alt="Python网络框架web.py配置" class="thumbnail-image"></span>
     
     <!--  -->
 </a>
@@ -410,7 +418,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2018/08/14/ubuntu-apache-config-webpy/" class="title">ubuntu apache config webpy</a></p>
+                            <p class="item-title"><a href="/blog/2018/08/14/ubuntu-apache-config-webpy/" class="title">Python网络框架web.py配置</a></p>
                             <p class="item-date"><time datetime="2018-08-14T09:09:51.000Z" itemprop="datePublished">2018-08-14</time></p>
                         </div>
                     </li>
