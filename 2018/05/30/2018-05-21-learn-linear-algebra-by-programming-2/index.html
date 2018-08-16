@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>通过编程来学习线性代数2 | tomfriwel&#39;s blog</title>
+    <title>通过编程来学习线性代数2-计算行列式的值 | tomfriwel&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -12,15 +12,15 @@
     <meta name="description" content="全排列及其逆序数为了计算每一项，我们先要了解如何生成每一个相乘的项，了解什么时候是正数什么时候是负数，关于正负问题就需要了解逆序数的定义。 全排列:  将n个不同的元素排成一列  123456781 &amp;gt; 12 &amp;gt; 1,2 | 2,13 &amp;gt; 1,2,3 | 1,3,2 | 2,1,3 | 2,3,1 | 3,1,2 | 3,2,1... 从排列组合的知识中可以知道: n个不同的元素">
 <meta name="keywords" content="基础知识,线性代数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过编程来学习线性代数2">
+<meta property="og:title" content="通过编程来学习线性代数2-计算行列式的值">
 <meta property="og:url" content="https://tomfriwel.github.io/blog/2018/05/30/2018-05-21-learn-linear-algebra-by-programming-2/index.html">
 <meta property="og:site_name" content="tomfriwel&#39;s blog">
 <meta property="og:description" content="全排列及其逆序数为了计算每一项，我们先要了解如何生成每一个相乘的项，了解什么时候是正数什么时候是负数，关于正负问题就需要了解逆序数的定义。 全排列:  将n个不同的元素排成一列  123456781 &amp;gt; 12 &amp;gt; 1,2 | 2,13 &amp;gt; 1,2,3 | 1,3,2 | 2,1,3 | 2,3,1 | 3,1,2 | 3,2,1... 从排列组合的知识中可以知道: n个不同的元素">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://tomfriwel.github.io/blog/assets/images/linear-algebra/cover.png">
-<meta property="og:updated_time" content="2018-08-14T08:42:50.371Z">
+<meta property="og:updated_time" content="2018-08-16T07:20:36.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通过编程来学习线性代数2">
+<meta name="twitter:title" content="通过编程来学习线性代数2-计算行列式的值">
 <meta name="twitter:description" content="全排列及其逆序数为了计算每一项，我们先要了解如何生成每一个相乘的项，了解什么时候是正数什么时候是负数，关于正负问题就需要了解逆序数的定义。 全排列:  将n个不同的元素排成一列  123456781 &amp;gt; 12 &amp;gt; 1,2 | 2,13 &amp;gt; 1,2,3 | 1,3,2 | 2,1,3 | 2,3,1 | 3,1,2 | 3,2,1... 从排列组合的知识中可以知道: n个不同的元素">
 <meta name="twitter:image" content="https://tomfriwel.github.io/blog/assets/images/linear-algebra/cover.png">
     
@@ -140,7 +140,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        通过编程来学习线性代数2
+        通过编程来学习线性代数2-计算行列式的值
         </h1>
     
 
@@ -175,7 +175,7 @@
 <p>继续从这<code>n-1</code>各种继续选取, 放到第二位, 有<code>n-1</code>钟选法.</p>
 <p>以此类推, 直到选完为止.</p>
 <p>n个元素所有排列的种数: <code>n! = n*(n-1)*...*3*2*1</code></p>
-<p>这里我们用<a href="https://en.wikipedia.org/wiki/Heap%27s_algorithm" target="_blank" rel="noopener"><code>Heap&#39;s algorithm</code></a>算法来生成每一项:</p>
+<p>这里我们用 <a href="https://en.wikipedia.org/wiki/Heap%27s_algorithm" target="_blank" rel="noopener"><code>Heap&#39;s algorithm</code></a> 描述的算法来生成每一项:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Heap's algorithm</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 列举所有@param A 数组元素的全排列(排列)</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param &#123;Number&#125; n A长度</span></span><br><span class="line"><span class="comment"> * @param &#123;Array&#125; A 元素</span></span><br><span class="line"><span class="comment"> * @param &#123;Array&#125; result 全部结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generate</span>(<span class="params">n, A, result</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) &#123;</span><br><span class="line">        result.push(A.slice())</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            generate(n - <span class="number">1</span>, A, result)</span><br><span class="line">            <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">                swap(A, i, n - <span class="number">1</span>)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                swap(A, <span class="number">0</span>, n - <span class="number">1</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        generate(n - <span class="number">1</span>, A, result)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以在浏览器的控制台中试一下, 如<code>generate(3, [1, 2, 3], arr)</code>或者<code>generate(4, [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;], arr)</code>, 字符数字都行，<code>arr</code>需要事先定义好<code>let arr = []</code></p>
 <p>得到每一项后, 就可以进行计算逆序数了. 一个排列的逆序数决定了这一项是正或负数.</p>
@@ -208,7 +208,7 @@
 
 
 
-    <a data-url="https://tomfriwel.github.io/blog/2018/05/30/2018-05-21-learn-linear-algebra-by-programming-2/" data-id="cjkw873a8001rccwh0lwojz7z" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://tomfriwel.github.io/blog/2018/05/30/2018-05-21-learn-linear-algebra-by-programming-2/" data-id="cjkwah19g000k61whq05het7l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
