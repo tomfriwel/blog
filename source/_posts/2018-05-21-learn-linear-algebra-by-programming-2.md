@@ -38,7 +38,7 @@ tag:
 n个元素所有排列的种数: `n! = n*(n-1)*...*3*2*1`
 
 
-这里我们用[`Heap's algorithm`](https://en.wikipedia.org/wiki/Heap%27s_algorithm)算法来生成每一项:
+这里我们用 [`Heap's algorithm`](https://en.wikipedia.org/wiki/Heap%27s_algorithm) 描述的算法来生成每一项:
 
 ```js
 // Heap's algorithm
