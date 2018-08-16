@@ -217,7 +217,7 @@ tdet.calc() // 27
 ```js
 // 互换行列式的两行（列）
 Det.prototype.swap = function (n0, n1, isRow=true) {
-    let newArr = this.array.slice()
+    let newArr = JSON.parse(JSON.stringify(this.array))
 
     if(isRow) {
         newArr = swap(newArr, n0, n1)
@@ -248,7 +248,47 @@ tdet.calc()
 
 #### 性质3：行列式的某一行（列）中所有元素都乘以同一个数`k`，等于用数`k`乘以此行列式
 
-可以通过计算下面两个行列式来验证，第二个行列式的第一列是第一个行列式第一列的两倍，计算结果分别为27和54
+添加方法：
+```js
+// 某一行（列）乘以一个数
+/**
+ * 
+ * @param {Number} n 行/列，从0开始
+ * @param {Number} k 数 
+ * @param {Boolean} isRow 默认行
+ */
+Det.prototype.multiply = function (n, k, isRow = true) {
+    let newArr = JSON.parse(JSON.stringify(this.array)) //deep copy
+    let len = this.length
+
+    if (isRow) {
+        for (i = 0; i < len; i++) {
+            newArr[n][i] *= k
+        }
+    } else {
+        for (let i = 0; i < len; i++) {
+            newArr[i][n] *= k
+        }
+    }
+
+    return new Det(newArr)
+}
+```
+
+通过计算乘之前和之后的两个结果来看：
+```js
+let det = new Det([
+    [2, 1, -5, 1],
+    [1, -3, 0, -6],
+    [0, 2, -1, 2],
+    [1, 4, -7, 6]
+])
+det.calc() // 27
+
+det.multiply(1, 5).calc()   // 135
+```
+
+也可以通过计算下面两个行列式来验证，第二个行列式的第一列是第一个行列式第一列的两倍，计算结果分别为27和54
 
 ```js
 let det = new Det([
