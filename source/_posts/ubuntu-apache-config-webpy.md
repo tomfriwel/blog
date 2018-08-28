@@ -71,6 +71,6 @@ application = web.application(urls, globals()).wsgifunc()
 
 输入`网址/test`进行访问，比如`test.example.com/test`，不出错就会看到`Handle`类的输出了。
 
-有的时候改动之后可能需要重启一下Apache: `$ service apache2 restart`。
+有的时候改动之后可能需要重启一下Apache才会生效: `$ service apache2 restart`。
 
 有的时候报错需要到报错日志里查看。`/var/log/apache2/test.example.com.error.log`，从这点来看，不如`PHP`的一些框架（`CodeIgniter`, `Laravel`）那么人性化。
