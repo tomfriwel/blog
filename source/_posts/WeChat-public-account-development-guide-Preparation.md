@@ -189,6 +189,28 @@ class WelCache(object):
 
 `line 44~52`保存数据。`expire`有效期（秒）
 
+因为最近也接触过一些`php`框架，在`php`的`CodeIgniter`或`Laravel`中都有现成的方法可以使用。
+
+`Laravel`:
+```php
+Cache::put($key, $accessToken, $expire);
+
+Cache::get($key);
+```
+
+`CodeIgniter`:
+```php
+//在Controller的__construct中初始化
+$this->load->driver(
+    'cache',
+    array('adapter' => 'apc', 'backup' => 'file', 'key_prefix' => 'wechat_')
+);
+
+//使用
+$this->cache->save($key, $accessToken, $expire);
+$this->cache->get($key);
+```
+
 主要就是这两个函数。然后我根据官方提供的`basic.py`代码进行改造：
 
 ```python
