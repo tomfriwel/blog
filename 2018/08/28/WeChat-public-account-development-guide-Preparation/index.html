@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>微信公众号开发指南 - 准备工作 | tomfriwel&#39;s blog</title>
+    <title>微信公众号开发指南 - 准备工作以及AccessToken | tomfriwel&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -12,15 +12,15 @@
     <meta name="description" content="开发之前 得有一台自己的服务器（我用的是阿里云服务器） 做好相关的开发配置（我用的是Apache + Python + MySql，用了Python的Webpy框架）  申请测试账号因为不是每个都有一个公众号，就算有，也不能什么测试都在上线的公众号上进行。基于安全和不影响正式环境的考虑，我们可以申请一个微信公众平台接口测试帐号来进行开发测试。 申请链接：微信公众平台接口测试帐号 只需要用自己的微信">
 <meta name="keywords" content="微信开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信公众号开发指南 - 准备工作">
+<meta property="og:title" content="微信公众号开发指南 - 准备工作以及AccessToken">
 <meta property="og:url" content="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/index.html">
 <meta property="og:site_name" content="tomfriwel&#39;s blog">
 <meta property="og:description" content="开发之前 得有一台自己的服务器（我用的是阿里云服务器） 做好相关的开发配置（我用的是Apache + Python + MySql，用了Python的Webpy框架）  申请测试账号因为不是每个都有一个公众号，就算有，也不能什么测试都在上线的公众号上进行。基于安全和不影响正式环境的考虑，我们可以申请一个微信公众平台接口测试帐号来进行开发测试。 申请链接：微信公众平台接口测试帐号 只需要用自己的微信">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png">
-<meta property="og:updated_time" content="2018-08-28T09:41:38.008Z">
+<meta property="og:updated_time" content="2018-08-28T09:53:27.853Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信公众号开发指南 - 准备工作">
+<meta name="twitter:title" content="微信公众号开发指南 - 准备工作以及AccessToken">
 <meta name="twitter:description" content="开发之前 得有一台自己的服务器（我用的是阿里云服务器） 做好相关的开发配置（我用的是Apache + Python + MySql，用了Python的Webpy框架）  申请测试账号因为不是每个都有一个公众号，就算有，也不能什么测试都在上线的公众号上进行。基于安全和不影响正式环境的考虑，我们可以申请一个微信公众平台接口测试帐号来进行开发测试。 申请链接：微信公众平台接口测试帐号 只需要用自己的微信">
 <meta name="twitter:image" content="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png">
     
@@ -140,7 +140,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-        微信公众号开发指南 - 准备工作
+        微信公众号开发指南 - 准备工作以及AccessToken
         </h1>
     
 
@@ -234,6 +234,9 @@
 <p><code>line 22</code>，初始化类，这里我用的文件来保存数据，默认保存在目录<code>/tmp/cache/data</code>下面，<strong>需要修改读写权限（我设置的777），不然无法写入</strong>。</p>
 <p><code>line 34~42</code>根据<code>key</code>获取缓存数据，<code>line 39</code>判断是否过期，过期的话返回<code>None</code>。</p>
 <p><code>line 44~52</code>保存数据。<code>expire</code>有效期（秒）</p>
+<p>因为最近也接触过一些<code>php</code>框架，在<code>php</code>的<code>CodeIgniter</code>或<code>Laravel</code>中都有现成的方法可以使用。</p>
+<p><code>Laravel</code>:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Cache::put($key, $accessToken, $expire);</span><br><span class="line"></span><br><span class="line">Cache::get($key);</span><br></pre></td></tr></table></figure></p>
+<p><code>CodeIgniter</code>:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在Controller的__construct中初始化</span></span><br><span class="line"><span class="keyword">$this</span>-&gt;load-&gt;driver(</span><br><span class="line">    <span class="string">'cache'</span>,</span><br><span class="line">    <span class="keyword">array</span>(<span class="string">'adapter'</span> =&gt; <span class="string">'apc'</span>, <span class="string">'backup'</span> =&gt; <span class="string">'file'</span>, <span class="string">'key_prefix'</span> =&gt; <span class="string">'wechat_'</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">$this</span>-&gt;cache-&gt;save($key, $accessToken, $expire);</span><br><span class="line"><span class="keyword">$this</span>-&gt;cache-&gt;get($key);</span><br></pre></td></tr></table></figure></p>
 <p>主要就是这两个函数。然后我根据官方提供的<code>basic.py</code>代码进行改造：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-# </span></span><br><span class="line"><span class="comment"># filename: basic.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> config</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> welCache <span class="keyword">import</span> WelCache</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Basic</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__accessToken = <span class="keyword">None</span></span><br><span class="line">        self.__expiresIn = <span class="number">7200</span></span><br><span class="line">        self.appId = config.wx[<span class="string">'appId'</span>]</span><br><span class="line">        self.appSecret = config.wx[<span class="string">'appSecret'</span>]</span><br><span class="line">        self.__key = <span class="string">'wx_access_token_'</span> + self.appId</span><br><span class="line">        self.cache = WelCache()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__real_get_access_token</span><span class="params">(self)</span>:</span></span><br><span class="line">        postUrl = (<span class="string">"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=%s&amp;secret=%s"</span> % (self.appId, self.appSecret))</span><br><span class="line">        urlResp = urllib.urlopen(postUrl)</span><br><span class="line">        urlResp = json.loads(urlResp.read())</span><br><span class="line">        self.__accessToken = urlResp[<span class="string">'access_token'</span>]</span><br><span class="line">        self.__expiresIn = urlResp[<span class="string">'expires_in'</span>]</span><br><span class="line"></span><br><span class="line">        self.cache.set(self.__key, self.__accessToken, self.__expiresIn<span class="number">-300</span>)</span><br><span class="line">        <span class="keyword">return</span> self.__accessToken</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_access_token</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__accessToken = self.cache.get(self.__key)</span><br><span class="line">        <span class="keyword">if</span> self.__accessToken <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            self.__accessToken = self.__real_get_access_token()</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> self.__accessToken</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_expires_in</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__expiresIn</span><br></pre></td></tr></table></figure>
 <p><code>line 16</code>这里我把<code>key</code>设置为<code>wx_access_token_[appid]</code>，保存的路径就为<code>/tmp/cache/data/wx_access_token_[appid]</code></p>
@@ -253,7 +256,7 @@
 
 
 
-    <a data-url="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" data-id="cjldiwych004rmhwh7lljmqar" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" data-id="cjldjhdb1004p1cwhek41iv9h" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -428,7 +431,7 @@
                             <a href="/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" class="thumbnail">
     
     
-        <span style="background-image:url(/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png)" alt="微信公众号开发指南 - 准备工作" class="thumbnail-image"></span>
+        <span style="background-image:url(/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png)" alt="微信公众号开发指南 - 准备工作以及AccessToken" class="thumbnail-image"></span>
     
     <!--  -->
 </a>
@@ -437,7 +440,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" class="title">微信公众号开发指南 - 准备工作</a></p>
+                            <p class="item-title"><a href="/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" class="title">微信公众号开发指南 - 准备工作以及AccessToken</a></p>
                             <p class="item-date"><time datetime="2018-08-27T16:00:00.000Z" itemprop="datePublished">2018-08-28</time></p>
                         </div>
                     </li>
