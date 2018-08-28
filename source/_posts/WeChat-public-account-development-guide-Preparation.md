@@ -1,5 +1,5 @@
 ---
-title: 微信公众号开发指南 - 准备工作
+title: 微信公众号开发指南 - 准备工作以及AccessToken
 date: 2018-08-28
 thumbnail: /blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png
 tags:
