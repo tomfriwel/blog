@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>微信公众号开发指南 - 准备工作 | tomfriwel&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="微信开发" />
+    
+    <meta name="description" content="开发之前 得有一台自己的服务器（我用的是阿里云服务器） 做好相关的开发配置（我用的是Apache + Python + MySql，用了Python的Webpy框架）  申请测试账号因为不是每个都有一个公众号，就算有，也不能什么测试都在上线的公众号上进行。基于安全和不影响正式环境的考虑，我们可以申请一个微信公众平台接口测试帐号来进行开发测试。 申请链接：微信公众平台接口测试帐号 只需要用自己的微信">
+<meta name="keywords" content="微信开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信公众号开发指南 - 准备工作">
+<meta property="og:url" content="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/index.html">
+<meta property="og:site_name" content="tomfriwel&#39;s blog">
+<meta property="og:description" content="开发之前 得有一台自己的服务器（我用的是阿里云服务器） 做好相关的开发配置（我用的是Apache + Python + MySql，用了Python的Webpy框架）  申请测试账号因为不是每个都有一个公众号，就算有，也不能什么测试都在上线的公众号上进行。基于安全和不影响正式环境的考虑，我们可以申请一个微信公众平台接口测试帐号来进行开发测试。 申请链接：微信公众平台接口测试帐号 只需要用自己的微信">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png">
+<meta property="og:updated_time" content="2018-08-28T09:41:38.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信公众号开发指南 - 准备工作">
+<meta name="twitter:description" content="开发之前 得有一台自己的服务器（我用的是阿里云服务器） 做好相关的开发配置（我用的是Apache + Python + MySql，用了Python的Webpy框架）  申请测试账号因为不是每个都有一个公众号，就算有，也不能什么测试都在上线的公众号上进行。基于安全和不影响正式环境的考虑，我们可以申请一个微信公众平台接口测试帐号来进行开发测试。 申请链接：微信公众平台接口测试帐号 只需要用自己的微信">
+<meta name="twitter:image" content="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/blog/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/blog/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/blog/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <script src="/blog/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/blog/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/blog/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/blog/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/blog/">主页</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/blog/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/blog/',
+        CONTENT_URL: '/blog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/blog/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-WeChat-public-account-development-guide-Preparation" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        微信公众号开发指南 - 准备工作
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" class="article-date">
+            <time datetime="2018-08-27T16:00:00.000Z" itemprop="datePublished">2018-08-28</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/blog/tags/微信开发/">微信开发</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h4 id="开发之前"><a href="#开发之前" class="headerlink" title="开发之前"></a>开发之前</h4><ul>
+<li>得有一台自己的服务器（我用的是阿里云服务器）</li>
+<li>做好相关的开发配置（我用的是<code>Apache + Python + MySql</code>，用了<code>Python</code>的<code>Webpy</code>框架）</li>
+</ul>
+<h4 id="申请测试账号"><a href="#申请测试账号" class="headerlink" title="申请测试账号"></a>申请测试账号</h4><p>因为不是每个都有一个公众号，就算有，也不能什么测试都在上线的公众号上进行。基于安全和不影响正式环境的考虑，我们可以申请一个<strong><em>微信公众平台接口测试帐号</em></strong>来进行开发测试。</p>
+<p>申请链接：<a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="noopener">微信公众平台接口测试帐号</a></p>
+<p>只需要用自己的微信扫一扫即可申请，并且会一直保留，下次扫码进入也会保留上次的设置。</p>
+<p><img src="./regist-test-account.png" alt=""></p>
+<p>大多数接口跟正式号没什么不同，但我在开发中也遇到过有些接口有限制的地方。我开发<strong><em>会员卡</em></strong>功能的时候就遇到过，这里不过多描述，当写到具体的地方会进行相关的提醒。</p>
+<h4 id="配置测试号"><a href="#配置测试号" class="headerlink" title="配置测试号"></a>配置测试号</h4><p>进入后，会有以下几大类：</p>
+<ul>
+<li>测试号信息</li>
+</ul>
+<p>包含<code>appID</code>和<code>appsecret</code>，同正式公众号管理页里<code>开发-基本配置-公众号开发信息</code>的<code>开发者ID(AppID)</code>和<code>开发者密码(AppSecret)</code>（需要管理员扫码生成，生成后只能重置不能查看已生成的，妥善保管），需要<strong>记录下来</strong>，后续开发会用到。</p>
+<ul>
+<li>接口配置信息</li>
+</ul>
+<p>包含<code>URL</code>和<code>Token</code>，虽然保存后显示有<strong>修改</strong>按钮，但我修改时是改不了的，所以配置时要注意。这里的<code>Token</code>是自定义的，不是<code>access_token</code>。</p>
+<p>因为<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1472017492_58YV5" target="_blank" rel="noopener">入门指引</a>使用的也是<code>Webpy</code>，如果你也是使用这个框架，你可跟着上面的代码进行配置。</p>
+<p>在填写上面两个参数时，需要你先配置好服务器，并做好相应的代码设置。比如根据上面<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1472017492_58YV5" target="_blank" rel="noopener">入门指引</a>，你需要把<code>handle.py</code>文件的<code>token = &quot;xxxx&quot;</code>改成你填写的<code>Token</code>才能配置成功，不然会显示配置失败。</p>
+<ul>
+<li>JS接口安全域名</li>
+</ul>
+<p><code>域名</code>：自己服务器的域名，你向微信发送请求时，会验证的，如果域名不匹配是无法获取数据的。不需要天<code>http</code>或<code>https</code>前缀。可以多次修改，可以填服务器的IP地址。</p>
+<ul>
+<li>测试号二维码</li>
+</ul>
+<p>查看测试公众号的二维码，扫码可以进行关注，并且可以看到关注的用户列表。</p>
+<ul>
+<li>模板消息接口</li>
+</ul>
+<p>配置一些消息模板，后续会讲到。</p>
+<ul>
+<li>体验接口权限表</li>
+</ul>
+<p>这里并没有列出全部的接口，比如<strong><em>卡券接口</em></strong>，不要被此列表所迷惑。</p>
+<h4 id="开始开发"><a href="#开始开发" class="headerlink" title="开始开发"></a>开始开发</h4><p>在<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1472017492_58YV5" target="_blank" rel="noopener">入门指引</a>中，已经有比较详细的开发引导，我这里代码相关的东西大多是重复内容。</p>
+<p>微信开发里，几乎所有接口都会涉及到一个东西：<code>access_token</code>，本文讲完如何获取、保存<code>access_token</code>就结束。</p>
+<p>根据微信官方文档介绍:<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140183" target="_blank" rel="noopener">获取access_token</a>:</p>
+<blockquote>
+<p>access_token是公众号的全局唯一接口调用凭据，公众号调用各接口时都需使用access_token。开发者需要进行妥善保存。access_token的存储至少要保留512个字符空间。access_token的有效期目前为2个小时，需定时刷新，重复获取将导致上次获取的access_token失效。</p>
+</blockquote>
+<blockquote>
+<p>公众平台的API调用所需的access_token的使用及生成方式说明：</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>建议公众号开发者使用中控服务器统一获取和刷新Access_token，其他业务逻辑服务器所使用的access_token均来自于该中控服务器，不应该各自去刷新，否则容易造成冲突，导致access_token覆盖而影响业务；</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>目前Access_token的有效期通过返回的expire_in来传达，目前是7200秒之内的值。中控服务器需要根据这个有效时间提前去刷新新access_token。在刷新过程中，中控服务器可对外继续输出的老access_token，此时公众平台后台会保证在5分钟内，新老access_token都可用，这保证了第三方业务的平滑过渡；</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>Access_token的有效时间可能会在未来有调整，所以中控服务器不仅需要内部定时主动刷新，还需要提供被动刷新access_token的接口，这样便于业务服务器在API调用获知access_token已超时的情况下，可以触发access_token的刷新流程。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>公众号和小程序均可以使用AppID和AppSecret调用本接口来获取access_token。AppID和AppSecret可在“微信公众平台-开发-基本配置”页中获得（需要已经成为开发者，且帐号没有异常状态）。<strong>调用接口时，请登录“微信公众平台-开发-基本配置”提前将服务器IP地址添加到IP白名单中，点击查看设置方法，否则将无法调用成功。小程序无需配置IP白名单。</strong></p>
+</blockquote>
+<p>大概意思就是，不要每次都重复获取，要保存这个<code>access_token</code>，目前有效期为2小时，快过期时需要提前刷新，或者在过期后有相应的机制刷新。</p>
+<p>因为我没找到<code>python</code>缓存这方面合适的库，我就自己写了一个简单的缓存类。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="comment"># filename: welCache.py</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">verify_directory</span><span class="params">(dirname)</span>:</span></span><br><span class="line">    <span class="string">"""verifies and creates a directory.  tries to</span></span><br><span class="line"><span class="string">ignore collisions with other threads and processes."""</span></span><br><span class="line">    <span class="comment"># print(dirname)</span></span><br><span class="line">    tries = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">not</span> os.access(dirname, os.F_OK):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            tries += <span class="number">1</span></span><br><span class="line">            os.makedirs(dirname)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">if</span> tries &gt; <span class="number">5</span>:</span><br><span class="line">                <span class="keyword">raise</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WelCache</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, region=None, cahceType=<span class="string">'file'</span>, dataDir=<span class="string">'/tmp/cache/data'</span>)</span>:</span></span><br><span class="line">        self.opts = &#123;</span><br><span class="line">            <span class="string">'cache.type'</span>: cahceType,</span><br><span class="line">            <span class="string">'cache.data_dir'</span>: dataDir,</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> region <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            self.region = <span class="string">''</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.region = region + <span class="string">'_'</span></span><br><span class="line">        self.file = <span class="string">''</span></span><br><span class="line">        self.data = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key)</span>:</span></span><br><span class="line">        key = self.opts.get(<span class="string">'cache.data_dir'</span>) + <span class="string">'/'</span> + self.region + key</span><br><span class="line">        self.file = key</span><br><span class="line">        data = self._read()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> data <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> data.get(<span class="string">'expire'</span>) &gt; time.time():</span><br><span class="line">            <span class="keyword">return</span> data.get(<span class="string">'value'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set</span><span class="params">(self, key, value, expire)</span>:</span></span><br><span class="line">        key = self.opts.get(<span class="string">'cache.data_dir'</span>) + <span class="string">'/'</span> + self.region + key</span><br><span class="line">        self.file = key</span><br><span class="line">        self._checkfile()</span><br><span class="line">        data = json.dumps(&#123;</span><br><span class="line">            <span class="string">'value'</span>: value,</span><br><span class="line">            <span class="string">'expire'</span>: time.time() + expire</span><br><span class="line">        &#125;)</span><br><span class="line">        self._save(data)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(self, key, value)</span>:</span></span><br><span class="line">        key = self.opts.get(<span class="string">'cache.data_dir'</span>) + <span class="string">'/'</span> + self.region + key</span><br><span class="line">        self.file = key</span><br><span class="line">        self._checkfile()</span><br><span class="line">        data = json.dumps(&#123;</span><br><span class="line">            <span class="string">'value'</span>: value,</span><br><span class="line">            <span class="string">'time'</span>: time.strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>, time.localtime(time.time())) </span><br><span class="line">        &#125;)</span><br><span class="line">        self._saveLog(data + <span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">file_exists</span><span class="params">(self, filepath)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> os.access(filepath, os.F_OK):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_ensuredir</span><span class="params">(self, filename)</span>:</span></span><br><span class="line">        dirname = os.path.dirname(filename)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(dirname):</span><br><span class="line">            verify_directory(dirname)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_checkfile</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.file_exists(self.file):</span><br><span class="line">            self._ensuredir(self.file)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_save</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        <span class="string">"""覆盖文件内容"""</span></span><br><span class="line">        textfile = open(self.file, <span class="string">'w'</span>)</span><br><span class="line">        textfile.write(str(data))</span><br><span class="line">        textfile.close()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_saveLog</span><span class="params">(self, data)</span>:</span></span><br><span class="line">        <span class="string">"""向文件追加内容"""</span></span><br><span class="line">        textfile = open(self.file, <span class="string">'a'</span>)</span><br><span class="line">        textfile.write(str(data))</span><br><span class="line">        textfile.close()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_read</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.file_exists(self.file):</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line">        textfile = open(self.file, <span class="string">'r'</span>)</span><br><span class="line">        data = textfile.read()</span><br><span class="line">        textfile.close()</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">return</span> json.loads(data)</span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<p><code>line 22</code>，初始化类，这里我用的文件来保存数据，默认保存在目录<code>/tmp/cache/data</code>下面，<strong>需要修改读写权限（我设置的777），不然无法写入</strong>。</p>
+<p><code>line 34~42</code>根据<code>key</code>获取缓存数据，<code>line 39</code>判断是否过期，过期的话返回<code>None</code>。</p>
+<p><code>line 44~52</code>保存数据。<code>expire</code>有效期（秒）</p>
+<p>主要就是这两个函数。然后我根据官方提供的<code>basic.py</code>代码进行改造：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-# </span></span><br><span class="line"><span class="comment"># filename: basic.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> config</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> welCache <span class="keyword">import</span> WelCache</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Basic</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__accessToken = <span class="keyword">None</span></span><br><span class="line">        self.__expiresIn = <span class="number">7200</span></span><br><span class="line">        self.appId = config.wx[<span class="string">'appId'</span>]</span><br><span class="line">        self.appSecret = config.wx[<span class="string">'appSecret'</span>]</span><br><span class="line">        self.__key = <span class="string">'wx_access_token_'</span> + self.appId</span><br><span class="line">        self.cache = WelCache()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__real_get_access_token</span><span class="params">(self)</span>:</span></span><br><span class="line">        postUrl = (<span class="string">"https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=%s&amp;secret=%s"</span> % (self.appId, self.appSecret))</span><br><span class="line">        urlResp = urllib.urlopen(postUrl)</span><br><span class="line">        urlResp = json.loads(urlResp.read())</span><br><span class="line">        self.__accessToken = urlResp[<span class="string">'access_token'</span>]</span><br><span class="line">        self.__expiresIn = urlResp[<span class="string">'expires_in'</span>]</span><br><span class="line"></span><br><span class="line">        self.cache.set(self.__key, self.__accessToken, self.__expiresIn<span class="number">-300</span>)</span><br><span class="line">        <span class="keyword">return</span> self.__accessToken</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_access_token</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.__accessToken = self.cache.get(self.__key)</span><br><span class="line">        <span class="keyword">if</span> self.__accessToken <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            self.__accessToken = self.__real_get_access_token()</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> self.__accessToken</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_expires_in</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__expiresIn</span><br></pre></td></tr></table></figure>
+<p><code>line 16</code>这里我把<code>key</code>设置为<code>wx_access_token_[appid]</code>，保存的路径就为<code>/tmp/cache/data/wx_access_token_[appid]</code></p>
+<p><code>line 17</code>初始化<code>WelCache</code>类。</p>
+<p><code>line 19~27</code>真正获取<code>access_token</code>的地方，也就是刷新。</p>
+<p><code>line 29~34</code>获取<code>access_token</code>，如果不存在<code>access_token</code>就调用<code>__real_get_access_token</code>进行刷新。</p>
+<p><img src="./access-token.png" alt="简易逻辑"></p>
+<p>下面是配置文件，填上自己申请的公众号信息。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="comment"># filename: config.py</span></span><br><span class="line"><span class="comment"># https://martin-thoma.com/configuration-files-in-python/</span></span><br><span class="line"><span class="comment"># https://stackoverflow.com/a/5056829/6279975</span></span><br><span class="line"></span><br><span class="line">wx = &#123;</span><br><span class="line">    <span class="string">'token'</span>: <span class="string">'xxx'</span>,</span><br><span class="line">    <span class="string">'appId'</span>: <span class="string">"xxx"</span>,</span><br><span class="line">    <span class="string">'appSecret'</span>: <span class="string">"xxx"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后在自己的路由管理页面（我是<code>index.py</code>）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding:utf-8</span></span><br><span class="line"><span class="comment"># filename: index.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">wk_dir = os.path.dirname(os.path.realpath(__file__))</span><br><span class="line">sys.path.append(wk_dir)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> web</span><br><span class="line"><span class="keyword">from</span> basic <span class="keyword">import</span> Basic</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Basic().get_access_token()</span><br><span class="line">urls = (</span><br><span class="line">    <span class="string">'/'</span>, <span class="string">'Test'</span></span><br><span class="line">)</span><br><span class="line">application = web.application(urls, globals()).wsgifunc()</span><br></pre></td></tr></table></figure></p>
+<p>最后访问自己网站即可，刷新几次也是同样的<code>access_token</code>，如果要看有效期是否生效，可以保存的时候设置一个几秒的过期时间。</p>
+
+        </div>
+        <i style="color:#AAAAAA;">声明：转载请注明作者及原文链接</i>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://tomfriwel.github.io/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" data-id="cjldiwych004rmhwh7lljmqar" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    
+    
+    
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="/blog/assets/js/md5.js"></script>
+
+
+<script type="text/javascript">
+    (function() {
+        var language = navigator.language || navigator.userLanguage;
+        var path = location.pathname || 'unknown'
+        var id = md5(path);
+        var title = '[blog]' + (document.title || 'unknown')
+
+        var gitalk = new Gitalk({
+            clientID: 'd1eb7e13bdea94d4be23',
+            clientSecret: '91cb6a1282bfd6e8225ee6d1c4b2743f621063ec',
+            repo: 'blog',
+            owner: 'tomfriwel',
+            admin: ['tomfriwel'],
+            id: id,
+            labels: ['blog-comments'],
+            title: title,
+            distractionFreeMode: false,
+            language: language
+        });
+        gitalk.render('gitalk-container');
+    })();
+</script>
+
+
+
+    
+    <section id="comments">
+    
+        
+<div id="gitalk-container"></div>
+<link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="/blog/assets/js/md5.js"></script>
+
+    
+
+    
+    </section>
+
+
+</article>
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/tomfriwel" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/tomfriwel" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="https://www.weibo.com/tomfriwel" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/blog/2018/08/17/vue-router-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">Vue Router 试探</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png)" alt="微信公众号开发指南 - 准备工作" class="thumbnail-image"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/08/28/WeChat-public-account-development-guide-Preparation/" class="title">微信公众号开发指南 - 准备工作</a></p>
+                            <p class="item-date"><time datetime="2018-08-27T16:00:00.000Z" itemprop="datePublished">2018-08-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/08/17/vue-router-tutorial/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2018/08/17/vue-router-tutorial/2.png)" alt="Vue Router 试探" class="thumbnail-image"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/08/17/vue-router-tutorial/" class="title">Vue Router 试探</a></p>
+                            <p class="item-date"><time datetime="2018-08-17T08:40:28.000Z" itemprop="datePublished">2018-08-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/08/16/Painting-record-2018-8-16/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2018/08/16/Painting-record-2018-8-16/3.jpg)" alt="Painting record 2018 8 16" class="thumbnail-image"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/08/16/Painting-record-2018-8-16/" class="title">Painting record 2018 8 16</a></p>
+                            <p class="item-date"><time datetime="2018-08-16T06:04:57.000Z" itemprop="datePublished">2018-08-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/08/16/About-the-inspiration-of-creation-and-time-management/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2018/08/16/Painting-record-2018-8-16/2.jpg)" alt="关于创作的感悟和时间管理" class="thumbnail-image"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/08/16/About-the-inspiration-of-creation-and-time-management/" class="title">关于创作的感悟和时间管理</a></p>
+                            <p class="item-date"><time datetime="2018-08-16T05:41:31.000Z" itemprop="datePublished">2018-08-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/08/14/ubuntu-apache-config-webpy/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/2018/08/14/ubuntu-apache-config-webpy/ubuntu-apache-config-webpy-0.png)" alt="Python网络框架web.py配置" class="thumbnail-image"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/08/14/ubuntu-apache-config-webpy/" class="title">Python网络框架web.py配置</a></p>
+                            <p class="item-date"><time datetime="2018-08-14T09:09:51.000Z" itemprop="datePublished">2018-08-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">八月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/06/">六月 2018</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">五月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">四月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">三月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Apache/">Apache</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Game/">Game</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Mysql/">Mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Research/">Research</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Router/">Router</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Vue/">Vue</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/english/">english</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/image-recognition/">image recognition</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/machine-learning/">machine learning</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webpy/">webpy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/后端/">后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/基础知识/">基础知识</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/开源项目/">开源项目</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/微信小程序/">微信小程序</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/微信开发/">微信开发</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/思考/">思考</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/电影/">电影</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/目标/">目标</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/线性代数/">线性代数</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/练习/">练习</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/绘画/">绘画</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/记录/">记录</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/读书/">读书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/阅读/">阅读</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/阅读笔记/">阅读笔记</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/blog/tags/Apache/" style="font-size: 12px;">Apache</a> <a href="/blog/tags/Game/" style="font-size: 10px;">Game</a> <a href="/blog/tags/Github/" style="font-size: 10px;">Github</a> <a href="/blog/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/blog/tags/Python/" style="font-size: 12px;">Python</a> <a href="/blog/tags/Research/" style="font-size: 10px;">Research</a> <a href="/blog/tags/Router/" style="font-size: 10px;">Router</a> <a href="/blog/tags/Ubuntu/" style="font-size: 12px;">Ubuntu</a> <a href="/blog/tags/Vue/" style="font-size: 12px;">Vue</a> <a href="/blog/tags/english/" style="font-size: 10px;">english</a> <a href="/blog/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/blog/tags/image-recognition/" style="font-size: 10px;">image recognition</a> <a href="/blog/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/blog/tags/webpy/" style="font-size: 10px;">webpy</a> <a href="/blog/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog/tags/基础知识/" style="font-size: 14px;">基础知识</a> <a href="/blog/tags/开源项目/" style="font-size: 12px;">开源项目</a> <a href="/blog/tags/微信小程序/" style="font-size: 18px;">微信小程序</a> <a href="/blog/tags/微信开发/" style="font-size: 10px;">微信开发</a> <a href="/blog/tags/思考/" style="font-size: 20px;">思考</a> <a href="/blog/tags/电影/" style="font-size: 10px;">电影</a> <a href="/blog/tags/目标/" style="font-size: 10px;">目标</a> <a href="/blog/tags/线性代数/" style="font-size: 14px;">线性代数</a> <a href="/blog/tags/练习/" style="font-size: 16px;">练习</a> <a href="/blog/tags/绘画/" style="font-size: 18px;">绘画</a> <a href="/blog/tags/记录/" style="font-size: 18px;">记录</a> <a href="/blog/tags/读书/" style="font-size: 10px;">读书</a> <a href="/blog/tags/阅读/" style="font-size: 10px;">阅读</a> <a href="/blog/tags/阅读笔记/" style="font-size: 10px;">阅读笔记</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://www.tomfriwel.com">tomfriwel</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/blog/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 tomfriwel</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+        <script src="/blog/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/blog/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/blog/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/blog/js/main.js"></script>
+
+    </div>
+</body>
+</html>
