@@ -1,6 +1,7 @@
 ---
 title: 微信公众号开发指南 - 准备工作
 date: 2018-08-28
+thumbnail: /blog/2018/08/28/WeChat-public-account-development-guide-Preparation/cover.png
 tags:
     - 微信开发
 ---
@@ -237,6 +238,8 @@ class Basic:
 `line 19~27`真正获取`access_token`的地方，也就是刷新。
 
 `line 29~34`获取`access_token`，如果不存在`access_token`就调用`__real_get_access_token`进行刷新。
+
+![简易逻辑](./access-token.png)
 
 下面是配置文件，填上自己申请的公众号信息。
 
