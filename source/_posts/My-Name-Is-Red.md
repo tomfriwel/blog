@@ -4,7 +4,7 @@ date: 2018-06-14 20:29:38
 create: 2018-06-02 20:29:38
 thumbnail: /blog/2018/06/14/My-Name-Is-Red/cover.png
 tags:
-    - 读书
+    - 阅读
     - 阅读笔记
 ---
 
