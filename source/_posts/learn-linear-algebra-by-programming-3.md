@@ -262,7 +262,7 @@ Det.prototype.multiply = function (n, k, isRow = true) {
     let len = this.length
 
     if (isRow) {
-        for (i = 0; i < len; i++) {
+        for (let i = 0; i < len; i++) {
             newArr[n][i] *= k
         }
     } else {
