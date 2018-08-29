@@ -360,6 +360,8 @@ let det3 = new Det([
 det3.calc() //44
 ```
 
+#### 性质6：把行列式的某一行（列）的各元素乘以同一个倍数加到另一行（列）对应的元素上去，行列式不变。
+
 ### 代码
 
 - [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)
