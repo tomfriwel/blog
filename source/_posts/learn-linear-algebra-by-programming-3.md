@@ -362,6 +362,51 @@ det3.calc() //44
 
 #### 性质6：把行列式的某一行（列）的各元素乘以同一个倍数加到另一行（列）对应的元素上去，行列式不变。
 
+在`Det`类上添加方法
+```js
+// 性质6：把行列式的某一行（列）的各元素乘以同一个倍数加到另一行（列）对应的元素上去，行列式不变。
+/**
+    * 
+    * @param {Number} n0 行/列
+    * @param {Number} n1 行/列
+    * @param {Number} k 行列式的 n0(行/列) + n1(行/列)*k
+    * @param {Boolean} isRow
+    */
+Det.prototype.plusLine = function (n0, n1, k, isRow=true) {
+    let newArr = JSON.parse(JSON.stringify(this.array))
+    let len = this.length
+
+    if (isRow) {
+        for (let i = 0; i < len; i++) {
+            newArr[n0][i] += newArr[n1][i] * k
+        }
+    } else {
+        for (let i = 0; i < len; i++) {
+            newArr[i][n0] += newArr[i][n1] * k
+        }
+    }
+
+    return new Det(newArr)
+}
+```
+
+验证：
+```js
+// 性质6
+let det = new Det([
+    [1, 1, 2, 1],
+    [1, -3, 5, 3],
+    [0, 2, 2, 2],
+    [1, 2, -4, 4]
+])
+det.calc()  //-112
+
+// 第1列每行对应元素加上第4列每行对应元素乘3
+let det1 = det.plusLine(0, 3, 3, false)
+det1.calc()  //-112
+```
+
+
 ### 代码
 
 - [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)
