@@ -5,7 +5,7 @@ thumbnail: /blog/assets/images/linear-algebra/cover.png
 tags:
   - 基础知识
   - 线性代数
-date: 2018-07-29 17:29:00
+date: 2018-08-29 17:29:00
 ---
 
 
@@ -361,6 +361,9 @@ det3.calc() //44
 ```
 
 #### 性质6：把行列式的某一行（列）的各元素乘以同一个倍数加到另一行（列）对应的元素上去，行列式不变。
+
+![性质6](./linear-3-4.png)
+
 
 在`Det`类上添加方法
 ```js
