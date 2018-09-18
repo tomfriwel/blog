@@ -1,9 +1,11 @@
 ---
 title: 微信小程序日历(含农历)
 date: 2018-09-12 12:42:34
+thumbnail: /blog/2018/09/12/WeChat-miniapp-calendar-including-lunar-calendar/welcalendar-cover.png
 tags:
     - 微信小程序
     - 前端
+    - 开源项目
 ---
 
 # welCalendar
