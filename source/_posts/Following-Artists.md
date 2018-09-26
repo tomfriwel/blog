@@ -6,11 +6,9 @@ tags:
     - Painting
 ---
 
-#### 寺田克也
+### 寺田克也
 
-
-
-#### 金政基 Kim Jung Gi
+### 金政基 Kim Jung Gi
 
 [Home Page](https://www.kimjunggius.com)
 
@@ -25,3 +23,6 @@ He has the ability to visualize the drawing before making his marks.  With menta
  
 
 Since 2007, he has published three Sketchbooks which contain more than 2,200 pages of his monumental art work.
+
+
+### 诺阿·布拉德利（Noah Bradley）
