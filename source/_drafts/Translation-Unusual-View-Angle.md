@@ -28,10 +28,14 @@ There are often many possibilities to choose a more compelling view angle than t
 
 ![Picture 1. A low view angle can be used to create interesting views.](./p1.jpg)
 
-### Low View Angle Composition
+### 低视角构图
 
 Picture 2 is taken from the ground level. The subject is left in the distance on purpose. The desired story is to tell that people are alone in the middle of nowhere. The placement of the people where chosen by using the rule of thirds. Additionally, many lines of the photo lead the eye to the subject, which enhances the composition. The low view angle ensures that the photo is something different than many other snapshots of the same situation.
 
+图2是从地面拍摄的。主题被故意留在远处。理想的故事是告诉人们在不知名的地方独处。通过使用三分法则选择人员的位置。另外，照片的许多行引导眼睛到主体，这增强了构图。低视角确保照片与同一情况下的许多其他快照不同。
+
 The example photos on this page are both taken from a low angle of view. That is only one way of creating unusual angle of view. It's worth it to also try high view angle or any other view angle that is something different than what everybody sees.
+
+此页面上的示例照片都是从低视角拍摄的。 这只是创造不寻常视角的一种方式。 值得尝试高视角或任何其他视角，这与每个人看到的不同。
 
 ![Picture 2. The low angle of view ensures that the photo is something out of the ordinary.](./p2.jpg)
