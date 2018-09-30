@@ -1,15 +1,15 @@
 ---
 title: '[翻译]构图的忌讳'
+thumbnail: /blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/p1.jpg
 tags:
   - 翻译
   - 摄影
 date: 2018-09-30 13:44:12
 ---
 
-
 原文：[Things to Avoid in Composition](http://www.secondpicture.com/tutorials/photography/things_to_avoid_in_picture_composition.html)
 
-翻译方式：通过谷歌翻译后，做了一些更改和优化。
+翻译方式：通过谷歌翻译后，做了一些更改和优化。如果在翻译文中有更好的建议可以告诉我。很喜欢这种以实际图片来解释相关技巧的文章，让我这种没有接受过专业摄影教育的人来说非常直观，易于理解。
 
 ---
 
