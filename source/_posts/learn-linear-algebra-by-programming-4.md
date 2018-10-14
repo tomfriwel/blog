@@ -84,6 +84,50 @@ let a0 = -2 * Math.pow(-1, 2 + 2) * c2.calc() //-2 * (-148)
 console.log(a0) //296
 ```
 
+### 行列式按行（列）展开法则
+
+**定理** 行列式等于它的任一行（列）的各元素与其对应的代数余子式乘积之和，即：
+![](./equation1.png)
+
+在`Det`对象上添加通过`代数余子式`来计算行列式的值的方法`calcViaComplement`:
+```js
+/**
+  * 通过代数余子式来计算行列式的值
+  * 
+  * @param {Number} i 行
+  */
+Det.prototype.calcViaComplement = function (i=0) {
+    let len = this.length
+    if (!(i < len)) {
+        throw ('行标或列标超出范围: 0~'+(len-1))
+    }
+    let sum = 0
+    for (let k = 0; k < len; k++) {
+        let tempDet = this.complementMinor(i, k)
+        sum += tempDet.calc() * Math.pow(-1, k + i) * this.array[i][k]
+    }
+
+    return sum
+}
+```
+这里默认以行来计算，默认第0行，可以通过计算不同行来验证：
+```js
+let det1 = new Det([
+    [1, 3, 2, 5],
+    [5, -3, -1, 3],
+    [0, 0, -2, 0],
+    [-5, 2, 0, 4]
+])
+let res0 = det1.calc()
+let res1 = det1.calcViaComplement(0)
+let res2 = det1.calcViaComplement(2)
+
+console.log('res0=' + res0) //296
+console.log('res1=' + res1) //296
+console.log('res2=' + res2) //296
+```
+
+
 ### 代码
 
 - [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)

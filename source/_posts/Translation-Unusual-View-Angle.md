@@ -20,4 +20,4 @@ A view angle can be used to create compelling composition to a photo. By choosin
 
 You often see photos of famous sights that are photographed from the eye level and straight from in front of the sight. Many photos are taken from the most natural location and view angle which is of course logical. However, it means that many photos taken by different people from the same sight might look somewhat similar. That can be boring because the view in the photos is something that everybody sees while walking by the sight. The appeal of a photo can often be increased by choosing an unusual view angle instead of the natural one.
 
-您经常会看到一些著名景点的照片，它们通常是从景点的正前方以从水平视角直接拍摄的。许多照片都是从最自然的位置和视角拍摄的，这当然是合乎逻辑的。 然而，这意味着不同人从同一视线拍摄的许多照片可能看起来有些相似。 这可能很无聊，因为照片中的视图是每个人在视线旁边看到的东西。 通常可以通过选择不寻常的视角而不是自然视角来增加照片的吸引力。
+您经常会看到一些著名景点的照片，它们通常是从景点的正前方以从水平视角直接拍摄的。许多照片都是从最自然的位置和视角拍摄的，这当然是合乎逻辑的。 然而，这意味着不同人从同一视线拍摄的许多照片可能看起来有些相似。这会很无聊，因为照片中的景象是每个人在走过景点的时候都会看到的东西。所以我们通常可以通过选择不寻常的视角来增加照片的吸引力，而不是以最常见、每个人都会看到的角度。
