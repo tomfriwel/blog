@@ -8,6 +8,64 @@ tags:
 date: 2018-09-07 10:07:17
 ---
 
+
+***余子式***：将`aij`所在的行和列划去后，剩下的元素组成的行列式，记作`Mij`。(`i, j`为下标)
+
+***代数余子式***：`Aij = (-1)^(i+j) * Mij`
+
+行列式每一项都对应一个余子式和代数余子式，因为`i, j`可以唯一确定一个元素。
+
+求`i`行`j`列的余子式：
+```js
+/**
+  * 余子式
+  * 
+  * @param {Number} i 行
+  * @param {Number} j 列
+  */
+Det.prototype.complementMinor = function (i, j) {
+    let len = this.length
+    if (!(i < len && j < len)) {
+        throw ('行标或列标超出范围: 0~'+(len-1))
+    }
+    let detArr = JSON.parse(JSON.stringify(this.array))
+    let newArr = []
+    for (let k = 0; k < len; k++) {
+        if (i != k) {
+            let temp = detArr[k]
+            temp.splice(j, 1)
+            newArr.push(temp)
+        }
+    }
+
+    return new Det(newArr)
+}
+```
+
+`line 15~19` 如果`k`等于`i`就跳过（同一行），如果不是，那就移除该行的第`j`个元素，并添加到新数组中。最后生成`Det`对象。
+
+测试：
+```js
+let det = new Det([
+    [1, 1, 2, 1],
+    [1, -3, 5, 3],
+    [0, 2, 2, 2],
+    [1, 2, -4, 4]
+])
+let c0 = det.complementMinor(0, 0)
+// 输出
+// [-3, 5, 3]
+// [2, 2, 2]
+// [2, -4, 4]
+
+let c1 = det.complementMinor(3, 2)
+// 输出
+// [1, 1, 1]
+// [1, -3, 3]
+// [0, 2, 2]
+
+```
+
 ### 代码
 
 - [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)
