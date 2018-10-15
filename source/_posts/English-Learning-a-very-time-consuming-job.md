@@ -34,3 +34,5 @@ I can fix the problems by doing a apt-get remove && apt-get install for every pa
 #### Example
 
 I can fix the problems caused by the bug but this is a very time consuming job.
+
+He want to finish the fantasy novel, his friend told him that is a very time consuming procedure.
