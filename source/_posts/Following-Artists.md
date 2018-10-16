@@ -4,6 +4,7 @@ date: 2018-09-18 10:38:51
 tags:
     - Drawing
     - Painting
+    - Art
 ---
 
 #### 寺田克也
@@ -26,3 +27,10 @@ Since 2007, he has published three Sketchbooks which contain more than 2,200 pag
 
 
 #### 诺阿·布拉德利（Noah Bradley）
+
+
+#### ERAK NOTE
+
+[ERAK NOTE Home Page](https://blog.naver.com/blooda)
+
+![](./eraknote0.jpg)
