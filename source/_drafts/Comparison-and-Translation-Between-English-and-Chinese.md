@@ -97,6 +97,10 @@ re-    reuse(再利用)    re-route(变更旅程)
 -ation    legislation(立法)    inflation(通货膨胀)
 
 -ee    employee(雇员)    referee(裁判)    nominee(被提名人)    trustee(受托人，保管人)
+
+-ness    awareness(意识)    cost-effectiveness(成本效率)
+
+-philia    Anglophilia(亲英)    Americophilia(亲美)
 ```
 
 5 percent; a higher percentage
