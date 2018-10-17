@@ -34,3 +34,10 @@ Since 2007, he has published three Sketchbooks which contain more than 2,200 pag
 [ERAK NOTE Home Page](https://blog.naver.com/blooda)
 
 ![](./eraknote0.jpg)
+
+
+#### yasahime @JasminDarnell
+
+[JasminDarnell](https://www.jasmindarnell.com)
+
+[Deviantart yasa-hime](https://www.deviantart.com/yasa-hime)
