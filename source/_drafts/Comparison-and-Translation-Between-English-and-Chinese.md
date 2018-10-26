@@ -2,6 +2,7 @@
 title: Comparison and Translation Between English and Chinese
 tags:
     - English
+    - Learning
 ---
 
 ### Chapter 1
