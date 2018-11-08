@@ -112,6 +112,8 @@ https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID
 ```
 参数为`grant_type`、`appid`和`secret`，具体信息可查看官方文档。
 
+![accessToken处理示意图](./1.png)
+
 代码：
 设置`cache`和相关信息：
 ```php
@@ -154,3 +156,9 @@ private function getAccessToken() {
     return $accessToken;
 }
 ```
+
+#### 参考
+
+- [官方文档：上传卡券图片素材](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1451025056)
+- [官方文档：获取access_token](https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140183)
+- [PHP通过CURL上传图片（微信公众号上传素材）](https://blog.csdn.net/lei8308/article/details/79505260?utm_source=blogxgwz0)
