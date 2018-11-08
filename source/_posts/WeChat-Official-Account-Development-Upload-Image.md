@@ -1,6 +1,7 @@
 ---
 title: 微信公众号开发之上传图片（附AccessToken获取和处理）
 date: 2018-11-08 11:28:33
+thumbnail: /blog/assets/images/official-account/cover.png
 tags:
     - 微信小程序
     - 前端
