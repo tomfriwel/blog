@@ -18,7 +18,7 @@
 <meta property="og:description" content="余子式：将aij所在的行和列划去后，剩下的元素组成的行列式，记作Mij。(i, j为下标) 代数余子式：Aij = Math.pow(-1, i+j) * Mij 行列式每一项都对应一个余子式和代数余子式，因为i, j可以唯一确定一个元素。 求i行j列的余子式：1234567891011121314151617181920212223/**  * 余子式  *   * @param &amp;#123;N">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://tomfriwel.github.io/blog/assets/images/linear-algebra/cover.png">
-<meta property="og:updated_time" content="2018-10-14T09:59:30.162Z">
+<meta property="og:updated_time" content="2018-11-14T02:39:18.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过编程来学习线性代数4-行列式按行(列)展开">
 <meta name="twitter:description" content="余子式：将aij所在的行和列划去后，剩下的元素组成的行列式，记作Mij。(i, j为下标) 代数余子式：Aij = Math.pow(-1, i+j) * Mij 行列式每一项都对应一个余子式和代数余子式，因为i, j可以唯一确定一个元素。 求i行j列的余子式：1234567891011121314151617181920212223/**  * 余子式  *   * @param &amp;#123;N">
@@ -174,16 +174,19 @@
 <p>引理：一个<code>n</code>阶行列式，如果其中第<code>i</code>行所有元素除<code>aij</code>外都为零，那么这行列式等于<code>aij</code>与它的代数余子式的乘积，即<code>D=aijAij</code></p>
 <p><img src="./equation0.png" alt=""></p>
 <p>测试：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> det1 = <span class="keyword">new</span> Det([</span><br><span class="line">    [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>],</span><br><span class="line">    [<span class="number">5</span>, <span class="number">-3</span>, <span class="number">-1</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">0</span>, <span class="number">-2</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">-5</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">4</span>]</span><br><span class="line">])</span><br><span class="line">det1.calc() <span class="comment">//296</span></span><br><span class="line"><span class="keyword">let</span> c2 = det1.complementMinor(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">let</span> a0 = <span class="number">-2</span> * <span class="built_in">Math</span>.pow(<span class="number">-1</span>, <span class="number">2</span> + <span class="number">2</span>) * c2.calc() <span class="comment">//-2 * (-148)</span></span><br><span class="line"><span class="built_in">console</span>.log(a0) <span class="comment">//296</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="行列式按行（列）展开法则"><a href="#行列式按行（列）展开法则" class="headerlink" title="行列式按行（列）展开法则"></a>行列式按行（列）展开法则</h3><p><strong><em>定理3</em></strong> 行列式等于它的任一行（列）的各元素与其对应的代数余子式乘积之和，即：<br><img src="./equation1.png" alt=""></p>
+<p>这里<code>(2, 2)</code>即3行3列的<code>-2</code>，该行除<code>(2, 2)</code>外其余都为零，根据上面的引理，行列式的值为<code>-2 * 代数余子式</code></p>
+<h4 id="行列式按行（列）展开法则"><a href="#行列式按行（列）展开法则" class="headerlink" title="行列式按行（列）展开法则"></a>行列式按行（列）展开法则</h4><p><strong><em>定理3</em></strong> 行列式等于它的任一行（列）的各元素与其对应的代数余子式乘积之和，即：<br><img src="./equation1.png" alt=""></p>
+<p>根据<code>性质5</code>，若行列式的某一行（列）的元素都是两个数之和，则可以将其拆分开来：</p>
+<p><img src="./e3.png" alt=""></p>
 <p>在<code>Det</code>对象上添加通过<code>代数余子式</code>来计算行列式的值的方法<code>calcViaComplement</code>:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 通过代数余子式来计算行列式的值</span></span><br><span class="line"><span class="comment">  * </span></span><br><span class="line"><span class="comment">  * @param &#123;Number&#125; i 行</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">Det.prototype.calcViaComplement = <span class="function"><span class="keyword">function</span> (<span class="params">i=<span class="number">0</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> len = <span class="keyword">this</span>.length</span><br><span class="line">    <span class="keyword">if</span> (!(i &lt; len)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> (<span class="string">'行标或列标超出范围: 0~'</span>+(len<span class="number">-1</span>))</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; len; k++) &#123;</span><br><span class="line">        <span class="keyword">let</span> tempDet = <span class="keyword">this</span>.complementMinor(i, k)</span><br><span class="line">        sum += tempDet.calc() * <span class="built_in">Math</span>.pow(<span class="number">-1</span>, k + i) * <span class="keyword">this</span>.array[i][k]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>这里默认以行来计算，默认第0行，可以通过计算不同行来验证：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> det1 = <span class="keyword">new</span> Det([</span><br><span class="line">    [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">5</span>],</span><br><span class="line">    [<span class="number">5</span>, <span class="number">-3</span>, <span class="number">-1</span>, <span class="number">3</span>],</span><br><span class="line">    [<span class="number">0</span>, <span class="number">0</span>, <span class="number">-2</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">-5</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">4</span>]</span><br><span class="line">])</span><br><span class="line"><span class="keyword">let</span> res0 = det1.calc()</span><br><span class="line"><span class="keyword">let</span> res1 = det1.calcViaComplement(<span class="number">0</span>)</span><br><span class="line"><span class="keyword">let</span> res2 = det1.calcViaComplement(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'res0='</span> + res0) <span class="comment">//296</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'res1='</span> + res1) <span class="comment">//296</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'res2='</span> + res2) <span class="comment">//296</span></span><br></pre></td></tr></table></figure></p>
 <p><strong><em>推论</em></strong> 行列式任一行（列）的元素与另一行（列）的对应元素的代数余子式乘积之和等于零。</p>
 <p><img src="./equation2.png" alt=""></p>
 <p>相当于用<code>j</code>行替换掉第<code>i</code>行，此时有两行的对应列元素都相等，根据<code>性质4：行列式中如果有两行（列）元素成比例，则此行列式为零</code>，其结果为零。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><ul>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><ul>
 <li><a href="https://github.com/tomfriwel/linearAlgebraPro" target="_blank" rel="noopener">tomfriwel/linearAlgebraPro</a></li>
 </ul>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
 <li><a href="https://wenku.baidu.com/view/e3efed47fe4733687e21aafd?pn=51" target="_blank" rel="noopener">线性代数-同济大学(第五版)课件 [完整版]</a></li>
 </ul>
 
@@ -194,7 +197,7 @@
 
 
 
-    <a data-url="https://tomfriwel.github.io/blog/2018/10/14/learn-linear-algebra-by-programming-4/" data-id="cjo9czrfn0039jqwh3y5hl706" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://tomfriwel.github.io/blog/2018/10/14/learn-linear-algebra-by-programming-4/" data-id="cjogy2d9b003fsvomz6ro3gxk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -355,9 +358,9 @@
     </a>
     
     
-        <a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">[翻译]不同寻常的拍摄角度(更新中)</p>
+        <p class="article-nav-title">[翻译]构图的忌讳</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -416,26 +419,6 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    <!--  -->
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="title">[翻译]不同寻常的拍摄角度(更新中)</a></p>
-                            <p class="item-date"><time datetime="2018-09-30T05:44:12.000Z" itemprop="datePublished">2018-09-30</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" class="thumbnail">
     
     
@@ -449,6 +432,26 @@
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" class="title">[翻译]构图的忌讳</a></p>
+                            <p class="item-date"><time datetime="2018-09-30T05:44:12.000Z" itemprop="datePublished">2018-09-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    <!--  -->
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="title">[翻译]不同寻常的拍摄角度(更新中)</a></p>
                             <p class="item-date"><time datetime="2018-09-30T05:44:12.000Z" itemprop="datePublished">2018-09-30</time></p>
                         </div>
                     </li>
