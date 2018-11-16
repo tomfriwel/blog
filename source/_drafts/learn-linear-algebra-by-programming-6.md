@@ -1,5 +1,5 @@
 ---
-title: 通过编程来学习线性代数6-矩阵
+title: 通过编程来学习线性代数6-矩阵的运算
 comments: true
 thumbnail: /blog/assets/images/linear-algebra/cover.png
 tags:
@@ -107,6 +107,8 @@ mat0.add(mat2); //error
 
 数`λ`与矩阵`A`相乘，即矩阵的每一项都乘以数`λ`。
 
+满足`结合律`和`分配律`。
+
 ```js
 static multiplyNumber(mat, n) {
     let newArray = new Array(mat.columnLength);
@@ -134,3 +136,7 @@ static multiplyNumber(mat, n) {
     // 0: (3) [2, 4, 6]
     // 1: (3) [4, 2, 6]
 ```
+
+矩阵相加与数乘矩阵合起来，统称为`矩阵的线性运算`。
+
+#### 矩阵与矩阵相乘
