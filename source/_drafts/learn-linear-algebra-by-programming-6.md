@@ -22,8 +22,8 @@ class Mat {
     constructor(array) {
         console.log(array);
         this.array = array;
-        this.rowLength = array[0].length;
-        this.columnLength = array.length;
+        this.rowLength = array.length;
+        this.colLength = array[0].length;
     }
 
     print() {
@@ -32,16 +32,16 @@ class Mat {
 
     // add operation
     static add(mat0, mat1) {
-        if (mat0.rowLength != mat1.rowLength && mat0.columnLength != mat1.columnLength) {
+        if (mat0.rowLength != mat1.rowLength && mat0.colLength != mat1.colLength) {
             throw new Error("只有同型矩阵才能进行加法运算");
         }
 
-        let newArray = new Array(mat0.columnLength);
-        for (let i = 0; i < mat0.columnLength; i++) {
+        let newArray = new Array(mat0.rowLength);
+        for (let i = 0; i < mat0.rowLength; i++) {
             if(!newArray[i]) {
-                newArray[i] = new Array(mat0.rowLength);
+                newArray[i] = new Array(mat0.colLength);
             }
-            for (let j = 0; j < mat0.rowLength; j++) {
+            for (let j = 0; j < mat0.colLength; j++) {
                 newArray[i][j] = mat0.array[i][j] + mat1.array[i][j];
             }
         }
@@ -51,16 +51,16 @@ class Mat {
 
     // subtract operation
     static subtract(mat0, mat1) {
-        if (mat0.rowLength != mat1.rowLength && mat0.columnLength != mat1.columnLength) {
+        if (mat0.rowLength != mat1.rowLength && mat0.colLength != mat1.colLength) {
             throw new Error("只有同型矩阵才能进行加法运算");
         }
 
-        let newArray = new Array(mat0.columnLength);
-        for (let i = 0; i < mat0.columnLength; i++) {
+        let newArray = new Array(mat0.rowLength);
+        for (let i = 0; i < mat0.rowLength; i++) {
             if(!newArray[i]) {
-                newArray[i] = new Array(mat0.rowLength);
+                newArray[i] = new Array(mat0.colLength);
             }
-            for (let j = 0; j < mat0.rowLength; j++) {
+            for (let j = 0; j < mat0.colLength; j++) {
                 newArray[i][j] = mat0.array[i][j] - mat1.array[i][j];
             }
         }
@@ -69,11 +69,11 @@ class Mat {
     }
 
     add(mat) {
-        return Mat.add(this, mat)
+        return Mat.add(this, mat);
     }
 
     subtract(mat) {
-        return Mat.subtract(this, mat)
+        return Mat.subtract(this, mat);
     }
 }
 ```
@@ -110,19 +110,19 @@ mat0.add(mat2); //error
 满足`结合律`和`分配律`。
 
 ```js
-static multiplyNumber(mat, n) {
-    let newArray = new Array(mat.columnLength);
-    for (let i = 0; i < mat.columnLength; i++) {
-        if(!newArray[i]) {
-            newArray[i] = new Array(mat.rowLength);
+    static multiplyNumber(mat, n) {
+        let newArray = new Array(mat.rowLength);
+        for (let i = 0; i < mat.rowLength; i++) {
+            if(!newArray[i]) {
+                newArray[i] = new Array(mat.colLength);
+            }
+            for (let j = 0; j < mat.colLength; j++) {
+                newArray[i][j] = mat.array[i][j] * n;
+            }
         }
-        for (let j = 0; j < mat.rowLength; j++) {
-            newArray[i][j] = mat.array[i][j] * n;
-        }
-    }
 
-    return new Mat(newArray);
-}
+        return new Mat(newArray);
+    }
 ```
 
 验证：
@@ -140,3 +140,52 @@ static multiplyNumber(mat, n) {
 矩阵相加与数乘矩阵合起来，统称为`矩阵的线性运算`。
 
 #### 矩阵与矩阵相乘
+
+![定义](./e1.png)
+
+```js
+    static multiply(mat0, mat1) {
+        if (mat0.colLength != mat1.rowLength) {
+            throw new Error(`mat0(${mat0.rowLength}*${mat0.colLength})的列数不等于mat1(${mat1.rowLength}*${mat1.colLength})的行数，无法进行相乘运算`);
+        }
+
+        let newRowLength = mat0.rowLength;
+        let newColLength = mat1.colLength;
+        let len = mat0.colLength;
+
+        let newArray = new Array(newRowLength);
+        for (let i = 0; i < newRowLength; i++) {
+            if(!newArray[i]) {
+                newArray[i] = new Array(newColLength);
+            }
+            for (let j = 0; j < newColLength; j++) {
+                newArray[i][j] = 0;
+                for (let k = 0; k < len; k++) {
+                    newArray[i][j] += mat0.array[i][k] * mat1.array[k][j];
+                }
+            }
+        }
+
+        return new Mat(newArray);
+    }
+```
+
+测试：
+```js
+// ---矩阵相乘
+let a = new Mat([
+    [1, 0, -1, 2],
+    [-1, 1, 3, 0],
+    [0, 5, -1, 4],
+]);
+let b = new Mat([
+    [0, 3, 4],
+    [1, 2, 1],
+    [3, 1, -1],
+    [-1, 2, 1],
+]);
+Mat.multiply(a, b);
+// 0: (3) [-5, 6, 7]
+// 1: (3) [10, 2, -6]
+// 2: (3) [-2, 17, 10]
+```
