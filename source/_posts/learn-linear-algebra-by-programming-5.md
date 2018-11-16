@@ -1,13 +1,14 @@
 ---
-layout: post
-title:  "通过编程来学习线性代数5-克拉默法则"
-date: '2018-11-14 22:31:00'
+title: 通过编程来学习线性代数5-克拉默法则
 comments: true
 thumbnail: /blog/assets/images/linear-algebra/cover.png
 tag:
-    - 基础知识
-    - 线性代数
+  - 基础知识
+  - 线性代数
+date: 2018-11-14 22:31:00
+tags:
 ---
+
 下面基本上都是PPT中的内容。
 
 如果线性方程组的系数行列式不等于零，那么线性方程组有解并且解是唯一的：
@@ -42,3 +43,11 @@ tag:
 **定理5** 如果齐次线性方程组的系数行列式 `D!=0`，则其只有零解，没有非零解。
 
 **定理5'** 如果齐次线性方程组有非零解，则其系数行列式比为零。
+
+#### 代码
+
+- [tomfriwel/linearAlgebraPro](https://github.com/tomfriwel/linearAlgebraPro)
+
+#### 参考
+
+- [线性代数-同济大学(第五版)课件 [完整版]](https://wenku.baidu.com/view/e3efed47fe4733687e21aafd?pn=51)
