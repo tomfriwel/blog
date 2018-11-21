@@ -189,3 +189,72 @@ Mat.multiply(a, b);
 // 1: (3) [10, 2, -6]
 // 2: (3) [-2, 17, 10]
 ```
+
+1. 矩阵乘法不一定满足交换律
+2. 矩阵`A!=O, B!=0`， 但有`AB=O`，所以不能从`AB=O`得出`A=O`或者`B=O`
+
+矩阵乘法的运算规律：
+1. 乘法结合律 `(AB)C = A(BC)`
+2. 数乘和乘法的结合律 `λ(AB) = (λA)B`，其中`λ`是数
+3. 乘法对加法的分配率 `A(B + C) = AB + AC, (B + C)A = BA + CA`
+4. 单位矩阵在矩阵乘法中的作用类似于数1，即：`E_m * A_mxn =  A_mxn * E_n = A`
+5. 矩阵的幂 矩阵为方阵
+
+#### 矩阵的转置
+
+定义跟行列式转置差不多，`A`右上角有个`T`，叫做`A`的转置矩阵
+
+给`Mat`类添加转置方法：
+```js
+//获取转置矩阵
+static getTransposedMat(mat) {
+    let rlen = mat.rowLength;
+    let clen = mat.colLength;
+    let newArr = new Array(clen);
+
+    for (let i = 0; i < clen; i++) {
+        if (!newArr[i]) {
+            newArr[i] = new Array(rlen);
+        }
+        for (let j = 0; j < rlen; j++) {
+            newArr[i][j] = mat.array[j][i];
+        }
+    }
+    return new Mat(newArr)
+}
+
+//获取转置矩阵
+getTransposedMat () {
+    return Mat.getTransposedMat(this);
+}
+```
+
+测试：
+```js
+let b = new Mat([
+    [0, 3, 4],
+    [1, 2, 1],
+    [3, 1, -1],
+    [-1, 2, 1],
+]);
+let bt = b.getTransposedMat();
+// 0: (4) [0, 1, 3, -1]
+// 1: (4) [3, 2, 1, 2]
+// 2: (4) [4, 1, -1, 1]
+```
+
+**转置矩阵的运算性质1**：`A`的转置矩阵再转置变回`A`
+```js
+bt.getTransposedMat();
+// 0: (3) [0, 3, 4]
+// 1: (3) [1, 2, 1]
+// 2: (3) [3, 1, -1]
+// 3: (3) [-1, 2, 1]
+```
+
+**转置矩阵的运算性质2**：`A+B`的转置等于`A`的转置加上`B`的转置
+
+测试：
+```js
+
+```
