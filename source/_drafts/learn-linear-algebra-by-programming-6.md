@@ -256,5 +256,87 @@ bt.getTransposedMat();
 
 测试：
 ```js
+let a = new Mat([
+    [1, 0, -1],
+    [-1, 1, 3],
+    [0, 5, -1],
+    [0, 5, -1],
+]);
 
+let b = new Mat([
+    [0, 3, 4],
+    [1, 2, 1],
+    [3, 1, -1],
+    [-1, 2, 1],
+]);
+
+//A+B的转置
+let ab = Mat.add(a, b);
+ab.getTransposedMat();
+// 0: (4) [1, 0, 3, -1]
+// 1: (4) [3, 3, 6, 7]
+// 2: (4) [3, 4, -2, 0]
+
+//A，B转置相加
+let at = a.getTransposedMat();
+let bt = b.getTransposedMat();
+Mat.add(at, bt);
+// 0: (4) [1, 0, 3, -1]
+// 1: (4) [3, 3, 6, 7]
+// 2: (4) [3, 4, -2, 0]
+```
+
+**转置矩阵的运算性质3**：`λA`的转置等于`λ`乘以`A`的转置，`λ`为数
+
+测试：
+```js
+ let a = new Mat([
+    [1, 0, -1],
+    [-1, 1, 3],
+    [0, 5, -1],
+    [0, 5, -1],
+]);
+// λA的转置
+let n = 5;
+let an = a.multiplyNumber(n);
+an.getTransposedMat();
+// 0: (4) [5, -5, 0, 0]
+// 1: (4) [0, 5, 25, 25]
+// 2: (4) [-5, 15, -5, -5]
+
+// λ乘以A的转置
+let at = a.getTransposedMat();
+at.multiplyNumber(n);
+// 0: (4) [5, -5, 0, 0]
+// 1: (4) [0, 5, 25, 25]
+// 2: (4) [-5, 15, -5, -5]
+```
+
+**转置矩阵的运算性质4**：`AB`的转置等于`B`的转置乘`A`的转置
+
+测试：
+```js
+let a = new Mat([
+    [1, 0, -1],
+    [-1, 1, 3],
+    [0, 5, -1],
+    [0, 5, -1],
+]); //4*3
+let b = new Mat([
+    [0, 3],
+    [1, -2],
+    [3, 1],
+]); //3*2
+// AB转置
+let ab = Mat.multiply(a, b);
+ab.getTransposedMat();
+// 0: (4) [-3, 10, 2, 2]
+// 1: (4) [2, -2, -11, -11]
+
+// B的转置乘A的转置
+let at = a.getTransposedMat();
+let bt = b.getTransposedMat();
+Mat.multiply(bt, at);
+// 0: (4) [-3, 10, 2, 2]
+// 1: (4) [2, -2, -11, -11]
 ```
