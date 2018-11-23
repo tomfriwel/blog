@@ -242,6 +242,9 @@ let bt = b.getTransposedMat();
 // 1: (4) [3, 2, 1, 2]
 // 2: (4) [4, 1, -1, 1]
 ```
+**转置矩阵的运算性质**
+
+![](./e2.png)
 
 **转置矩阵的运算性质1**：`A`的转置矩阵再转置变回`A`
 ```js
@@ -339,4 +342,87 @@ let bt = b.getTransposedMat();
 Mat.multiply(bt, at);
 // 0: (4) [-3, 10, 2, 2]
 // 1: (4) [2, -2, -11, -11]
+```
+
+**对称阵**：设`A`为`n`阶方阵，满足`A`等于`A`的转置。
+
+**反对称阵**：满足`A`等于负`A`的转置
+
+![](./e3.png)
+
+在`Mat`类里添加检测矩阵类型的方法：
+```js
+// 矩阵类型
+static getMatType(mat) {
+    let rlen = mat.rowLength;
+    let clen = mat.colLength;
+
+    let typeString = '普通矩阵';
+    if (rlen == clen) {
+        let mat_t = Mat.getTransposedMat(mat);
+        let symmetric = 0;
+        let dissymmetric = 0;
+        let finish = false;
+        for (let i = 0; i < clen; i++) {
+            for (let j = 0; j < rlen; j++) {
+                if (mat.array[i][j] == mat_t.array[i][j]) {
+                    symmetric += 1;
+                    if(mat.array[i][j]==0) {
+                        dissymmetric += 1;
+                    }
+                } else if (mat.array[i][j] == -mat_t.array[i][j]) {
+                    dissymmetric += 1;
+                } else {
+                    finish = true;
+                    break;
+                }
+            }
+            if (finish) {
+                break;
+            }
+        }
+        let sum = rlen * rlen;
+        if (symmetric == sum && dissymmetric == sum) {
+            typeString = '既是对称阵又是反对称阵';
+        } else if (symmetric == sum) {
+            typeString = '对称阵';
+        } else if (dissymmetric == sum) {
+            typeString = '反对称阵';
+        }
+    }
+    return typeString;
+}
+
+getMatType() {
+    return Mat.getMatType(this);
+}
+```
+
+测试：
+```js
+let a = new Mat([
+    [1, 0, -1],
+    [-1, 1, 3],
+    [0, 5, -1],
+    [0, 5, -1],
+]);
+let b = new Mat([
+    [12, 6, 1],
+    [6, 8, -1],
+    [1, -1, 6],
+]);
+let c = new Mat([
+    [0, -6, 1],
+    [6, 0, 7],
+    [-1, -7, 0],
+]);
+let d = new Mat([
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+]);
+console.log(a.getMatType());    //普通矩阵
+console.log(b.getMatType());    //对称阵
+console.log(c.getMatType());    //反对称阵
+console.log(d.getMatType());    //既是对称阵又是反对称阵
 ```
