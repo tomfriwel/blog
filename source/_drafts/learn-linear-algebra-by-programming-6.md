@@ -426,3 +426,6 @@ console.log(b.getMatType());    //对称阵
 console.log(c.getMatType());    //反对称阵
 console.log(d.getMatType());    //既是对称阵又是反对称阵
 ```
+
+#### 方阵的行列式
+
