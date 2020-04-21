@@ -3,24 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>更改Gihub公开邮箱后发生的ssh错误 | tomfriwel&#39;s blog</title>
+    <title>分类：: 数学 | tomfriwel&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="Github" />
-    
-    <meta name="description" content="最近改了Github的Public email，然后在电脑上使用git拉取Github的库的时候，发生各种离奇的错误。 一开始查了一下，没找到什么办法，也没去管，就没用git clone ...，就直接在Github上通过zip下载。 今天打算使用Carthage，然后用carthage update安装库的时候，又看到ssh相关的报错，就开始重视。因为Carthage里面也用到类似于git">
-<meta name="keywords" content="Github">
-<meta property="og:type" content="article">
-<meta property="og:title" content="更改Gihub公开邮箱后发生的ssh错误">
-<meta property="og:url" content="https://tomfriwel.github.io/blog/2018/05/07/2018-05-07-github-ssh-error-after-change-github-account-email/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="tomfriwel&#39;s blog">
+<meta property="og:url" content="https://tomfriwel.github.io/blog/categories/数学/index.html">
 <meta property="og:site_name" content="tomfriwel&#39;s blog">
-<meta property="og:description" content="最近改了Github的Public email，然后在电脑上使用git拉取Github的库的时候，发生各种离奇的错误。 一开始查了一下，没找到什么办法，也没去管，就没用git clone ...，就直接在Github上通过zip下载。 今天打算使用Carthage，然后用carthage update安装库的时候，又看到ssh相关的报错，就开始重视。因为Carthage里面也用到类似于git">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T08:53:11.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="更改Gihub公开邮箱后发生的ssh错误">
-<meta name="twitter:description" content="最近改了Github的Public email，然后在电脑上使用git拉取Github的库的时候，发生各种离奇的错误。 一开始查了一下，没找到什么办法，也没去管，就没用git clone ...，就直接在Github上通过zip下载。 今天打算使用Carthage，然后用carthage update安装库的时候，又看到ssh相关的报错，就开始重视。因为Carthage里面也用到类似于git">
+<meta name="twitter:title" content="tomfriwel&#39;s blog">
     
 
     
@@ -68,7 +61,7 @@
                                     <a class="main-nav-list-link" href="/blog/">主页</a>
                                 </li>
                             
-                                        
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/数学/">数学</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/blog/about/index.html">关于</a>
@@ -127,191 +120,284 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    未分类
+    <i class="icon fa fa-folder-open"></i>分类：: <em class="page-title-link">数学</em>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-2018-05-07-github-ssh-error-after-change-github-account-email" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/blog/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/blog/2018/11/14/learn-linear-algebra-by-programming-5/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/assets/images/linear-algebra/cover.png)" alt="通过编程来学习线性代数5-克拉默法则" class="thumbnail-image"></span>
+    
+    <!-- 
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+</span>
+
+
+     -->
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/blog/categories/数学/">数学</a>
+            </div>
+            <div class="date"><time datetime="2018-11-14T14:31:00.000Z" itemprop="datePublished">2018-11-14</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        更改Gihub公开邮箱后发生的ssh错误
+        <a href="/blog/2018/11/14/learn-linear-algebra-by-programming-5/">通过编程来学习线性代数5-克拉默法则</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/blog/2018/05/07/2018-05-07-github-ssh-error-after-change-github-account-email/" class="article-date">
-            <time datetime="2018-05-07T03:42:05.000Z" itemprop="datePublished">2018-05-07</time>
-        </a>
+        <p class="article-excerpt">
+            下面基本上都是PPT中的内容。
+如果线性方程组的系数行列式不等于零，那么线性方程组有解并且解是唯一的：
+
+解可以表示成：
+x1 = D1/D, x2 = D2/D, x3 = D3/D, … (2)
+定理包含三个结论：
+
+方程组有解：（解的存在性）
+解是唯一的：（解的唯一性）
+解可以由公式（2）给出。
+
+
+定理4 如果线性方程组（1）的系数行列式不等于零，则该线性方程组一定有解，且解是唯一的。
+定
+        </p>
     </div>
-
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/Github/">Github</a>
-    </div>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <p>最近改了Github的Public email，然后在电脑上使用git拉取Github的库的时候，发生各种离奇的错误。</p>
-<p>一开始查了一下，没找到什么办法，也没去管，就没用<code>git clone ...</code>，就直接在Github上通过zip下载。</p>
-<p>今天打算使用Carthage，然后用<code>carthage update</code>安装库的时候，又看到ssh相关的报错，就开始重视。因为Carthage里面也用到类似于<code>git Github仓库地址</code>的相关命令。</p>
-<p>猜测是ssh key出错，可以到<code>$ cd ~/.ssh</code>查看，发现<code>id_rsa.pub</code>文件最后是老的邮箱，怀疑就是这个问题。</p>
-<p>想到最近改过Github的公开邮箱（就是Github个人主页那个邮箱），就联系到了一起。</p>
-<p>根据<a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a>的方法，重新设置了ssh key，填信息部分除了邮箱那里，其他都是默认的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br><span class="line">Enter a file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]</span><br><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure></p>
-<p><code>passphrase</code>我也是直接回车没填。</p>
-<p>然后再使用相关git命令，就解决了。</p>
-<p>大吉大利！</p>
-<p>🤪🤪🤪🤪</p>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>改了之后，<code>Gitlab</code>又不行了，出现错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git@gitlab.com: Permission denied (publickey).</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure></p>
-<p>后来把<code>id_rsa</code>添加到<code>Settings &gt; SSH Keys</code>，才可以用。</p>
-<p>复制命令：<code>$ pbcopy &lt; ~/.ssh/id_rsa.pub</code></p>
-<p>或者创建一个新的key：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br><span class="line">Enter a file in which to save the key (/Users/you/.ssh/id_rsa): gitlab_id_rsa</span><br><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br></pre></td></tr></table></figure></p>
-<p>然添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/id_rsa</span><br><span class="line">$ ssh-add ~/.ssh/gitlab_id_rsa</span><br></pre></td></tr></table></figure></p>
-<p>最后需要建一个配置文件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh/</span><br><span class="line">$ touch config</span><br></pre></td></tr></table></figure>
-<p>然后添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#gitlab account</span><br><span class="line">Host gitlab.com</span><br><span class="line">	HostName gitlab.com</span><br><span class="line">	User git</span><br><span class="line">	IdentityFile ~/.ssh/gitlab_id_rsa</span><br><span class="line"></span><br><span class="line">#github account</span><br><span class="line">Host github.com</span><br><span class="line">	HostName github.com</span><br><span class="line">	User git</span><br><span class="line">	IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
-<p>也要将<code>gitlab_id_rsa.pub</code>内容复制到<code>Settings &gt; SSH Keys</code></p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank" rel="noopener">Generating a new SSH key and adding it to the ssh-agent</a></li>
-<li><a href="https://docs.gitlab.com/ce/ssh/README.html#working-with-non-default-ssh-key-pair-paths" target="_blank" rel="noopener">GitLab and SSH keys</a></li>
-<li><a href="https://gist.github.com/jexchan/2351996" target="_blank" rel="noopener">Multiple SSH Keys settings for different github account</a></li>
-<li><a href="https://superuser.com/questions/287651/can-i-have-multiple-ssh-keys-in-my-ssh-folder" target="_blank" rel="noopener">Can I have multiple ssh keys in my .ssh folder?</a></li>
-</ul>
-
-        </div>
-        <i style="color:#AAAAAA;">声明：转载请注明作者及原文链接</i>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="https://tomfriwel.github.io/blog/2018/05/07/2018-05-07-github-ssh-error-after-change-github-account-email/" data-id="ck99kw632002y2hwhvex2o7id" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
-    </div>
-    
-    
-    
-<div id="gitalk-container"></div>
-<!-- <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
-<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script> -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script type="text/javascript" src="/blog/assets/js/md5.js"></script>
-
-
-<script type="text/javascript">
-    (function() {
-        var language = navigator.language || navigator.userLanguage;
-        var path = location.pathname || 'unknown'
-        var id = md5(path);
-        var title = '[blog]' + (document.title || 'unknown')
-
-        var gitalk = new Gitalk({
-            clientID: 'd1eb7e13bdea94d4be23',
-            clientSecret: '91cb6a1282bfd6e8225ee6d1c4b2743f621063ec',
-            repo: 'blog',
-            owner: 'tomfriwel',
-            admin: ['tomfriwel'],
-            id: id,
-            labels: ['blog-comments'],
-            title: title,
-            distractionFreeMode: false,
-            language: language
-        });
-        gitalk.render('gitalk-container');
-    })();
-</script>
-
-
-
-    
-    <section id="comments">
-    
-        
-<div id="gitalk-container"></div>
-<!-- <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
-<script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script> -->
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script type="text/javascript" src="/blog/assets/js/md5.js"></script>
-
-    
-
-    
-    </section>
-
-
 </article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/blog/2018/10/14/learn-linear-algebra-by-programming-4/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/assets/images/linear-algebra/cover.png)" alt="通过编程来学习线性代数4-行列式按行(列)展开" class="thumbnail-image"></span>
+    
+    <!-- 
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+</span>
+
+
+     -->
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/blog/categories/数学/">数学</a>
+            </div>
+            <div class="date"><time datetime="2018-10-14T09:59:17.000Z" itemprop="datePublished">2018-10-14</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/blog/2018/10/14/learn-linear-algebra-by-programming-4/">通过编程来学习线性代数4-行列式按行(列)展开</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            余子式：将aij所在的行和列划去后，剩下的元素组成的行列式，记作Mij。(i, j为下标)
+代数余子式：Aij = Math.pow(-1, i+j) * Mij
+行列式每一项都对应一个余子式和代数余子式，因为i, j可以唯一确定一个元素。
+求i行j列的余子式：1234567891011121314151617181920212223/**  * 余子式  *   * @param &#123;N
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/blog/2018/09/07/learn-linear-algebra-by-programming-3/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/assets/images/linear-algebra/cover.png)" alt="通过编程来学习线性代数3-行列式的性质" class="thumbnail-image"></span>
+    
+    <!-- 
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+</span>
+
+
+     -->
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/blog/categories/数学/">数学</a>
+            </div>
+            <div class="date"><time datetime="2018-09-07T09:29:00.000Z" itemprop="datePublished">2018-09-07</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/blog/2018/09/07/learn-linear-algebra-by-programming-3/">通过编程来学习线性代数3-行列式的性质</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            行列式类在讨论行列式的一些性质之前，我先根据之前讲到的内容写一个行列式的类。
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/blog/2018/05/30/learn-linear-algebra-by-programming-2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/assets/images/linear-algebra/cover.png)" alt="通过编程来学习线性代数2-计算行列式的值" class="thumbnail-image"></span>
+    
+    <!-- 
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+</span>
+
+
+     -->
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/blog/categories/数学/">数学</a>
+            </div>
+            <div class="date"><time datetime="2018-05-30T14:31:00.000Z" itemprop="datePublished">2018-05-30</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/blog/2018/05/30/learn-linear-algebra-by-programming-2/">通过编程来学习线性代数2-计算行列式的值</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            全排列及其逆序数为了计算每一项，我们先要了解如何生成每一个相乘的项，了解什么时候是正数什么时候是负数，关于正负问题就需要了解逆序数的定义。
+全排列:
+
+将n个不同的元素排成一列
+
+123456781 &gt; 12 &gt; 1,2 | 2,13 &gt; 1,2,3 | 1,3,2 | 2,1,3 | 2,3,1 | 3,1,2 | 3,2,1...
+从排列组合的知识中可以知道: n个不同的元素
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/blog/2018/03/21/learn-linear-algebra-by-programming-1/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/blog/assets/images/linear-algebra/cover.png)" alt="通过编程来学习线性代数1-解二元线性方程组" class="thumbnail-image"></span>
+    
+    <!-- 
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+</span>
+
+
+     -->
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/blog/categories/数学/">数学</a>
+            </div>
+            <div class="date"><time datetime="2018-03-21T02:11:47.000Z" itemprop="datePublished">2018-03-21</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/blog/2018/03/21/learn-linear-algebra-by-programming-1/">通过编程来学习线性代数1-解二元线性方程组</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            环境采用的编程方式是网页，会使用javascript来实现线性代数中的计算方法。比如文件linearAlgebra.html:1234&lt;script&gt;    // 在控制台打印    console.log(123*2)&lt;/script&gt;
+写入上面的代码，保存后用浏览器打开，然后右键打开审查元素点击控制台（Console）来查看输出。
+
+更多网页相关知识网上可以搜得到，掌握
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+
+    </div></section>
+
+
+
+
                         </div>
                     </section>
                     <aside id="sidebar">
@@ -347,29 +433,6 @@
         </ul>
     </div>
     
-        
-<nav id="article-nav">
-    
-        <a href="/blog/2018/05/07/2018-05-07-use-carthage-for-the-first-time/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            第一次使用Carthage记录
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-        <a href="/blog/2018/05/05/2018-05-05-small-target-2018/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">小目标</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
-    
     <div class="widgets-container">
         
             
@@ -382,7 +445,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/" class="thumbnail">
+                            <a href="/blog/2019/02/21/wechat-miniapp-fullscreen-mode/" class="thumbnail">
     
     
         <span style="background-image:url(/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/2.png)" alt="微信小程序全屏模式（自定义导航栏）" class="thumbnail-image"></span>
@@ -394,7 +457,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/" class="title">微信小程序全屏模式（自定义导航栏）</a></p>
+                            <p class="item-title"><a href="/blog/2019/02/21/wechat-miniapp-fullscreen-mode/" class="title">微信小程序全屏模式（自定义导航栏）</a></p>
                             <p class="item-date"><time datetime="2019-02-21T08:59:53.000Z" itemprop="datePublished">2019-02-21</time></p>
                         </div>
                     </li>
@@ -413,7 +476,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/数学/">数学</a></p>
                             <p class="item-title"><a href="/blog/2018/11/14/learn-linear-algebra-by-programming-5/" class="title">通过编程来学习线性代数5-克拉默法则</a></p>
                             <p class="item-date"><time datetime="2018-11-14T14:31:00.000Z" itemprop="datePublished">2018-11-14</time></p>
                         </div>
@@ -453,7 +516,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/数学/">数学</a></p>
                             <p class="item-title"><a href="/blog/2018/10/14/learn-linear-algebra-by-programming-4/" class="title">通过编程来学习线性代数4-行列式按行(列)展开</a></p>
                             <p class="item-date"><time datetime="2018-10-14T09:59:17.000Z" itemprop="datePublished">2018-10-14</time></p>
                         </div>
@@ -462,10 +525,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="thumbnail">
+                            <a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/p1.jpg)" alt="[翻译]构图的忌讳" class="thumbnail-image"></span>
     
     <!--  -->
 </a>
@@ -474,7 +537,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="title">[翻译]不同寻常的拍摄角度(更新中)</a></p>
+                            <p class="item-title"><a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" class="title">[翻译]构图的忌讳</a></p>
                             <p class="item-date"><time datetime="2018-09-30T05:44:12.000Z" itemprop="datePublished">2018-09-30</time></p>
                         </div>
                     </li>
@@ -485,6 +548,13 @@
 
             
                 
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/数学/">数学</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
 
             
                 

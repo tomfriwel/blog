@@ -3,24 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>小目标 | tomfriwel&#39;s blog</title>
+    <title>微信小程序群功能开发-前端篇 | tomfriwel&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="目标" />
+        <meta name="keywords" content="微信小程序" />
     
-    <meta name="description" content="每周至少练习一次画画  阅读">
-<meta name="keywords" content="目标">
+    <meta name="description" content="我们在一些微信群中看到过这样的小程序分享卡片：当你点进去后，会看到一个列表，里面有其他群成员的头像和相关信息。比如《王者荣耀群排行》，但是段位信息是腾讯私有的接口，我们只能拿到头像和昵称等基础信息。 下面我将实现小程序端的从转发到用户点击卡片后获取信息的这个过程。  开启首先我们要调用wx.showShareMenu进行设置，来开启是否使用带shareTicket的转发，这个shareTicket">
+<meta name="keywords" content="微信小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小目标">
-<meta property="og:url" content="https://tomfriwel.github.io/blog/2018/05/05/2018-05-05-small-target-2018/index.html">
+<meta property="og:title" content="微信小程序群功能开发-前端篇">
+<meta property="og:url" content="https://tomfriwel.github.io/blog/2018/03/22/develop-wechat-group-miniprogram-front-end/index.html">
 <meta property="og:site_name" content="tomfriwel&#39;s blog">
-<meta property="og:description" content="每周至少练习一次画画  阅读">
+<meta property="og:description" content="我们在一些微信群中看到过这样的小程序分享卡片：当你点进去后，会看到一个列表，里面有其他群成员的头像和相关信息。比如《王者荣耀群排行》，但是段位信息是腾讯私有的接口，我们只能拿到头像和昵称等基础信息。 下面我将实现小程序端的从转发到用户点击卡片后获取信息的这个过程。  开启首先我们要调用wx.showShareMenu进行设置，来开启是否使用带shareTicket的转发，这个shareTicket">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T08:53:11.432Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-06-21T08:53:11.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小目标">
-<meta name="twitter:description" content="每周至少练习一次画画  阅读">
+<meta name="twitter:title" content="微信小程序群功能开发-前端篇">
+<meta name="twitter:description" content="我们在一些微信群中看到过这样的小程序分享卡片：当你点进去后，会看到一个列表，里面有其他群成员的头像和相关信息。比如《王者荣耀群排行》，但是段位信息是腾讯私有的接口，我们只能拿到头像和昵称等基础信息。 下面我将实现小程序端的从转发到用户点击卡片后获取信息的这个过程。  开启首先我们要调用wx.showShareMenu进行设置，来开启是否使用带shareTicket的转发，这个shareTicket">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
     
 
     
@@ -68,7 +70,7 @@
                                     <a class="main-nav-list-link" href="/blog/">主页</a>
                                 </li>
                             
-                                        
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/数学/">数学</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/blog/about/index.html">关于</a>
@@ -131,14 +133,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-2018-05-05-small-target-2018" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-develop-wechat-group-miniprogram-front-end" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        小目标
+        微信小程序群功能开发-前端篇
         </h1>
     
 
@@ -148,24 +150,46 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/blog/2018/05/05/2018-05-05-small-target-2018/" class="article-date">
-            <time datetime="2018-05-05T11:41:10.000Z" itemprop="datePublished">2018-05-05</time>
+        <a href="/blog/2018/03/22/develop-wechat-group-miniprogram-front-end/" class="article-date">
+            <time datetime="2018-03-22T08:28:49.000Z" itemprop="datePublished">2018-03-22</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/目标/">目标</a>
+        <a class="tag-link" href="/blog/tags/微信小程序/">微信小程序</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <ul>
-<li style="list-style: none"><input type="checkbox"> 每周至少练习一次画画</li>
-<li style="list-style: none"><input type="checkbox"> 阅读</li>
+            <p>我们在一些微信群中看到过这样的小程序分享卡片：当你点进去后，会看到一个列表，里面有其他群成员的头像和相关信息。比如《王者荣耀群排行》，但是段位信息是腾讯私有的接口，我们只能拿到头像和昵称等基础信息。</p>
+<p>下面我将实现小程序端的从转发到用户点击卡片后获取信息的这个过程。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="openGId"></p>
+<h3 id="开启"><a href="#开启" class="headerlink" title="开启"></a>开启</h3><p>首先我们要调用<a href="https://mp.weixin.qq.com/debug/wxagame/dev/document/share/wx.showShareMenu.html?t=2018321" target="_blank" rel="noopener"><code>wx.showShareMenu</code></a>进行设置，来开启是否使用带<code>shareTicket</code>的转发，这个<code>shareTicket</code>是开发群功能的关键:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wx.showShareMenu(&#123;</span><br><span class="line">    withShareTicket: <span class="literal">true</span>,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>我一般将其放在页面<code>onShow</code>中。</p>
+<h3 id="触发转发事件"><a href="#触发转发事件" class="headerlink" title="触发转发事件"></a>触发转发事件</h3><p>如果要自定义转发按钮而不是有默认右上角的转发按钮，需要在页面中放置一个<code>open-type=&quot;share&quot;</code>的<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/component/button.html" target="_blank" rel="noopener"><code>button</code></a>组件:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">open-type</span>=<span class="string">"share"</span>&gt;</span>share<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>接下来在页面中设置分享函数<a href="https://mp.weixin.qq.com/debug/wxagame/dev/document/share/GroupMsgInfo.md?t=2018321" target="_blank" rel="noopener"><code>onShareAppMessage</code></a>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">onShareAppMessage: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (res.from === <span class="string">'button'</span>) &#123;</span><br><span class="line">        <span class="comment">// 来自页面内转发按钮</span></span><br><span class="line">        <span class="built_in">console</span>.log(res.target)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        title: <span class="string">'自定义转发标题'</span>,</span><br><span class="line">        path: <span class="string">'/pages/test/test?id=123'</span>,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 转发成功</span></span><br><span class="line">            <span class="built_in">console</span>.log(res)</span><br><span class="line">            <span class="comment">// 只有转发到群聊中打开才可以获取到 shareTickets 返回值，单聊没有 shareTickets</span></span><br><span class="line">            <span class="keyword">if</span> (res.shareTickets &amp;&amp; res.shareTickets.length&gt;<span class="number">0</span>) &#123;</span><br><span class="line">                app.getShareInfo(res.shareTickets[<span class="number">0</span>])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 转发失败</span></span><br><span class="line">            <span class="built_in">console</span>.log(res)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现在就可以进行转发了，在群聊中将会看到此次分享的小程序消息卡片。每个<code>shareTicket</code>对应每个群并且单聊不会有该值。这里只选择一个转发，所以直接取第一个。至于<code>app.getShareInfo</code>是用来获取群id(<code>openGId</code>)的函数，我们放到后面介绍。</p>
+<h3 id="群成员点消息卡片"><a href="#群成员点消息卡片" class="headerlink" title="群成员点消息卡片"></a>群成员点消息卡片</h3><p>当群成员点消息卡片进入小程序后，在<code>app.js</code>的<code>onShow</code>/<code>onLaunch</code>的<code>options</code>中可以获取到<code>shareTicket</code>，<code>shareTicket</code>每次都是不一样的，比分你分享的时候获取到的跟这里获取到的不是同一个，但是会对应同一个<code>openGId</code>。</p>
+<p><strong><em>app.js</em></strong>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在onShow中获取转发信息shareTicket</span></span><br><span class="line">onShow: <span class="function"><span class="keyword">function</span> (<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(options)</span><br><span class="line">    <span class="keyword">let</span> scene = options.scene</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 场景值是1044，带 shareTicket 的小程序消息卡片</span></span><br><span class="line">    <span class="keyword">if</span>(scene == <span class="number">1044</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> shareTicket = options.shareTicket</span><br><span class="line">        <span class="comment">// 这里的id根据自己的具体需求进行操作，也可以设置其他的</span></span><br><span class="line">        <span class="keyword">let</span> id = options.query.id</span><br><span class="line">        <span class="keyword">this</span>.getShareInfo(shareTicket)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取加密信息encryptedData, iv</span></span><br><span class="line">getShareInfo: <span class="function"><span class="keyword">function</span> (<span class="params">shareTicket</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> z = <span class="keyword">this</span></span><br><span class="line">    wx.getShareInfo(&#123;</span><br><span class="line">        shareTicket: shareTicket,</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(res)</span><br><span class="line">            <span class="keyword">let</span> &#123;encryptedData, iv&#125; = res</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(encryptedData &amp;&amp; iv) &#123;</span><br><span class="line">                z.getDecodeEncryptedData(encryptedData, iv)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        fail: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(res)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取解密后的信息</span></span><br><span class="line">getDecodeEncryptedData: <span class="function"><span class="keyword">function</span> (<span class="params">encryptedData, iv</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 发送到后台解析</span></span><br><span class="line">    wx.login(&#123;</span><br><span class="line">        success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">let</span> code = res.code</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 下面只是演示代码</span></span><br><span class="line">            <span class="comment">// post(&#123;</span></span><br><span class="line">            <span class="comment">//     url:'https://www.example.com/controller/getDecodeEncryptedData'</span></span><br><span class="line">            <span class="comment">//     data:&#123;</span></span><br><span class="line">            <span class="comment">//         code,</span></span><br><span class="line">            <span class="comment">//         encryptedData,</span></span><br><span class="line">            <span class="comment">//         iv,</span></span><br><span class="line">            <span class="comment">//     &#125;</span></span><br><span class="line">            <span class="comment">// &#125;)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>首先，我们通过<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/share.html#wxgetshareinfoobject" target="_blank" rel="noopener"><code>wx.getShareInfo</code></a>获取<code>encryptedData</code>和<code>iv</code>，然后将其传给后台进行解析。</p>
+<p>在<code>getDecodeEncryptedData</code>中，当后台解析成功后，就会返回一个<code>openGId</code>。</p>
+<p>此时就可以将群<code>openGId</code>与用户<code>openid</code>进行绑定了，这个绑定信息也是要保存到后台的。如果后台没有保存过头像昵称信息，此时也可以将用户头像和昵称一起保存到后台。</p>
+<p>类似于下面这样的一个接口:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面只是演示代码</span></span><br><span class="line">post(&#123;</span><br><span class="line">    url:<span class="string">'https://www.example.com/controller/bindGroupAndUser'</span></span><br><span class="line">    data:&#123;</span><br><span class="line">        code,</span><br><span class="line">        openGId</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>其中的<code>code</code>调用<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxloginobject" target="_blank" rel="noopener"><code>wx.login</code></a>获得，后台根据这个<code>code</code>能获取到<code>openid</code>。然后进行绑定。</p>
+<p>然后根据自己的需求，可能还要一个保存用户基础信息和拉取群成员信息列表的接口。</p>
+<p>基本思路就是这样，我将在另一篇文章中描述后端的相关处理。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/share.html" target="_blank" rel="noopener">小程序开发文档-转发</a></li>
+<li><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxchecksessionobject" target="_blank" rel="noopener">小程序登录</a></li>
+<li><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/signature.html" target="_blank" rel="noopener">用户数据的签名验证和加解密</a></li>
 </ul>
 
         </div>
@@ -175,7 +199,7 @@
 
 
 
-    <a data-url="https://tomfriwel.github.io/blog/2018/05/05/2018-05-05-small-target-2018/" data-id="ck99kw630002t2hwh8pgb7d58" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://tomfriwel.github.io/blog/2018/03/22/develop-wechat-group-miniprogram-front-end/" data-id="ck99o2tkn002j7kwhr6m1ryde" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -329,20 +353,20 @@
         
 <nav id="article-nav">
     
-        <a href="/blog/2018/05/07/2018-05-07-github-ssh-error-after-change-github-account-email/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/blog/2018/03/22/develop-wechat-group-miniprogram-back-end/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            更改Gihub公开邮箱后发生的ssh错误
+            微信小程序群功能开发-后端篇
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/blog/2018/04/25/2018-04-25-the-idea-of-finding-a-solution/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/blog/2018/03/21/learn-linear-algebra-by-programming-1/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">关于寻找解决办法</p>
+        <p class="article-nav-title">通过编程来学习线性代数1-解二元线性方程组</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -361,7 +385,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/" class="thumbnail">
+                            <a href="/blog/2019/02/21/wechat-miniapp-fullscreen-mode/" class="thumbnail">
     
     
         <span style="background-image:url(/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/2.png)" alt="微信小程序全屏模式（自定义导航栏）" class="thumbnail-image"></span>
@@ -373,7 +397,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/" class="title">微信小程序全屏模式（自定义导航栏）</a></p>
+                            <p class="item-title"><a href="/blog/2019/02/21/wechat-miniapp-fullscreen-mode/" class="title">微信小程序全屏模式（自定义导航栏）</a></p>
                             <p class="item-date"><time datetime="2019-02-21T08:59:53.000Z" itemprop="datePublished">2019-02-21</time></p>
                         </div>
                     </li>
@@ -392,7 +416,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/数学/">数学</a></p>
                             <p class="item-title"><a href="/blog/2018/11/14/learn-linear-algebra-by-programming-5/" class="title">通过编程来学习线性代数5-克拉默法则</a></p>
                             <p class="item-date"><time datetime="2018-11-14T14:31:00.000Z" itemprop="datePublished">2018-11-14</time></p>
                         </div>
@@ -432,7 +456,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/数学/">数学</a></p>
                             <p class="item-title"><a href="/blog/2018/10/14/learn-linear-algebra-by-programming-4/" class="title">通过编程来学习线性代数4-行列式按行(列)展开</a></p>
                             <p class="item-date"><time datetime="2018-10-14T09:59:17.000Z" itemprop="datePublished">2018-10-14</time></p>
                         </div>
@@ -441,10 +465,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="thumbnail">
+                            <a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/p1.jpg)" alt="[翻译]构图的忌讳" class="thumbnail-image"></span>
     
     <!--  -->
 </a>
@@ -453,7 +477,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="title">[翻译]不同寻常的拍摄角度(更新中)</a></p>
+                            <p class="item-title"><a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" class="title">[翻译]构图的忌讳</a></p>
                             <p class="item-date"><time datetime="2018-09-30T05:44:12.000Z" itemprop="datePublished">2018-09-30</time></p>
                         </div>
                     </li>
@@ -464,6 +488,13 @@
 
             
                 
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/数学/">数学</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
 
             
                 

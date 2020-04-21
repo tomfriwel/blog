@@ -3,26 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>微信小程序群功能开发-后端篇 | tomfriwel&#39;s blog</title>
+    <title>小目标 | tomfriwel&#39;s blog</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="后端,微信小程序" />
+        <meta name="keywords" content="目标" />
     
-    <meta name="description" content="之前介绍过了如何在微信小程序中获取群openGId相关的流程，在这篇文章中我会使用php实现之前提到过的相关接口。解析encryptedData和iv的代码官方已经给出了php、nodejs等版本的实现，这篇主要是贴一些相关代码。  准备下载官方实例：https://mp.weixin.qq.com/debug/wxadoc/dev/demo/aes-sample.zip 在自己的代码中引入并设置">
-<meta name="keywords" content="后端,微信小程序">
+    <meta name="description" content="每周至少练习一次画画  阅读">
+<meta name="keywords" content="目标">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序群功能开发-后端篇">
-<meta property="og:url" content="https://tomfriwel.github.io/blog/2018/03/22/2018-03-22-develop-wechat-group-miniprogram-back-end/index.html">
+<meta property="og:title" content="小目标">
+<meta property="og:url" content="https://tomfriwel.github.io/blog/2018/05/05/small-target-2018/index.html">
 <meta property="og:site_name" content="tomfriwel&#39;s blog">
-<meta property="og:description" content="之前介绍过了如何在微信小程序中获取群openGId相关的流程，在这篇文章中我会使用php实现之前提到过的相关接口。解析encryptedData和iv的代码官方已经给出了php、nodejs等版本的实现，这篇主要是贴一些相关代码。  准备下载官方实例：https://mp.weixin.qq.com/debug/wxadoc/dev/demo/aes-sample.zip 在自己的代码中引入并设置">
+<meta property="og:description" content="每周至少练习一次画画  阅读">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-06-21T08:53:11.430Z">
+<meta property="og:updated_time" content="2018-06-21T08:53:11.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序群功能开发-后端篇">
-<meta name="twitter:description" content="之前介绍过了如何在微信小程序中获取群openGId相关的流程，在这篇文章中我会使用php实现之前提到过的相关接口。解析encryptedData和iv的代码官方已经给出了php、nodejs等版本的实现，这篇主要是贴一些相关代码。  准备下载官方实例：https://mp.weixin.qq.com/debug/wxadoc/dev/demo/aes-sample.zip 在自己的代码中引入并设置">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="小目标">
+<meta name="twitter:description" content="每周至少练习一次画画  阅读">
     
 
     
@@ -70,7 +68,7 @@
                                     <a class="main-nav-list-link" href="/blog/">主页</a>
                                 </li>
                             
-                                        
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/数学/">数学</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/blog/about/index.html">关于</a>
@@ -133,14 +131,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-2018-03-22-develop-wechat-group-miniprogram-back-end" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-small-target-2018" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        微信小程序群功能开发-后端篇
+        小目标
         </h1>
     
 
@@ -150,41 +148,24 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/blog/2018/03/22/2018-03-22-develop-wechat-group-miniprogram-back-end/" class="article-date">
-            <time datetime="2018-03-22T10:28:49.000Z" itemprop="datePublished">2018-03-22</time>
+        <a href="/blog/2018/05/05/small-target-2018/" class="article-date">
+            <time datetime="2018-05-05T11:41:10.000Z" itemprop="datePublished">2018-05-05</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/后端/">后端</a>, <a class="tag-link" href="/blog/tags/微信小程序/">微信小程序</a>
+        <a class="tag-link" href="/blog/tags/目标/">目标</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>之前介绍过了如何在微信小程序中获取群openGId相关的流程，在这篇文章中我会使用<code>php</code>实现之前提到过的相关接口。解析<code>encryptedData</code>和<code>iv</code>的代码官方已经给出了<code>php</code>、<code>nodejs</code>等版本的实现，这篇主要是贴一些相关代码。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2158535-341dcae96ac8bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="openGId"></p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>下载官方实例：<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/demo/aes-sample.zip" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/wxadoc/dev/demo/aes-sample.zip</a></p>
-<p>在自己的代码中引入并设置相关常数：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require_once</span>(<span class="string">'wxBizDataCrypt.php'</span>);</span><br><span class="line"></span><br><span class="line">$appid= <span class="string">'...'</span>;  <span class="comment">//小程序 AppID</span></span><br><span class="line">$appsecret= <span class="string">'...'</span>;  <span class="comment">//小程序 AppSecret</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="获取登录信息"><a href="#获取登录信息" class="headerlink" title="获取登录信息"></a>获取登录信息</h3><p>根据微信小程序中通过<code>wx.login</code>得到的<code>code</code>获取用户对小程序的唯一标识<code>openid</code>和<code>session_key</code>，<code>session_key</code>时会过期的。</p>
-<p>当然，满足一定条件还会的到<code>unionid</code>，具体可以查看官方文档。<a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/uinionID.html" target="_blank" rel="noopener">UnionID机制说明</a></p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfoWithCode</span><span class="params">($appid, $appsecret, $code)</span> </span>&#123;</span><br><span class="line">    $url = <span class="string">"https://api.weixin.qq.com/sns/jscode2session?appid="</span>.$appid.<span class="string">"&amp;secret="</span>.$appsecret.<span class="string">"&amp;js_code="</span>.$code.<span class="string">"&amp;grant_type=authorization_code"</span>;</span><br><span class="line">    $reData = http_post($url, <span class="keyword">array</span>());</span><br><span class="line"></span><br><span class="line">    $obj = json_decode($reData);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> $obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="解析加密信息"><a href="#解析加密信息" class="headerlink" title="解析加密信息"></a>解析加密信息</h3><p>下面函数是根据官方示例改成的：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDecodeEncryptedData</span><span class="params">($sessionKey, $encryptedData, $iv)</span> </span>&#123;</span><br><span class="line">    $pc = <span class="keyword">new</span> WXBizDataCrypt($appid, $sessionKey);</span><br><span class="line">    $errCode = $pc-&gt;decryptData($encryptedData, $iv, $data );</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> ($errCode == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> $data;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> $errCode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最后获取<code>post</code>传过来的参数，进行调用获取<code>openGId</code>：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$code = ... <span class="comment">// post 参数</span></span><br><span class="line">$encryptedData = ... <span class="comment">// post 参数</span></span><br><span class="line">$iv = ... <span class="comment">// post  参数</span></span><br><span class="line"></span><br><span class="line">$loginInfo = getInfoWithCode($appid, $appsecret, $code);</span><br><span class="line">$sessionKey = $loginInfo-&gt;session_key;</span><br><span class="line"><span class="keyword">echo</span> getDecodeEncryptedData($sessionKey, $encryptedData, $iv);</span><br></pre></td></tr></table></figure>
-<p>前端拿到<code>openGId</code>后就可以进行绑定相关操作了。</p>
-<p><code>http_post</code>函数，是官方某个demo里的，具体是哪里的忘了：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">http_post</span><span class="params">( $url, $data=null )</span> </span>&#123;</span><br><span class="line">    $curl = curl_init(); <span class="comment">// 启动一个CURL会话</span></span><br><span class="line">    curl_setopt($curl, CURLOPT_URL, $url); <span class="comment">// 要访问的地址</span></span><br><span class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, <span class="keyword">false</span>); <span class="comment">// 对认证证书来源的检查</span></span><br><span class="line">    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, <span class="keyword">false</span>); <span class="comment">// 从证书中检查SSL加密算法是否存在</span></span><br><span class="line">    curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER[<span class="string">'HTTP_USER_AGENT'</span>]); <span class="comment">// 模拟用户使用的浏览器</span></span><br><span class="line">    <span class="keyword">if</span>($data != <span class="keyword">null</span>)&#123;</span><br><span class="line">        curl_setopt($curl, CURLOPT_POST, <span class="number">1</span>); <span class="comment">// 发送一个常规的Post请求</span></span><br><span class="line">        curl_setopt($curl, CURLOPT_POSTFIELDS, $data); <span class="comment">// Post提交的数据包</span></span><br><span class="line">    &#125;</span><br><span class="line">    curl_setopt($curl, CURLOPT_TIMEOUT, <span class="number">300</span>); <span class="comment">// 设置超时限制防止死循环</span></span><br><span class="line">    curl_setopt($curl, CURLOPT_HEADER, <span class="number">0</span>); <span class="comment">// 显示返回的Header区域内容</span></span><br><span class="line">    curl_setopt($curl, CURLOPT_RETURNTRANSFER, <span class="number">1</span>); <span class="comment">// 获取的信息以文件流的形式返回</span></span><br><span class="line">    $info = curl_exec($curl); <span class="comment">// 执行操作</span></span><br><span class="line">    curl_close( $curl );</span><br><span class="line">    <span class="comment">// var_dump(json_decode($resp, true));</span></span><br><span class="line">    <span class="comment">// echo "&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;";</span></span><br><span class="line">    <span class="keyword">return</span> $info;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其实这些都可以从官方文档里找到，这里只是做一个总结。</p>
-<p>因为我用过框架，上面代码是改变过的，没有进行实际测试，但思路就大概是这样的。</p>
-<p>如果代码有什么问题可以告知我。</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxchecksessionobject" target="_blank" rel="noopener">小程序登录</a></li>
-<li><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/api/signature.html" target="_blank" rel="noopener">用户数据的签名验证和加解密</a></li>
+            <ul>
+<li style="list-style: none"><input type="checkbox"> 每周至少练习一次画画</li>
+<li style="list-style: none"><input type="checkbox"> 阅读</li>
 </ul>
 
         </div>
@@ -194,7 +175,7 @@
 
 
 
-    <a data-url="https://tomfriwel.github.io/blog/2018/03/22/2018-03-22-develop-wechat-group-miniprogram-back-end/" data-id="ck99kw62m002h2hwhkquvkq1h" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://tomfriwel.github.io/blog/2018/05/05/small-target-2018/" data-id="ck99o2tkr002q7kwh2q88fghc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -348,20 +329,20 @@
         
 <nav id="article-nav">
     
-        <a href="/blog/2018/04/09/2018-04-09-Florence/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/blog/2018/05/07/github-ssh-error-after-change-github-account-email/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">下一篇</strong>
         <p class="article-nav-title">
         
-            《Florence》- 游戏推荐
+            更改Gihub公开邮箱后发生的ssh错误
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
     
-        <a href="/blog/2018/03/22/2018-03-22-develop-wechat-group-miniprogram-front-end/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/blog/2018/04/25/the-idea-of-finding-a-solution/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">微信小程序群功能开发-前端篇</p>
+        <p class="article-nav-title">关于寻找解决办法</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -380,7 +361,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/" class="thumbnail">
+                            <a href="/blog/2019/02/21/wechat-miniapp-fullscreen-mode/" class="thumbnail">
     
     
         <span style="background-image:url(/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/2.png)" alt="微信小程序全屏模式（自定义导航栏）" class="thumbnail-image"></span>
@@ -392,7 +373,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/" class="title">微信小程序全屏模式（自定义导航栏）</a></p>
+                            <p class="item-title"><a href="/blog/2019/02/21/wechat-miniapp-fullscreen-mode/" class="title">微信小程序全屏模式（自定义导航栏）</a></p>
                             <p class="item-date"><time datetime="2019-02-21T08:59:53.000Z" itemprop="datePublished">2019-02-21</time></p>
                         </div>
                     </li>
@@ -411,7 +392,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/数学/">数学</a></p>
                             <p class="item-title"><a href="/blog/2018/11/14/learn-linear-algebra-by-programming-5/" class="title">通过编程来学习线性代数5-克拉默法则</a></p>
                             <p class="item-date"><time datetime="2018-11-14T14:31:00.000Z" itemprop="datePublished">2018-11-14</time></p>
                         </div>
@@ -451,7 +432,7 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/数学/">数学</a></p>
                             <p class="item-title"><a href="/blog/2018/10/14/learn-linear-algebra-by-programming-4/" class="title">通过编程来学习线性代数4-行列式按行(列)展开</a></p>
                             <p class="item-date"><time datetime="2018-10-14T09:59:17.000Z" itemprop="datePublished">2018-10-14</time></p>
                         </div>
@@ -460,10 +441,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="thumbnail">
+                            <a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/p1.jpg)" alt="[翻译]构图的忌讳" class="thumbnail-image"></span>
     
     <!--  -->
 </a>
@@ -472,7 +453,7 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2018/09/30/Translation-Unusual-View-Angle/" class="title">[翻译]不同寻常的拍摄角度(更新中)</a></p>
+                            <p class="item-title"><a href="/blog/2018/09/30/Translation-Things-to-Avoid-in-Composition/" class="title">[翻译]构图的忌讳</a></p>
                             <p class="item-date"><time datetime="2018-09-30T05:44:12.000Z" itemprop="datePublished">2018-09-30</time></p>
                         </div>
                     </li>
@@ -483,6 +464,13 @@
 
             
                 
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/数学/">数学</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
 
             
                 
