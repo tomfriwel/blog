@@ -1,6 +1,7 @@
 ---
 title: 微信小程序全屏模式（自定义导航栏）
 date: 2019-02-21 16:59:53
+thumbnail: /blog/2019/02/21/2019-02-21-wechat-miniapp-fullscreen-mode/2.png
 tags:
     - 微信小程序
 ---
@@ -260,4 +261,4 @@ Component({
     * 客户端 6.7.2 版本开始，navigationStyle: custom 对 <web-view> 组件无效
     * 开启 custom 后，低版本客户端需要做好兼容。开发者工具基础库版本切到 1.7.0（不代表最低版本，只供调试用）可方便切到旧视觉
 
-![微信官方文档：全局设置](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)
+[微信官方文档：全局设置](https://developers.weixin.qq.com/miniprogram/dev/framework/config.html)
