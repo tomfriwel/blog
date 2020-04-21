@@ -40,7 +40,7 @@ categories:
 n个元素所有排列的种数: `n! = n*(n-1)*...*3*2*1`
 
 
-这里我们用 [`Heap's algorithm`](https://en.wikipedia.org/wiki/Heap%27s_algorithm) 描述的算法来生成每一项:
+这里我们用 [Heap's algorithm](https://en.wikipedia.org/wiki/Heap%27s_algorithm) 描述的算法来生成所有的排列组合:
 
 ```js
 // Heap's algorithm
@@ -73,6 +73,8 @@ function generate(n, A, result) {
 
 可以在浏览器的控制台中试一下, 如`generate(3, [1, 2, 3], arr)`或者``generate(4, ['a', 'b', 'c', 'd'], arr)``, 字符数字都行，`arr`需要事先定义好`let arr = []`
 
+![控制台测试](./Screen Shot 2020-04-21 at 15.52.37.png)
+
 
 得到每一项后, 就可以进行计算逆序数了. 一个排列的逆序数决定了这一项是正或负数.
 
@@ -101,7 +103,12 @@ function calcInverseNumber(item) {
 }
 ```
 
-到这里，生成计算中的每一项和计算每一项的逆序数的方法都有了，接下来就需要一个计算方法。这个计算方法需要传入一个`行列式`，然后通过`generate`生成相乘的每一项，再通过`calcInverseNumber`算出逆序数并相加得出结果。
+到这里，生成计算中的每一项和计算每一项的逆序数的方法都有了，接下来就需要一个计算方法。这个计算方法需要传入一个`行列式`，然后通过`generate`生成相乘的每一项，再通过`calcInverseNumber`算出每一项的逆序数来判断该项的正负值，最终各项相加得出结果。
+
+在计算每一项的值时，元`aij`中的`i`的值不变，相乘的`j`取`n`的排列。如三阶行列式的计算：
+![](./Screen Shot 2020-04-21 at 16.37.58.png)
+
+其中每三个相乘中，三个元的`i`角标都是`1,2,3`，`j`角标取全排列每一项的值。
 
 ```js
 // 计算行列式的值
