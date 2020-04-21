@@ -5,9 +5,11 @@ excerpt: 在这一节中你将了解如何在`canvas`中进行基本的绘制操
 date: '2018-03-21 10:11:47'
 comments: true
 thumbnail: /blog/assets/images/linear-algebra/cover.png
-tag:
+tags:
     - 基础知识
     - 线性代数
+categories:
+  - 数学
 ---
 
 ### 环境

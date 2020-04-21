@@ -2,9 +2,11 @@
 title: 通过编程来学习线性代数5-克拉默法则
 comments: true
 thumbnail: /blog/assets/images/linear-algebra/cover.png
-tag:
+tags:
   - 基础知识
   - 线性代数
+categories:
+  - 数学
 date: 2018-11-14 22:31:00
 ---
 
