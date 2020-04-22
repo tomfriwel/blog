@@ -14,7 +14,8 @@ categories:
 
 ### 环境
 
-采用的编程方式是网页，会使用`javascript`来实现线性代数中的计算方法。
+采用的编程方式是网页，会使用`javascript`来实现线性代数中的计算方法。如果只运行`js`的话也可以使用[Node.js](https://nodejs.org/en/)。
+
 比如文件***linearAlgebra.html***:
 ```html
 <script>

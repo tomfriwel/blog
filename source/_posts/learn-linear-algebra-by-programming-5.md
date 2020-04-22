@@ -12,6 +12,8 @@ date: 2018-11-14 22:31:00
 
 下面基本上都是PPT中的内容。
 
+从本篇文章开始，我们用`Node.js`作为运行环境，具体配置和使用方式可到[Node.js官网](https://nodejs.org/en/)查看。[源代码（node-version文件夹）](https://github.com/tomfriwel/linearAlgebraPro)也做了相应的更改。
+
 如果线性方程组的系数行列式不等于零，那么线性方程组有解并且解是唯一的：
 
 ![](./e5.png)
