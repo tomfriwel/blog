@@ -11,7 +11,7 @@
     "d": "hexo clean && hexo g && hexo d -g"
   },
   "dependencies": {
-    "hexo": "^3.9.0",
+    "hexo": "^7.3.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^0.1.4",
     "hexo-generator-category": "^0.1.3",
